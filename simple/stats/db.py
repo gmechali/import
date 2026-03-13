@@ -22,8 +22,13 @@ import os
 import sqlite3
 from typing import Any
 
+from google.auth.exceptions import DefaultCredentialsError
+import google.auth
+import google.auth.transport.requests
+from google.auth.transport.requests import AuthorizedSession
 from google.cloud.sql.connector.connector import Connector
 from google.cloud.sql.connector.connector import IPTypes
+from google.oauth2 import id_token
 import pandas as pd
 from pyld import jsonld
 from pymysql.connections import Connection
@@ -33,9 +38,9 @@ from rdflib import Literal
 from rdflib import Namespace
 from rdflib import RDF
 from rdflib import URIRef
-import requests
 from stats import constants
 from stats import schema_constants as sc
+from stats.auth import IDTokenCredentials
 from stats.data import McfNode
 from stats.data import STAT_VAR_GROUP
 from stats.data import STATISTICAL_VARIABLE
@@ -415,6 +420,14 @@ class DataCommonsPlatformDb(Db):
 
   def __init__(self, config: dict) -> None:
     self.url = config[FIELD_DB_PARAMS][DATA_COMMONS_PLATFORM_URL]
+    self.nodes_url = self.url + self.NODES_PATH
+
+    # 1. Initialize custom credentials for ID tokens
+    creds = IDTokenCredentials(target_audience=self.url)
+
+    # 2. Create the authorized session
+    self.session = AuthorizedSession(creds)
+
 
   def maybe_clear_before_import(self):
     # Not applicable for Data Commons Platform.
@@ -430,8 +443,10 @@ class DataCommonsPlatformDb(Db):
         "Writing %s triples (%s nodes) to Data Commons Platform at [%s]",
         len(triples), len(jsonld["@graph"]), self.url)
     logging.info("Writing jsonld: %s", json.dumps(jsonld, indent=2))
-    nodes_url = self.url + self.NODES_PATH
-    response = requests.post(nodes_url, json=jsonld)
+    
+    # AuthorizedSession automatically adds the Authorization header
+    response = self.session.post(self.nodes_url, json=jsonld)
+    
     if response.status_code != 200:
       # TODO: For now, we just log a warning, but we should raise an exception.
       logging.warning("Failed to write triples to Data Commons Platform: %s",
