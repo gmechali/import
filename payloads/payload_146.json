@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Zurich_Population_By_Age",
+  "importList": "[{\"importName\": \"Zurich_Population_By_Age\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_By_Age/2026_03_28T23_03_10_992601_07_00/zurich_population_bev_3903_age10_wiki/genmcf/table_mcf_nodes_zurich_population_bev_3903_age10_wiki.mcf\"}, {\"importName\": \"Zurich_Population_By_Age\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_By_Age/2026_03_28T23_03_10_992601_07_00/provenance/genmcf/Zurich_Population_By_Age.mcf\"}, {\"importName\": \"Zurich_Population_By_Age\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_By_Age/2026_03_28T23_03_10_992601_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

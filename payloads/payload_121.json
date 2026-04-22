@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "WorldBank_IDS",
+  "importList": "[{\"importName\": \"WorldBank_IDS\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/world_bank/worldbank_ids/WorldBank_IDS/2026_04_06T21_03_34_296985_07_00/currency/genmcf/table_mcf_nodes_currency.mcf\"}, {\"importName\": \"WorldBank_IDS\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/world_bank/worldbank_ids/WorldBank_IDS/2026_04_06T21_03_34_296985_07_00/disbursed_output/genmcf/table_mcf_nodes_disbursed_output.mcf\"}, {\"importName\": \"WorldBank_IDS\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/world_bank/worldbank_ids/WorldBank_IDS/2026_04_06T21_03_34_296985_07_00/interest_output/genmcf/table_mcf_nodes_interest_output.mcf\"}, {\"importName\": \"WorldBank_IDS\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/world_bank/worldbank_ids/WorldBank_IDS/2026_04_06T21_03_34_296985_07_00/principal_output/genmcf/table_mcf_nodes_principal_output.mcf\"}, {\"importName\": \"WorldBank_IDS\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/world_bank/worldbank_ids/WorldBank_IDS/2026_04_06T21_03_34_296985_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

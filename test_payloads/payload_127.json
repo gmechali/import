@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "CDC_OzoneCounty",
+  "importList": "[{\"importName\": \"CDC_OzoneCounty\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/environmental_health_toxicology/CDC_OzoneCounty/2026_04_04T18_03_24_399430_07_00/data.csv\"}, {\"importName\": \"CDC_OzoneCounty\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/environmental_health_toxicology/CDC_OzoneCounty/2026_04_04T18_03_24_399430_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

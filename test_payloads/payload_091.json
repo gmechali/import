@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "OECDRegionalDemography_LifeExpectancy",
+  "importList": "[{\"importName\": \"OECDRegionalDemography_LifeExpectancy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/oecd/regional_demography/life_expectancy/OECDRegionalDemography_LifeExpectancy/2026_04_15T01_08_16_445951_07_00/data.csv\"}, {\"importName\": \"OECDRegionalDemography_LifeExpectancy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/oecd/regional_demography/life_expectancy/OECDRegionalDemography_LifeExpectancy/2026_04_15T01_08_16_445951_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

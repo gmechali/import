@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "CanadaStatisticsAgeGender",
+  "importList": "[{\"importName\": \"CanadaStatisticsAgeGender\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/canada_statistics_age_gender/CanadaStatisticsAgeGender/2026_04_17T02_11_11_284243_07_00/data.csv\"}, {\"importName\": \"CanadaStatisticsAgeGender\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/canada_statistics_age_gender/CanadaStatisticsAgeGender/2026_04_17T02_11_11_284243_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

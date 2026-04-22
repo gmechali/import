@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "FBIGovCrime",
+  "importList": "[{\"importName\": \"FBIGovCrime\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/fbi/fbigovcrime/FBIGovCrime/2026_03_31T22_33_30_061280_07_00/fbi_gov_crime/genmcf/table_mcf_nodes_fbi_gov_crime.mcf\"}, {\"importName\": \"FBIGovCrime\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/fbi/fbigovcrime/FBIGovCrime/2026_03_31T22_33_30_061280_07_00/provenance/genmcf/FBIGovCrime.mcf\"}, {\"importName\": \"FBIGovCrime\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/fbi/fbigovcrime/FBIGovCrime/2026_03_31T22_33_30_061280_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

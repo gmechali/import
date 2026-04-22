@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "BLS_CES_State",
+  "importList": "[{\"importName\": \"BLS_CES_State\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_bls/bls_ces_state/BLS_CES_State/2026_04_20T00_16_42_274738_07_00/data.csv\"}, {\"importName\": \"BLS_CES_State\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_bls/bls_ces_state/BLS_CES_State/2026_04_20T00_16_42_274738_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

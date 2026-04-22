@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "USFEMA_NationalRiskIndex",
+  "importList": "[{\"importName\": \"USFEMA_NationalRiskIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_fema/national_risk_index/USFEMA_NationalRiskIndex/data.csv\"}, {\"importName\": \"USFEMA_NationalRiskIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_fema/national_risk_index/USFEMA_NationalRiskIndex/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

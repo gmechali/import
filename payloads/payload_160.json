@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "NCES_PrivateSchool",
+  "importList": "[{\"importName\": \"NCES_PrivateSchool\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_nces/demographics/private_school/NCES_PrivateSchool/2026_02_28T19_33_08_259989_08_00/us_nces_demographics_private_place/genmcf/table_mcf_nodes_us_nces_demographics_private_place.mcf\"}, {\"importName\": \"NCES_PrivateSchool\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_nces/demographics/private_school/NCES_PrivateSchool/2026_02_28T19_33_08_259989_08_00/us_nces_demographics_private_school/genmcf/table_mcf_nodes_us_nces_demographics_private_school.mcf\"}, {\"importName\": \"NCES_PrivateSchool\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_nces/demographics/private_school/NCES_PrivateSchool/2026_02_28T19_33_08_259989_08_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

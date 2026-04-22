@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "NCBI_Taxonomy",
+  "importList": "[{\"importName\": \"NCBI_Taxonomy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/biomedical/NCBI_Taxonomy/NCBI_Taxonomy/2026_03_31T17_03_22_818904_07_00/data.csv\"}, {\"importName\": \"NCBI_Taxonomy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/biomedical/NCBI_Taxonomy/NCBI_Taxonomy/2026_03_31T17_03_22_818904_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

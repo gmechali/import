@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "NCES_PublicSchool",
+  "importList": "[{\"importName\": \"NCES_PublicSchool\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_nces/demographics/public_school/NCES_PublicSchool/data.csv\"}, {\"importName\": \"NCES_PublicSchool\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_nces/demographics/public_school/NCES_PublicSchool/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Zurich_Population_Number_Of_Birth_By_Origin",
+  "importList": "[{\"importName\": \"Zurich_Population_Number_Of_Birth_By_Origin\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Birth_By_Origin/2026_03_29T08_48_14_286018_07_00/zurich_bev_4031_hel_wiki/genmcf/table_mcf_nodes_zurich_bev_4031_hel_wiki.mcf\"}, {\"importName\": \"Zurich_Population_Number_Of_Birth_By_Origin\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Birth_By_Origin/2026_03_29T08_48_14_286018_07_00/provenance/genmcf/Zurich_Population_Number_Of_Birth_By_Origin.mcf\"}, {\"importName\": \"Zurich_Population_Number_Of_Birth_By_Origin\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Birth_By_Origin/2026_03_29T08_48_14_286018_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

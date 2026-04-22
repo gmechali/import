@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "WorldBankDatasets",
+  "importList": "[{\"importName\": \"WorldBankDatasets\", \"graphPath\": \"gs://datcom-prod-imports/scripts/world_bank/datasets/WorldBankDatasets/2026_04_06T01_30_20_048283_07_00/wb_part1/genmcf/table_mcf_nodes_transformed_data_for_all_final.mcf\"}, {\"importName\": \"WorldBankDatasets\", \"graphPath\": \"gs://datcom-prod-imports/scripts/world_bank/datasets/WorldBankDatasets/2026_04_06T01_30_20_048283_07_00/wb_part2/genmcf/table_mcf_nodes_bq-results-20250423.mcf\"}, {\"importName\": \"WorldBankDatasets\", \"graphPath\": \"gs://datcom-prod-imports/scripts/world_bank/datasets/WorldBankDatasets/2026_04_06T01_30_20_048283_07_00/provenance/genmcf/WorldBankDatasets.mcf\"}, {\"importName\": \"WorldBankDatasets\", \"graphPath\": \"gs://datcom-prod-imports/scripts/world_bank/datasets/WorldBankDatasets/2026_04_06T01_30_20_048283_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

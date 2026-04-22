@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EuroStatHealth_AlcoholConsumption",
+  "importList": "[{\"importName\": \"EuroStatHealth_AlcoholConsumption\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_AlcoholConsumption/2026_04_01T19_03_31_977881_07_00/data.csv\"}, {\"importName\": \"EuroStatHealth_AlcoholConsumption\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_AlcoholConsumption/2026_04_01T19_03_31_977881_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

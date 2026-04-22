@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "USCensusPEP_By_Sex_Race",
+  "importList": "[{\"importName\": \"USCensusPEP_By_Sex_Race\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/us_pep_sexrace/USCensusPEP_By_Sex_Race/2026_04_20T03_03_40_140345_07_00/data.csv\"}, {\"importName\": \"USCensusPEP_By_Sex_Race\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/us_pep_sexrace/USCensusPEP_By_Sex_Race/2026_04_20T03_03_40_140345_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

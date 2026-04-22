@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "CDC500",
+  "importList": "[{\"importName\": \"CDC500\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/500_places/CDC500/2026_04_17T02_21_07_570547_07_00/data.csv\"}, {\"importName\": \"CDC500\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/500_places/CDC500/2026_04_17T02_21_07_570547_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

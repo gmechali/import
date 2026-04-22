@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "CDC_Social_Vulnerability_Index",
+  "importList": "[{\"importName\": \"CDC_Social_Vulnerability_Index\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/cdc/social_vulnerability_index/CDC_Social_Vulnerability_Index/2026_04_19T22_36_37_665861_07_00/input0/genmcf/table_mcf_nodes_SVI_2010_us_county.mcf\"}, {\"importName\": \"CDC_Social_Vulnerability_Index\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/cdc/social_vulnerability_index/CDC_Social_Vulnerability_Index/2026_04_19T22_36_37_665861_07_00/input1/genmcf/table_mcf_nodes_SVI_us_county.mcf\"}, {\"importName\": \"CDC_Social_Vulnerability_Index\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/cdc/social_vulnerability_index/CDC_Social_Vulnerability_Index/2026_04_19T22_36_37_665861_07_00/provenance/genmcf/CDC_Social_Vulnerability_Index.mcf\"}, {\"importName\": \"CDC_Social_Vulnerability_Index\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/cdc/social_vulnerability_index/CDC_Social_Vulnerability_Index/2026_04_19T22_36_37_665861_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Denmark_Demographics",
+  "importList": "[{\"importName\": \"Denmark_Demographics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/denmark_demographics/Denmark_Demographics/2026_04_09T10_43_28_709738_07_00/data.csv\"}, {\"importName\": \"Denmark_Demographics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/denmark_demographics/Denmark_Demographics/2026_04_09T10_43_28_709738_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

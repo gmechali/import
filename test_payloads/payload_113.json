@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Singapore_Census",
+  "importList": "[{\"importName\": \"Singapore_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/singapore_census/Singapore_Census/2026_04_13T22_33_47_626683_07_00/data.csv\"}, {\"importName\": \"Singapore_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/singapore_census/Singapore_Census/2026_04_13T22_33_47_626683_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

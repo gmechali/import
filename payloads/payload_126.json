@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "CensusCountyBusinessPatterns",
+  "importList": "[{\"importName\": \"CensusCountyBusinessPatterns\", \"graphPath\": \"gs://datcom-prod-imports/scripts/census_county_business_patterns/CensusCountyBusinessPatterns/2025_09_30T22_42_11_613992_07_00/CensusCountyBusinessPatterns/validation/summary_report.csv\"}, {\"importName\": \"CensusCountyBusinessPatterns\", \"graphPath\": \"gs://datcom-prod-imports/scripts/census_county_business_patterns/CensusCountyBusinessPatterns/2025_09_30T22_42_11_613992_07_00/CensusCountyBusinessPatterns.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

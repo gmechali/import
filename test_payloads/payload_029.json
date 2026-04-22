@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "CDC_Social_Vulnerability_Index",
+  "importList": "[{\"importName\": \"CDC_Social_Vulnerability_Index\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/cdc/social_vulnerability_index/CDC_Social_Vulnerability_Index/2026_04_19T22_36_37_665861_07_00/data.csv\"}, {\"importName\": \"CDC_Social_Vulnerability_Index\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/cdc/social_vulnerability_index/CDC_Social_Vulnerability_Index/2026_04_19T22_36_37_665861_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

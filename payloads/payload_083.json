@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "ClimateTrace_GHG_Emissions",
+  "importList": "[{\"importName\": \"ClimateTrace_GHG_Emissions\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/climate_trace/ClimateTrace_GHG_Emissions/2026_04_16T05_16_45_004266_07_00/common_output/genmcf/table_mcf_nodes_output_sectors.mcf\"}, {\"importName\": \"ClimateTrace_GHG_Emissions\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/climate_trace/ClimateTrace_GHG_Emissions/2026_04_16T05_16_45_004266_07_00/common_output/genmcf/table_mcf_nodes_output_subsectors.mcf\"}, {\"importName\": \"ClimateTrace_GHG_Emissions\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/climate_trace/ClimateTrace_GHG_Emissions/2026_04_16T05_16_45_004266_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

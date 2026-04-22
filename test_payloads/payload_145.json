@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Zurich_Population",
+  "importList": "[{\"importName\": \"Zurich_Population\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population/2026_03_29T04_33_18_201535_07_00/data.csv\"}, {\"importName\": \"Zurich_Population\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population/2026_03_29T04_33_18_201535_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

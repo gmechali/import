@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "IPEDS_StudentToFacultyRatio",
+  "importList": "[{\"importName\": \"IPEDS_StudentToFacultyRatio\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ipeds/student_to_faculty_ratio/IPEDS_StudentToFacultyRatio/2025_12_29T12_23_18_145130_08_00/source_files/input_files/student_faculty_ratio_data_2009.csv\"}, {\"importName\": \"IPEDS_StudentToFacultyRatio\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ipeds/student_to_faculty_ratio/IPEDS_StudentToFacultyRatio/2025_12_29T12_23_18_145130_08_00/student_faculty_ratio.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

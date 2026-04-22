@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Place",
+  "importList": "[{\"importName\": \"Place\", \"graphPath\": \"gs://datcom-prod-imports/scripts/entities/Place/2026-04-21/data.csv\"}, {\"importName\": \"Place\", \"graphPath\": \"gs://datcom-prod-imports/scripts/entities/Place/2026-04-21/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

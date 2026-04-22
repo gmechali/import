@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "US_UrbanSchool_Finances",
+  "importList": "[{\"importName\": \"US_UrbanSchool_Finances\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/school_finance/US_UrbanSchool_Finances/2026_04_17T03_43_42_863390_07_00/input0/genmcf/table_mcf_nodes_school_finance_output.mcf\"}, {\"importName\": \"US_UrbanSchool_Finances\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/school_finance/US_UrbanSchool_Finances/2026_04_17T03_43_42_863390_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

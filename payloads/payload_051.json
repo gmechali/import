@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "HUD_IncomeLimits",
+  "importList": "[{\"importName\": \"HUD_IncomeLimits\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_hud/income/HUD_IncomeLimits/2026_04_19T16_19_37_879092_07_00/input0/genmcf/table_mcf_nodes_output_all_years.mcf\"}, {\"importName\": \"HUD_IncomeLimits\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_hud/income/HUD_IncomeLimits/2026_04_19T16_19_37_879092_07_00/provenance/genmcf/HUD_IncomeLimits.mcf\"}, {\"importName\": \"HUD_IncomeLimits\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_hud/income/HUD_IncomeLimits/2026_04_19T16_19_37_879092_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

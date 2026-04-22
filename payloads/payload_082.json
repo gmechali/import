@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "BLS_JOLTS",
+  "importList": "[{\"importName\": \"BLS_JOLTS\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bls/jolts/BLS_JOLTS/2026_04_16T19_33_38_949650_07_00/input0/genmcf/instance_mcf_nodes.mcf\"}, {\"importName\": \"BLS_JOLTS\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bls/jolts/BLS_JOLTS/2026_04_16T19_33_38_949650_07_00/input0/genmcf/table_mcf_nodes_BLSJolts_StatisticalVariables.mcf\"}, {\"importName\": \"BLS_JOLTS\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bls/jolts/BLS_JOLTS/2026_04_16T19_33_38_949650_07_00/provenance/genmcf/BLS_JOLTS.mcf\"}, {\"importName\": \"BLS_JOLTS\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bls/jolts/BLS_JOLTS/2026_04_16T19_33_38_949650_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

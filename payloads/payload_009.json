@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "New_Zealand_Census",
+  "importList": "[{\"importName\": \"New_Zealand_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/statistics_new_zealand/new_zealand_census/New_Zealand_Census/2026_04_20T23_03_37_506031_07_00/input0/genmcf/table_mcf_nodes_nzl_national_output.mcf\"}, {\"importName\": \"New_Zealand_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/statistics_new_zealand/new_zealand_census/New_Zealand_Census/2026_04_20T23_03_37_506031_07_00/input1/genmcf/table_mcf_nodes_nzl_subnational_output.mcf\"}, {\"importName\": \"New_Zealand_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/statistics_new_zealand/new_zealand_census/New_Zealand_Census/2026_04_20T23_03_37_506031_07_00/provenance/genmcf/New_Zealand_Census.mcf\"}, {\"importName\": \"New_Zealand_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/statistics_new_zealand/new_zealand_census/New_Zealand_Census/2026_04_20T23_03_37_506031_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Event",
+  "importList": "[{\"importName\": \"Event\", \"graphPath\": \"gs://datcom-prod-imports/scripts/entities/Event/2026-04-21/data.csv\"}, {\"importName\": \"Event\", \"graphPath\": \"gs://datcom-prod-imports/scripts/entities/Event/2026-04-21/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

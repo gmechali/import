@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Finland_Census",
+  "importList": "[{\"importName\": \"Finland_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/finland_census/Finland_Census/2026_04_07T03_07_33_037329_07_00/data.csv\"}, {\"importName\": \"Finland_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/finland_census/Finland_Census/2026_04_07T03_07_33_037329_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

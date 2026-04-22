@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EuroStatHealth_SocialEnvironment",
+  "importList": "[{\"importName\": \"EuroStatHealth_SocialEnvironment\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_SocialEnvironment/2026_04_01T21_03_50_051488_07_00/eurostat_population_social_environment/genmcf/table_mcf_nodes_eurostat_population_social_environment.mcf\"}, {\"importName\": \"EuroStatHealth_SocialEnvironment\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_SocialEnvironment/2026_04_01T21_03_50_051488_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EIA_Coal",
+  "importList": "[{\"importName\": \"EIA_Coal\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_Coal/2026_04_20T07_03_52_487568_07_00/input0/genmcf/table_mcf_nodes_COAL.mcf\"}, {\"importName\": \"EIA_Coal\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_Coal/2026_04_20T07_03_52_487568_07_00/provenance/genmcf/EIA_Coal.mcf\"}, {\"importName\": \"EIA_Coal\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_Coal/2026_04_20T07_03_52_487568_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

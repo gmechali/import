@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "CRDC_EducationSchool_HarassmentOrBullying",
+  "importList": "[{\"importName\": \"CRDC_EducationSchool_HarassmentOrBullying\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/crdc_import/crdc_harassment_or_bullying/CRDC_EducationSchool_HarassmentOrBullying/2025_12_30T02_06_23_695740_08_00/data.csv\"}, {\"importName\": \"CRDC_EducationSchool_HarassmentOrBullying\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/crdc_import/crdc_harassment_or_bullying/CRDC_EducationSchool_HarassmentOrBullying/2025_12_30T02_06_23_695740_08_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

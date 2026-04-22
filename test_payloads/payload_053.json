@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "UAE_Population",
+  "importList": "[{\"importName\": \"UAE_Population\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/uae_bayanat/uae_population/UAE_Population/data.csv\"}, {\"importName\": \"UAE_Population\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/uae_bayanat/uae_population/UAE_Population/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

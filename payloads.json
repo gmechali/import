@@ -1,0 +1,29 @@
+[
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "FARS_CrashData",
+    "importList": "[{\"importName\": \"FARS_CrashData\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_crash/fars_crashdata/FARS_CrashData/2026_04_20T22_03_41_072048_07_00/data.csv\"}, {\"importName\": \"FARS_CrashData\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_crash/fars_crashdata/FARS_CrashData/2026_04_20T22_03_41_072048_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "FBIHateCrime",
+    "importList": "[{\"importName\": \"FBIHateCrime\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fbi/hate_crime/aggregations/FBIHateCrime/2026_04_21T03_03_16_728044_07_00/data.csv\"}, {\"importName\": \"FBIHateCrime\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fbi/hate_crime/aggregations/FBIHateCrime/2026_04_21T03_03_16_728044_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "FBIHateCrimePublications",
+    "importList": "[{\"importName\": \"FBIHateCrimePublications\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fbi/hate_crime/FBIHateCrimePublications/2026_04_21T03_03_49_397312_07_00/data.csv\"}, {\"importName\": \"FBIHateCrimePublications\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fbi/hate_crime/FBIHateCrimePublications/2026_04_21T03_03_49_397312_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  }
+]

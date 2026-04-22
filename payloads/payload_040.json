@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "USCensusPEP_AgeSexRace",
+  "importList": "[{\"importName\": \"USCensusPEP_AgeSexRace\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/population_estimates_by_asr/USCensusPEP_AgeSexRace/2026_04_19T22_04_00_566995_07_00/input0/genmcf/table_mcf_nodes_usa_population_asr.mcf\"}, {\"importName\": \"USCensusPEP_AgeSexRace\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/population_estimates_by_asr/USCensusPEP_AgeSexRace/2026_04_19T22_04_00_566995_07_00/provenance/genmcf/USCensusPEP_AgeSexRace.mcf\"}, {\"importName\": \"USCensusPEP_AgeSexRace\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/population_estimates_by_asr/USCensusPEP_AgeSexRace/2026_04_19T22_04_00_566995_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

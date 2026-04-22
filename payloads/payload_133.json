@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EuroStatHealth_FruitsAndVegetables",
+  "importList": "[{\"importName\": \"EuroStatHealth_FruitsAndVegetables\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_FruitsAndVegetables/2026_04_01T23_03_21_197723_07_00/eurostat_population_fruits_vegetables/genmcf/table_mcf_nodes_eurostat_population_fruits_vegetables.mcf\"}, {\"importName\": \"EuroStatHealth_FruitsAndVegetables\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_FruitsAndVegetables/2026_04_01T23_03_21_197723_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

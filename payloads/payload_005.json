@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EurostatData_GDP",
+  "importList": "[{\"importName\": \"EurostatData_GDP\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/gdp/EurostatData_GDP/2026_04_20T21_33_34_309956_07_00/input0/genmcf/table_mcf_nodes_eurostat_gdp.mcf\"}, {\"importName\": \"EurostatData_GDP\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/gdp/EurostatData_GDP/2026_04_20T21_33_34_309956_07_00/provenance/genmcf/EurostatData_GDP.mcf\"}, {\"importName\": \"EurostatData_GDP\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/gdp/EurostatData_GDP/2026_04_20T21_33_34_309956_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

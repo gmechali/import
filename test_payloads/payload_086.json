@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "CDC_StandardizedPrecipitationIndex",
+  "importList": "[{\"importName\": \"CDC_StandardizedPrecipitationIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/cdc_standardized_precipitation/index/CDC_StandardizedPrecipitationIndex/2026_04_15T04_03_11_681668_07_00/data.csv\"}, {\"importName\": \"CDC_StandardizedPrecipitationIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/cdc_standardized_precipitation/index/CDC_StandardizedPrecipitationIndex/2026_04_15T04_03_11_681668_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

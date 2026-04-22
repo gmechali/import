@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "SouthKorea_Demographics",
+  "importList": "[{\"importName\": \"SouthKorea_Demographics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/southkorea_statistics/demographics/SouthKorea_Demographics/2026_04_15T03_03_33_767818_07_00/input0/genmcf/table_mcf_nodes_population.mcf\"}, {\"importName\": \"SouthKorea_Demographics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/southkorea_statistics/demographics/SouthKorea_Demographics/2026_04_15T03_03_33_767818_07_00/input1/genmcf/table_mcf_nodes_population_density.mcf\"}, {\"importName\": \"SouthKorea_Demographics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/southkorea_statistics/demographics/SouthKorea_Demographics/2026_04_15T03_03_33_767818_07_00/provenance/genmcf/SouthKorea_Demographics.mcf\"}, {\"importName\": \"SouthKorea_Demographics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/southkorea_statistics/demographics/SouthKorea_Demographics/2026_04_15T03_03_33_767818_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

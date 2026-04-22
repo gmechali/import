@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "CensusSAHIE",
+  "importList": "[{\"importName\": \"CensusSAHIE\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/census_v2/sahie/CensusSAHIE/2025_12_14T16_03_17_928130_08_00/data.csv\"}, {\"importName\": \"CensusSAHIE\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/census_v2/sahie/CensusSAHIE/2025_12_14T16_03_17_928130_08_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

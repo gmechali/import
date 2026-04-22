@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EIA_TotalEnergy",
+  "importList": "[{\"importName\": \"EIA_TotalEnergy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_TotalEnergy/2026_04_20T06_04_16_245329_07_00/input0/genmcf/table_mcf_nodes_TOTAL.mcf\"}, {\"importName\": \"EIA_TotalEnergy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_TotalEnergy/2026_04_20T06_04_16_245329_07_00/provenance/genmcf/EIA_TotalEnergy.mcf\"}, {\"importName\": \"EIA_TotalEnergy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_TotalEnergy/2026_04_20T06_04_16_245329_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

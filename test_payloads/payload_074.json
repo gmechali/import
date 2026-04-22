@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "US_UrbanSchool_Covid_Directional_Indicators",
+  "importList": "[{\"importName\": \"US_UrbanSchool_Covid_Directional_Indicators\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/covid_directional_indicators/US_UrbanSchool_Covid_Directional_Indicators/2026_04_16T22_04_04_770948_07_00/data.csv\"}, {\"importName\": \"US_UrbanSchool_Covid_Directional_Indicators\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/covid_directional_indicators/US_UrbanSchool_Covid_Directional_Indicators/2026_04_16T22_04_04_770948_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

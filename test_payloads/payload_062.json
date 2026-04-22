@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Brazil_RuralDevelopmentProgram",
+  "importList": "[{\"importName\": \"Brazil_RuralDevelopmentProgram\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brazil_visdata/brazil_rural_development_program/Brazil_RuralDevelopmentProgram/2026_04_16T23_03_34_255424_07_00/data.csv\"}, {\"importName\": \"Brazil_RuralDevelopmentProgram\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brazil_visdata/brazil_rural_development_program/Brazil_RuralDevelopmentProgram/2026_04_16T23_03_34_255424_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

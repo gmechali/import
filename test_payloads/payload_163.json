@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EPAAirQualityIndex",
+  "importList": "[{\"importName\": \"EPAAirQualityIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/airqualityindex/EPAAirQualityIndex/data.csv\"}, {\"importName\": \"EPAAirQualityIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/airqualityindex/EPAAirQualityIndex/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

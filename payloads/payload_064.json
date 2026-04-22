@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "BIS_CentralBankPolicyRate",
+  "importList": "[{\"importName\": \"BIS_CentralBankPolicyRate\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/bis/bis_central_bank_policy_rate/BIS_CentralBankPolicyRate/2026_04_17T22_03_45_968213_07_00/input0/genmcf/table_mcf_nodes_central_bank_policy_rate.mcf\"}, {\"importName\": \"BIS_CentralBankPolicyRate\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/bis/bis_central_bank_policy_rate/BIS_CentralBankPolicyRate/2026_04_17T22_03_45_968213_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

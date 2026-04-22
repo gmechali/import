@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "NCSES_Employed_College_Grads_Import",
+  "importList": "[{\"importName\": \"NCSES_Employed_College_Grads_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_nces/nces_employed_college_grads/NCSES_Employed_College_Grads_Import/2026_04_18T00_03_39_460490_07_00/data.csv\"}, {\"importName\": \"NCSES_Employed_College_Grads_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_nces/nces_employed_college_grads/NCSES_Employed_College_Grads_Import/2026_04_18T00_03_39_460490_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

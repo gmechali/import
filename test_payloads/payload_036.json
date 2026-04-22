@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "NCHS_BRFSS_Asthma",
+  "importList": "[{\"importName\": \"NCHS_BRFSS_Asthma\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brfss_nchs_asthma_prevalence/nchs_brfss_asthma/NCHS_BRFSS_Asthma/2026_04_20T19_03_20_610053_07_00/data.csv\"}, {\"importName\": \"NCHS_BRFSS_Asthma\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brfss_nchs_asthma_prevalence/nchs_brfss_asthma/NCHS_BRFSS_Asthma/2026_04_20T19_03_20_610053_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

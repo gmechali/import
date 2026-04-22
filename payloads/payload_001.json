@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "FBIHateCrimePublications",
+  "importList": "[{\"importName\": \"FBIHateCrimePublications\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fbi/hate_crime/FBIHateCrimePublications/2026_04_21T03_03_49_397312_07_00/input0/genmcf/table_mcf_nodes_t1tot10_combined.mcf\"}, {\"importName\": \"FBIHateCrimePublications\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fbi/hate_crime/FBIHateCrimePublications/2026_04_21T03_03_49_397312_07_00/input1/genmcf/table_mcf_nodes_table11_output.mcf\"}, {\"importName\": \"FBIHateCrimePublications\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fbi/hate_crime/FBIHateCrimePublications/2026_04_21T03_03_49_397312_07_00/input2/genmcf/table_mcf_nodes_table12_output.mcf\"}, {\"importName\": \"FBIHateCrimePublications\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fbi/hate_crime/FBIHateCrimePublications/2026_04_21T03_03_49_397312_07_00/input3/genmcf/table_mcf_nodes_table13_output.mcf\"}, {\"importName\": \"FBIHateCrimePublications\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fbi/hate_crime/FBIHateCrimePublications/2026_04_21T03_03_49_397312_07_00/input4/genmcf/table_mcf_nodes_table14_output.mcf\"}, {\"importName\": \"FBIHateCrimePublications\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fbi/hate_crime/FBIHateCrimePublications/2026_04_21T03_03_49_397312_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

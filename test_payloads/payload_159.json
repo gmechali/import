@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "crdc_instructional_wifi_devices",
+  "importList": "[{\"importName\": \"crdc_instructional_wifi_devices\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/crdc/instructional_wifi_devices/crdc_instructional_wifi_devices/2026_02_28T16_03_26_687926_08_00/data.csv\"}, {\"importName\": \"crdc_instructional_wifi_devices\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/crdc/instructional_wifi_devices/crdc_instructional_wifi_devices/2026_02_28T16_03_26_687926_08_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

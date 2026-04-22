@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "CDC_PM25County",
+  "importList": "[{\"importName\": \"CDC_PM25County\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/environmental_health_toxicology/CDC_PM25County/2026_04_03T18_03_04_069113_07_00/PM25CountyPollution/genmcf/table_mcf_nodes_PM25county.mcf\"}, {\"importName\": \"CDC_PM25County\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/environmental_health_toxicology/CDC_PM25County/2026_04_03T18_03_04_069113_07_00/provenance/genmcf/CDC_PM25County.mcf\"}, {\"importName\": \"CDC_PM25County\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/environmental_health_toxicology/CDC_PM25County/2026_04_03T18_03_04_069113_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

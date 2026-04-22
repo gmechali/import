@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "USCensusPEP_PopulationEstimatebyRace",
+  "importList": "[{\"importName\": \"USCensusPEP_PopulationEstimatebyRace\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/population_estimate_by_race/USCensusPEP_PopulationEstimatebyRace/2026_04_20T03_14_09_436589_07_00/data.csv\"}, {\"importName\": \"USCensusPEP_PopulationEstimatebyRace\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/population_estimate_by_race/USCensusPEP_PopulationEstimatebyRace/2026_04_20T03_14_09_436589_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

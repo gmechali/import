@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "UNEnergy",
+  "importList": "[{\"importName\": \"UNEnergy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/un/energy/UNEnergy/2026_04_14T21_03_57_720991_07_00/un_energy_output/genmcf/table_mcf_nodes_un_energy_output.mcf\"}, {\"importName\": \"UNEnergy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/un/energy/UNEnergy/2026_04_14T21_03_57_720991_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

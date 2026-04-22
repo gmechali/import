@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Brazil_SIDRA_IBGE",
+  "importList": "[{\"importName\": \"Brazil_SIDRA_IBGE\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brazil_sidra_ibge/Brazil_SIDRA_IBGE/data.csv\"}, {\"importName\": \"Brazil_SIDRA_IBGE\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brazil_sidra_ibge/Brazil_SIDRA_IBGE/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

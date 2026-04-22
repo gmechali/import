@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "USFed_ConstantMaturityRates_Test",
+  "importList": "[{\"importName\": \"USFed_ConstantMaturityRates_Test\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_fed/treasury_constant_maturity_rates/USFed_ConstantMaturityRates_Test/2026_04_21T02_16_21_525319_07_00/input0/genmcf/instance_mcf_nodes.mcf\"}, {\"importName\": \"USFed_ConstantMaturityRates_Test\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_fed/treasury_constant_maturity_rates/USFed_ConstantMaturityRates_Test/2026_04_21T02_16_21_525319_07_00/input0/genmcf/table_mcf_nodes_treasury_constant_maturity_rates.mcf\"}, {\"importName\": \"USFed_ConstantMaturityRates_Test\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_fed/treasury_constant_maturity_rates/USFed_ConstantMaturityRates_Test/2026_04_21T02_16_21_525319_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

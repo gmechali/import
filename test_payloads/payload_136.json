@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "WHO_COVID19",
+  "importList": "[{\"importName\": \"WHO_COVID19\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/who_covid19/WHO_COVID19/2026_04_01T02_03_24_325103_07_00/data.csv\"}, {\"importName\": \"WHO_COVID19\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/who_covid19/WHO_COVID19/2026_04_01T02_03_24_325103_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

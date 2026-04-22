@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EuroStatHealth_BodyMassIndex",
+  "importList": "[{\"importName\": \"EuroStatHealth_BodyMassIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_BodyMassIndex/2026_04_02T00_03_17_745575_07_00/data.csv\"}, {\"importName\": \"EuroStatHealth_BodyMassIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_BodyMassIndex/2026_04_02T00_03_17_745575_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

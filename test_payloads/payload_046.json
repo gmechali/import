@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "USMonthlyRetailSales",
+  "importList": "[{\"importName\": \"USMonthlyRetailSales\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_census/us_monthly_retail_sales/USMonthlyRetailSales/2026_04_19T22_36_18_092447_07_00/data.csv\"}, {\"importName\": \"USMonthlyRetailSales\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_census/us_monthly_retail_sales/USMonthlyRetailSales/2026_04_19T22_36_18_092447_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

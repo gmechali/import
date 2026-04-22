@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Mongolia_Employment",
+  "importList": "[{\"importName\": \"Mongolia_Employment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_employment/Mongolia_Employment/2026_04_17T19_04_14_172259_07_00/data.csv\"}, {\"importName\": \"Mongolia_Employment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_employment/Mongolia_Employment/2026_04_17T19_04_14_172259_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

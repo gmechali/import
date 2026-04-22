@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "WHO_COVID19",
+  "importList": "[{\"importName\": \"WHO_COVID19\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/who_covid19/WHO_COVID19/2026_04_01T02_03_24_325103_07_00/COV_VAC_UPTAKE_2021_2023/genmcf/table_mcf_nodes_COV_VAC_UPTAKE_2021_2023.mcf\"}, {\"importName\": \"WHO_COVID19\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/who_covid19/WHO_COVID19/2026_04_01T02_03_24_325103_07_00/COV_VAC_UPTAKE_2024/genmcf/table_mcf_nodes_COV_VAC_UPTAKE_2024.mcf\"}, {\"importName\": \"WHO_COVID19\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/who_covid19/WHO_COVID19/2026_04_01T02_03_24_325103_07_00/death_by_age/genmcf/table_mcf_nodes_death_by_age.mcf\"}, {\"importName\": \"WHO_COVID19\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/who_covid19/WHO_COVID19/2026_04_01T02_03_24_325103_07_00/global_daily_data/genmcf/table_mcf_nodes_global_daily_data.mcf\"}, {\"importName\": \"WHO_COVID19\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/who_covid19/WHO_COVID19/2026_04_01T02_03_24_325103_07_00/global_hosp_icu_data/genmcf/table_mcf_nodes_global_hosp_icu_data.mcf\"}, {\"importName\": \"WHO_COVID19\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/who_covid19/WHO_COVID19/2026_04_01T02_03_24_325103_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

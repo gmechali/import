@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "OECDRegionalDemography_PopulationDensity",
+  "importList": "[{\"importName\": \"OECDRegionalDemography_PopulationDensity\", \"graphPath\": \"gs://datcom-prod-imports/scripts/oecd/regional_demography/pop_density/OECDRegionalDemography_PopulationDensity/2026_04_15T02_03_33_202736_07_00/data.csv\"}, {\"importName\": \"OECDRegionalDemography_PopulationDensity\", \"graphPath\": \"gs://datcom-prod-imports/scripts/oecd/regional_demography/pop_density/OECDRegionalDemography_PopulationDensity/2026_04_15T02_03_33_202736_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

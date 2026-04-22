@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "NOAA_GlobalForecastSystem",
+  "importList": "[{\"importName\": \"NOAA_GlobalForecastSystem\", \"graphPath\": \"gs://datcom-prod-imports/scripts/noaa_gfs/NOAA_GlobalForecastSystem/2026_04_21T09_33_16_251621_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

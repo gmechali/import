@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "OECDQuarterlyGDP",
+  "importList": "[{\"importName\": \"OECDQuarterlyGDP\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/oecd/quarterly_gdp/OECDQuarterlyGDP/2026_04_01T01_03_21_760807_07_00/data.csv\"}, {\"importName\": \"OECDQuarterlyGDP\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/oecd/quarterly_gdp/OECDQuarterlyGDP/2026_04_01T01_03_21_760807_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

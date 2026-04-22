@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "INPE_Fire_Event_Count",
+  "importList": "[{\"importName\": \"INPE_Fire_Event_Count\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/inpe_fire/INPE_Fire_Event_Count/2026_04_15T04_03_25_913540_07_00/data.csv\"}, {\"importName\": \"INPE_Fire_Event_Count\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/inpe_fire/INPE_Fire_Event_Count/2026_04_15T04_03_25_913540_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

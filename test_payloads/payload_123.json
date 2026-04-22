@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "WorldBankDatasets",
+  "importList": "[{\"importName\": \"WorldBankDatasets\", \"graphPath\": \"gs://datcom-prod-imports/scripts/world_bank/datasets/WorldBankDatasets/2026_04_06T01_30_20_048283_07_00/data.csv\"}, {\"importName\": \"WorldBankDatasets\", \"graphPath\": \"gs://datcom-prod-imports/scripts/world_bank/datasets/WorldBankDatasets/2026_04_06T01_30_20_048283_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

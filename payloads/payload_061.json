@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "US_Federal_Rates",
+  "importList": "[{\"importName\": \"US_Federal_Rates\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_federal_reserve_h15_interest_rates/us_federal_rates/US_Federal_Rates/2026_04_17T23_04_33_135545_07_00/input0/genmcf/table_mcf_nodes_us_fed_interest_rate_output.mcf\"}, {\"importName\": \"US_Federal_Rates\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_federal_reserve_h15_interest_rates/us_federal_rates/US_Federal_Rates/2026_04_17T23_04_33_135545_07_00/input1/genmcf/table_mcf_nodes_us_fed_fund_output.mcf\"}, {\"importName\": \"US_Federal_Rates\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_federal_reserve_h15_interest_rates/us_federal_rates/US_Federal_Rates/2026_04_17T23_04_33_135545_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

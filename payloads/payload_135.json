@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EurostatHealth_Tobacco_Consumption",
+  "importList": "[{\"importName\": \"EurostatHealth_Tobacco_Consumption\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EurostatHealth_Tobacco_Consumption/2026_04_01T20_03_08_191503_07_00/eurostat_population_tobaccoconsumption/genmcf/table_mcf_nodes_eurostat_population_tobaccoconsumption.mcf\"}, {\"importName\": \"EurostatHealth_Tobacco_Consumption\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EurostatHealth_Tobacco_Consumption/2026_04_01T20_03_08_191503_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

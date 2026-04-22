@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EIA_SEDS",
+  "importList": "[{\"importName\": \"EIA_SEDS\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_SEDS/2026_04_20T05_04_07_517712_07_00/input0/genmcf/table_mcf_nodes_SEDS.mcf\"}, {\"importName\": \"EIA_SEDS\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_SEDS/2026_04_20T05_04_07_517712_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

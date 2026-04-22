@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Brazil_SIDRA_IBGE",
+  "importList": "[{\"importName\": \"Brazil_SIDRA_IBGE\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brazil_sidra_ibge/Brazil_SIDRA_IBGE/2026_02_25T01_33_28_006722_08_00/average_real_income_output/genmcf/table_mcf_nodes_average_real_income_output.mcf\"}, {\"importName\": \"Brazil_SIDRA_IBGE\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brazil_sidra_ibge/Brazil_SIDRA_IBGE/2026_02_25T01_33_28_006722_08_00/employment_and_unemployment_labor_force_output/genmcf/table_mcf_nodes_employment_and_unemployment_labor_force_output.mcf\"}, {\"importName\": \"Brazil_SIDRA_IBGE\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brazil_sidra_ibge/Brazil_SIDRA_IBGE/2026_02_25T01_33_28_006722_08_00/mass_income_output/genmcf/table_mcf_nodes_mass_income_output.mcf\"}, {\"importName\": \"Brazil_SIDRA_IBGE\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brazil_sidra_ibge/Brazil_SIDRA_IBGE/2026_02_25T01_33_28_006722_08_00/population_economic_sector_output/genmcf/table_mcf_nodes_population_economic_sector_output.mcf\"}, {\"importName\": \"Brazil_SIDRA_IBGE\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brazil_sidra_ibge/Brazil_SIDRA_IBGE/2026_02_25T01_33_28_006722_08_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

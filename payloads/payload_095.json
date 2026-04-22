@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Google_SustainabilityFinancialIncentives",
+  "importList": "[{\"importName\": \"Google_SustainabilityFinancialIncentives\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/google_sustainability_financial_incentives/Google_SustainabilityFinancialIncentives/2026_04_14T23_03_38_560784_07_00/financial_incentives_final/genmcf/table_mcf_nodes_financial_incentives.mcf\"}, {\"importName\": \"Google_SustainabilityFinancialIncentives\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/google_sustainability_financial_incentives/Google_SustainabilityFinancialIncentives/2026_04_14T23_03_38_560784_07_00/provenance/genmcf/Google_SustainabilityFinancialIncentives.mcf\"}, {\"importName\": \"Google_SustainabilityFinancialIncentives\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/google_sustainability_financial_incentives/Google_SustainabilityFinancialIncentives/2026_04_14T23_03_38_560784_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

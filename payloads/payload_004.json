@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "BEAGDPv2",
+  "importList": "[{\"importName\": \"BEAGDPv2\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/gdp_by_county_metro_and_other_areas/beagdpv2/BEAGDPv2/2026_04_21T00_04_11_744304_07_00/input0/genmcf/table_mcf_nodes_bea_gdp_output.mcf\"}, {\"importName\": \"BEAGDPv2\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/gdp_by_county_metro_and_other_areas/beagdpv2/BEAGDPv2/2026_04_21T00_04_11_744304_07_00/provenance/genmcf/BEAGDPv2.mcf\"}, {\"importName\": \"BEAGDPv2\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/gdp_by_county_metro_and_other_areas/beagdpv2/BEAGDPv2/2026_04_21T00_04_11_744304_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "UNData",
+  "importList": "[{\"importName\": \"UNData\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/undata/UNData/2026_04_14T22_03_10_008652_07_00/data.csv\"}, {\"importName\": \"UNData\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/undata/UNData/2026_04_14T22_03_10_008652_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

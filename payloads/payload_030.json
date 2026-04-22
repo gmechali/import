@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Commerce_EDA",
+  "importList": "[{\"importName\": \"Commerce_EDA\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/commerce_eda/Commerce_EDA/2026_04_19T22_33_51_590436_07_00/input0/genmcf/table_mcf_nodes_Investment_output.mcf\"}, {\"importName\": \"Commerce_EDA\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/commerce_eda/Commerce_EDA/2026_04_19T22_33_51_590436_07_00/input1/genmcf/table_mcf_nodes_Estimated_output.mcf\"}, {\"importName\": \"Commerce_EDA\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/commerce_eda/Commerce_EDA/2026_04_19T22_33_51_590436_07_00/input2/genmcf/table_mcf_nodes_Poverty_output.mcf\"}, {\"importName\": \"Commerce_EDA\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/commerce_eda/Commerce_EDA/2026_04_19T22_33_51_590436_07_00/provenance/genmcf/Commerce_EDA.mcf\"}, {\"importName\": \"Commerce_EDA\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/commerce_eda/Commerce_EDA/2026_04_19T22_33_51_590436_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "CDC_Mortality_UnderlyingCause_SingleRace",
+  "importList": "[{\"importName\": \"CDC_Mortality_UnderlyingCause_SingleRace\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_cdc/single_race/CDC_Mortality_UnderlyingCause_SingleRace/2026_04_18T01_34_11_292258_07_00/data.csv\"}, {\"importName\": \"CDC_Mortality_UnderlyingCause_SingleRace\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_cdc/single_race/CDC_Mortality_UnderlyingCause_SingleRace/2026_04_18T01_34_11_292258_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

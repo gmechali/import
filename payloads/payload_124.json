@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "USBTS_Tract_Household_Transportation",
+  "importList": "[{\"importName\": \"USBTS_Tract_Household_Transportation\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bts/latch/USBTS_Tract_Household_Transportation/2026_04_05T18_03_00_219467_07_00/us_transportation_household_part1/genmcf/table_mcf_nodes_us_transportation_household_part1.mcf\"}, {\"importName\": \"USBTS_Tract_Household_Transportation\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bts/latch/USBTS_Tract_Household_Transportation/2026_04_05T18_03_00_219467_07_00/us_transportation_household_part2/genmcf/table_mcf_nodes_us_transportation_household_part2.mcf\"}, {\"importName\": \"USBTS_Tract_Household_Transportation\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bts/latch/USBTS_Tract_Household_Transportation/2026_04_05T18_03_00_219467_07_00/us_transportation_household_part3/genmcf/table_mcf_nodes_us_transportation_household_part3.mcf\"}, {\"importName\": \"USBTS_Tract_Household_Transportation\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bts/latch/USBTS_Tract_Household_Transportation/2026_04_05T18_03_00_219467_07_00/us_transportation_household_part4/genmcf/table_mcf_nodes_us_transportation_household_part4.mcf\"}, {\"importName\": \"USBTS_Tract_Household_Transportation\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bts/latch/USBTS_Tract_Household_Transportation/2026_04_05T18_03_00_219467_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

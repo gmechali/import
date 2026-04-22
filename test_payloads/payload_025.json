@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EurostatData_Education_Attainment",
+  "importList": "[{\"importName\": \"EurostatData_Education_Attainment\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/education_attainment/EurostatData_Education_Attainment/2026_04_20T19_33_37_648778_07_00/data.csv\"}, {\"importName\": \"EurostatData_Education_Attainment\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/education_attainment/EurostatData_Education_Attainment/2026_04_20T19_33_37_648778_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

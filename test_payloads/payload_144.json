@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "statistics_poland",
+  "importList": "[{\"importName\": \"statistics_poland\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/statistics_poland/statistics_poland/2026_03_31T17_03_14_291758_07_00/data.csv\"}, {\"importName\": \"statistics_poland\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/statistics_poland/statistics_poland/2026_03_31T17_03_14_291758_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

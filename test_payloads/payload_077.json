@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "WHO_TuberculosisAndHIVTreatmentOutcome",
+  "importList": "[{\"importName\": \"WHO_TuberculosisAndHIVTreatmentOutcome\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/who_tuberculosis/treatmentoutcome_tb_hiv/WHO_TuberculosisAndHIVTreatmentOutcome/2026_04_17T00_25_30_832113_07_00/data.csv\"}, {\"importName\": \"WHO_TuberculosisAndHIVTreatmentOutcome\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/who_tuberculosis/treatmentoutcome_tb_hiv/WHO_TuberculosisAndHIVTreatmentOutcome/2026_04_17T00_25_30_832113_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

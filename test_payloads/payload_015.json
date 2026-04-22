@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "France_Demographics",
+  "importList": "[{\"importName\": \"France_Demographics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/france_demographics/France_Demographics/2026_04_21T03_03_44_084179_07_00/data.csv\"}, {\"importName\": \"France_Demographics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/france_demographics/France_Demographics/2026_04_21T03_03_44_084179_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

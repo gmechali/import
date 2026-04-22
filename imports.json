@@ -1,0 +1,666 @@
+[
+  {
+    "name": "FBIHateCrimePublications",
+    "gcs_path": "gs://datcom-prod-imports/scripts/fbi/hate_crime/FBIHateCrimePublications/2026_04_21T03_03_49_397312_07_00"
+  },
+  {
+    "name": "US_CPI",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_bls/us_cpi/US_CPI/2026_04_21T03_03_44_337746_07_00"
+  },
+  {
+    "name": "WorldDevelopmentIndicators",
+    "gcs_path": "gs://datcom-prod-imports/scripts/world_bank/wdi/WorldDevelopmentIndicators/2026_04_21T04_03_35_425895_07_00"
+  },
+  {
+    "name": "BEAGDPv2",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/gdp_by_county_metro_and_other_areas/beagdpv2/BEAGDPv2/2026_04_21T00_04_11_744304_07_00"
+  },
+  {
+    "name": "EurostatData_GDP",
+    "gcs_path": "gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/gdp/EurostatData_GDP/2026_04_20T21_33_34_309956_07_00"
+  },
+  {
+    "name": "EurostatData_LifeExpectancy",
+    "gcs_path": "gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/life_expectancy/EurostatData_LifeExpectancy/2026_04_21T05_54_06_056700_07_00"
+  },
+  {
+    "name": "EurostatData_PopulationDensity",
+    "gcs_path": "gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/population_density/EurostatData_PopulationDensity/2026_04_20T22_33_25_922347_07_00"
+  },
+  {
+    "name": "Event",
+    "gcs_path": "gs://datcom-prod-imports/scripts/entities/Event/2026-04-21"
+  },
+  {
+    "name": "New_Zealand_Census",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/statistics_new_zealand/new_zealand_census/New_Zealand_Census/2026_04_20T23_03_37_506031_07_00"
+  },
+  {
+    "name": "Provenance",
+    "gcs_path": "gs://datcom-prod-imports/scripts/entities/Provenance/2026-04-21"
+  },
+  {
+    "name": "usa_child_birth",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/child_birth/usa_child_birth/2026_04_21T00_04_05_028535_07_00"
+  },
+  {
+    "name": "NOAA_GlobalForecastSystem",
+    "gcs_path": "gs://datcom-prod-imports/scripts/noaa_gfs/NOAA_GlobalForecastSystem/2026_04_21T09_33_16_251621_07_00"
+  },
+  {
+    "name": "BLS_CPI_Category",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_bls/cpi_category/BLS_CPI_Category/2026_04_21T03_04_07_725454_07_00"
+  },
+  {
+    "name": "EurostatData_Fertility",
+    "gcs_path": "gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/fertility_rate_mother_age/EurostatData_Fertility/2026_04_21T02_21_58_883838_07_00"
+  },
+  {
+    "name": "France_Demographics",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/france_demographics/France_Demographics/2026_04_21T03_03_44_084179_07_00"
+  },
+  {
+    "name": "USCensusPEP_Annual_Population",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_census/pep/annual_population/USCensusPEP_Annual_Population/2026_04_21T03_04_22_032631_07_00"
+  },
+  {
+    "name": "USFed_ConstantMaturityRates_Test",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_fed/treasury_constant_maturity_rates/USFed_ConstantMaturityRates_Test/2026_04_21T02_16_21_525319_07_00"
+  },
+  {
+    "name": "NASA_VIIRSActiveFiresEvents",
+    "gcs_path": "gs://datcom-prod-imports/scripts/fires/firms/NASA_VIIRSActiveFiresEvents"
+  },
+  {
+    "name": "EIA_Electricity",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_Electricity/2026_04_20T00_03_59_927580_07_00"
+  },
+  {
+    "name": "BLS_CES_State",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_bls/bls_ces_state/BLS_CES_State/2026_04_20T00_16_42_274738_07_00"
+  },
+  {
+    "name": "EIA_NaturalGas",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_NaturalGas/2026_04_20T01_03_48_024797_07_00"
+  },
+  {
+    "name": "EIA_Petroleum",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_Petroleum/2026_04_20T03_03_56_156290_07_00"
+  },
+  {
+    "name": "EIA_SEDS",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_SEDS/2026_04_20T05_04_07_517712_07_00"
+  },
+  {
+    "name": "EurostatData_Demographic_Balance_Crude_Rates",
+    "gcs_path": "gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/birth_death_migration/EurostatData_Demographic_Balance_Crude_Rates/2026_04_20T19_03_35_348962_07_00"
+  },
+  {
+    "name": "EurostatData_Education_Attainment",
+    "gcs_path": "gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/education_attainment/EurostatData_Education_Attainment/2026_04_20T19_33_37_648778_07_00"
+  },
+  {
+    "name": "EurostatData_Education_Enrollment",
+    "gcs_path": "gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/education_enrollment/EurostatData_Education_Enrollment/2026_04_20T20_03_47_914285_07_00"
+  },
+  {
+    "name": "India_RBI_State_Statistics",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/database_on_indian_economy/india_rbi_state_statistics/India_RBI_State_Statistics/2026_04_20T03_04_14_746079_07_00"
+  },
+  {
+    "name": "EurostatData_Employment_Per_Sector",
+    "gcs_path": "gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/employed_per_sector/EurostatData_Employment_Per_Sector/2026_04_20T20_33_31_173850_07_00"
+  },
+  {
+    "name": "CDC_Social_Vulnerability_Index",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/cdc/social_vulnerability_index/CDC_Social_Vulnerability_Index/2026_04_19T22_36_37_665861_07_00"
+  },
+  {
+    "name": "Commerce_EDA",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/commerce_eda/Commerce_EDA/2026_04_19T22_33_51_590436_07_00"
+  },
+  {
+    "name": "EIA_Coal",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_Coal/2026_04_20T07_03_52_487568_07_00"
+  },
+  {
+    "name": "EIA_NuclearOutages",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_NuclearOutages/2026_04_20T02_03_53_698552_07_00"
+  },
+  {
+    "name": "EIA_TotalEnergy",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_TotalEnergy/2026_04_20T06_04_16_245329_07_00"
+  },
+  {
+    "name": "BLS_CES",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_bls/bls_ces/BLS_CES/2026_04_19T23_03_36_907761_07_00"
+  },
+  {
+    "name": "India_NFHS",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/india_nfhs/India_NFHS/2026_04_19T22_33_42_653542_07_00"
+  },
+  {
+    "name": "NCHS_BRFSS_Asthma",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/brfss_nchs_asthma_prevalence/nchs_brfss_asthma/NCHS_BRFSS_Asthma/2026_04_20T19_03_20_610053_07_00"
+  },
+  {
+    "name": "NCSES_DoctorateDegreeEmployment",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/doctoratedegreeemployment/NCSES_DoctorateDegreeEmployment/2026_04_19T22_33_53_936992_07_00"
+  },
+  {
+    "name": "OECDRegionalDemography_Deaths",
+    "gcs_path": "gs://datcom-prod-imports/scripts/oecd/regional_demography/deaths/OECDRegionalDemography_Deaths/2026_04_20T03_47_42_607148_07_00"
+  },
+  {
+    "name": "Place",
+    "gcs_path": "gs://datcom-prod-imports/scripts/entities/Place/2026-04-21"
+  },
+  {
+    "name": "USCensusPEP_AgeSexRace",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_census/pep/population_estimates_by_asr/USCensusPEP_AgeSexRace/2026_04_19T22_04_00_566995_07_00"
+  },
+  {
+    "name": "USCensusPEP_By_SexRaceHispanicOrigin",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_census/pep/pep_by_srh/USCensusPEP_By_SexRaceHispanicOrigin/2026_04_19T23_04_06_846977_07_00"
+  },
+  {
+    "name": "USCensusPEP_By_Sex_Race",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_census/pep/us_pep_sexrace/USCensusPEP_By_Sex_Race/2026_04_20T03_03_40_140345_07_00"
+  },
+  {
+    "name": "USCensusPEP_PopulationEstimatebyRace",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_census/pep/population_estimate_by_race/USCensusPEP_PopulationEstimatebyRace/2026_04_20T03_14_09_436589_07_00"
+  },
+  {
+    "name": "USCensusPEP_Sex",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_census/pep/us_pep_sex/USCensusPEP_Sex/2026_04_20T03_31_39_461747_07_00"
+  },
+  {
+    "name": "USFed_ConstantMaturityRates",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_fed/treasury_constant_maturity_rates/USFed_ConstantMaturityRates/2026_04_20T20_18_27_983867_07_00"
+  },
+  {
+    "name": "USMonthlyRetailSales",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_census/us_monthly_retail_sales/USMonthlyRetailSales/2026_04_19T22_36_18_092447_07_00"
+  },
+  {
+    "name": "OECDRegionalDemography_Population",
+    "gcs_path": "gs://datcom-prod-imports/scripts/oecd/regional_demography/population/OECDRegionalDemography_Population/2026_04_20T04_30_00_557546_07_00"
+  },
+  {
+    "name": "USCensusPEP_AgeSexRaceHispanicOrigin",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_census/pep/us_census_pep_asrh/USCensusPEP_AgeSexRaceHispanicOrigin"
+  },
+  {
+    "name": "GenderIncomeInequality",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_census/gender_income_inequality/GenderIncomeInequality/2026_04_19T20_05_09_948681_07_00"
+  },
+  {
+    "name": "CDC500_States",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_cdc/cdc500_state/CDC500_States/2026_04_19T18_04_18_320538_07_00"
+  },
+  {
+    "name": "HUD_IncomeLimits",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_hud/income/HUD_IncomeLimits/2026_04_19T16_19_37_879092_07_00"
+  },
+  {
+    "name": "Rwanda_Census",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/opendataforafrica/rwanda_census/Rwanda_Census"
+  },
+  {
+    "name": "UAE_Population",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/uae_bayanat/uae_population/UAE_Population"
+  },
+  {
+    "name": "India_RBIStateDomesticProduct",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/india_rbistatedomesticproduct/India_RBIStateDomesticProduct/2026_04_18T02_03_44_555304_07_00"
+  },
+  {
+    "name": "US_UrbanSchool_Enrollment",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_urban_school/enrollment/US_UrbanSchool_Enrollment/2026_04_16T22_03_35_036283_07_00"
+  },
+  {
+    "name": "CDC_Mortality_UnderlyingCause_SingleRace",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_cdc/single_race/CDC_Mortality_UnderlyingCause_SingleRace/2026_04_18T01_34_11_292258_07_00"
+  },
+  {
+    "name": "NCES_STEM_Degrees_Import",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_steam_degrees_data/nces_stem_degrees_import/NCES_STEM_Degrees_Import/2026_04_17T22_04_05_395772_07_00"
+  },
+  {
+    "name": "NCSES_Employed_College_Grads_Import",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_nces/nces_employed_college_grads/NCSES_Employed_College_Grads_Import/2026_04_18T00_03_39_460490_07_00"
+  },
+  {
+    "name": "Subnational_Demographics_Stats",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/world_bank/subnational_demographics_stats/Subnational_Demographics_Stats/2026_04_17T23_04_06_872945_07_00"
+  },
+  {
+    "name": "USCensusPEP_MonthlyPopulation",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_census/pep/monthly_population_estimate/USCensusPEP_MonthlyPopulation/2026_04_18T00_04_17_717414_07_00"
+  },
+  {
+    "name": "US_Federal_Rates",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_federal_reserve_h15_interest_rates/us_federal_rates/US_Federal_Rates/2026_04_17T23_04_33_135545_07_00"
+  },
+  {
+    "name": "Brazil_RuralDevelopmentProgram",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/brazil_visdata/brazil_rural_development_program/Brazil_RuralDevelopmentProgram/2026_04_16T23_03_34_255424_07_00"
+  },
+  {
+    "name": "Mongolia_Employment",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_employment/Mongolia_Employment/2026_04_17T19_04_14_172259_07_00"
+  },
+  {
+    "name": "BIS_CentralBankPolicyRate",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/bis/bis_central_bank_policy_rate/BIS_CentralBankPolicyRate/2026_04_17T22_03_45_968213_07_00"
+  },
+  {
+    "name": "BLS_CPI",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_bls/cpi/BLS_CPI/2026_04_16T23_47_00_867641_07_00"
+  },
+  {
+    "name": "CDC500",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_cdc/500_places/CDC500/2026_04_17T02_21_07_570547_07_00"
+  },
+  {
+    "name": "CanadaStatisticsAgeGender",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/canada_statistics_age_gender/CanadaStatisticsAgeGender/2026_04_17T02_11_11_284243_07_00"
+  },
+  {
+    "name": "CensusSAIPE",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/census_v2/saipe/CensusSAIPE/2026_04_16T22_03_56_001307_07_00"
+  },
+  {
+    "name": "Commerce_NTIA",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/ntia_internet_use_survey/commerce_ntia/Commerce_NTIA/2026_04_16T23_03_44_171311_07_00"
+  },
+  {
+    "name": "NCES_HBCU_Enrollment_Import",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_hbcu_data/nces_hbcu_enrollment_import/NCES_HBCU_Enrollment_Import/2026_04_17T00_04_03_718275_07_00"
+  },
+  {
+    "name": "NYU_Tennessee_Diabetes",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/nyu_diabetes/tennessee/NYU_Tennessee_Diabetes/2026_04_16T22_04_03_179194_07_00"
+  },
+  {
+    "name": "USA_DOL_Wages",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/usa_dol/minimum_wage/USA_DOL_Wages/2026_04_17T02_33_47_211771_07_00"
+  },
+  {
+    "name": "US_CCD_Enrollment",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/ccd/enrollment/US_CCD_Enrollment/2026_04_16T23_03_36_550747_07_00"
+  },
+  {
+    "name": "US_UrbanSchool_Covid_Directional_Indicators",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_urban_school/covid_directional_indicators/US_UrbanSchool_Covid_Directional_Indicators/2026_04_16T22_04_04_770948_07_00"
+  },
+  {
+    "name": "US_UrbanSchool_Finances",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/school_finance/US_UrbanSchool_Finances/2026_04_17T03_43_42_863390_07_00"
+  },
+  {
+    "name": "US_Urban_MathsAndScience_Course_Enrollment",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_urban_school/maths_and_science_enrollment/US_Urban_MathsAndScience_Course_Enrollment/2026_04_16T21_03_13_246746_07_00"
+  },
+  {
+    "name": "WHO_TuberculosisAndHIVTreatmentOutcome",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/who_tuberculosis/treatmentoutcome_tb_hiv/WHO_TuberculosisAndHIVTreatmentOutcome/2026_04_17T00_25_30_832113_07_00"
+  },
+  {
+    "name": "Mongolia_Demographics",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_demographics/Mongolia_Demographics"
+  },
+  {
+    "name": "Mongolia_Education",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_education/Mongolia_Education"
+  },
+  {
+    "name": "Mongolia_Health",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_health/Mongolia_Health"
+  },
+  {
+    "name": "FAO_Currency_statvar",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/fao_currency_and_exchange_rate/fao_currency_statvar/FAO_Currency_statvar/2026_04_16T00_04_11_658127_07_00"
+  },
+  {
+    "name": "BLS_JOLTS",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_bls/jolts/BLS_JOLTS/2026_04_16T19_33_38_949650_07_00"
+  },
+  {
+    "name": "ClimateTrace_GHG_Emissions",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/climate_trace/ClimateTrace_GHG_Emissions/2026_04_16T05_16_45_004266_07_00"
+  },
+  {
+    "name": "NCES_Bachelors_Degree_By_Field_Import",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_bachelors_degree_data/nces_bachelors_degree_by_field_import/NCES_Bachelors_Degree_By_Field_Import/2026_04_15T22_03_40_864120_07_00"
+  },
+  {
+    "name": "Ireland_Census",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/ireland_census/Ireland_Census"
+  },
+  {
+    "name": "CDC_StandardizedPrecipitationIndex",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_cdc/cdc_standardized_precipitation/index/CDC_StandardizedPrecipitationIndex/2026_04_15T04_03_11_681668_07_00"
+  },
+  {
+    "name": "EPA_USAirPollutantEmissionTrends_NationalAndState",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_epa/air_emissions_inventory/national_state/EPA_USAirPollutantEmissionTrends_NationalAndState/2026_04_15T03_03_51_884474_07_00"
+  },
+  {
+    "name": "MexicoCensus_AA2",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/mexico_subnational_population_statistics/mexico_census_aa2/MexicoCensus_AA2/2026_04_15T00_03_12_317697_07_00"
+  },
+  {
+    "name": "OECDRegionalEducation",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/oecd/regional_education/OECDRegionalEducation/2026_04_15T03_03_51_257393_07_00"
+  },
+  {
+    "name": "SouthKorea_Employment",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/southkorea_statistics/employment/SouthKorea_Employment/2026_04_15T03_03_31_015206_07_00"
+  },
+  {
+    "name": "OECDRegionalDemography_LifeExpectancy",
+    "gcs_path": "gs://datcom-prod-imports/scripts/oecd/regional_demography/life_expectancy/OECDRegionalDemography_LifeExpectancy/2026_04_15T01_08_16_445951_07_00"
+  },
+  {
+    "name": "CDC_StandardizedPrecipitationEvapotranspirationIndex",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_cdc/cdc_standardized_precipitation/evapotranspiration_index/CDC_StandardizedPrecipitationEvapotranspirationIndex/2026_04_15T03_03_28_687974_07_00"
+  },
+  {
+    "name": "CRDC_Education_Discipline_Attendance",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/crdc_import/CRDC_Education_Discipline_Attendance/2026_04_15T01_08_12_051405_07_00"
+  },
+  {
+    "name": "EPA_EJSCREEN",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_epa/ejscreen/EPA_EJSCREEN/2026_04_15T03_03_23_664441_07_00"
+  },
+  {
+    "name": "Google_SustainabilityFinancialIncentives",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/google_sustainability_financial_incentives/Google_SustainabilityFinancialIncentives/2026_04_14T23_03_38_560784_07_00"
+  },
+  {
+    "name": "INPE_Fire_Event_Count",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/inpe_fire/INPE_Fire_Event_Count/2026_04_15T04_03_25_913540_07_00"
+  },
+  {
+    "name": "India_LifeExpectancy",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/india_ndap/ndap/India_LifeExpectancy/2026_04_15T04_03_15_742415_07_00"
+  },
+  {
+    "name": "CDC_PalmerDroughtSeverityIndex",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_cdc/cdc_standardized_precipitation/palmer_drought/CDC_PalmerDroughtSeverityIndex/2026_04_15T05_03_22_850371_07_00"
+  },
+  {
+    "name": "OECDRegionalDemography_PopulationDensity",
+    "gcs_path": "gs://datcom-prod-imports/scripts/oecd/regional_demography/pop_density/OECDRegionalDemography_PopulationDensity/2026_04_15T02_03_33_202736_07_00"
+  },
+  {
+    "name": "OECD_Waste_Water_Treatment",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/oecd/wastewater_treatment/OECD_Waste_Water_Treatment/2026_04_15T03_03_33_840654_07_00"
+  },
+  {
+    "name": "SouthKorea_Demographics",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/southkorea_statistics/demographics/SouthKorea_Demographics/2026_04_15T03_03_33_767818_07_00"
+  },
+  {
+    "name": "SouthKorea_Education",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/southkorea_statistics/education/SouthKorea_Education/2026_04_15T03_03_19_085892_07_00"
+  },
+  {
+    "name": "SouthKorea_Health",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/southkorea_statistics/health/SouthKorea_Health/2026_04_15T03_03_28_936762_07_00"
+  },
+  {
+    "name": "UNData",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/undata/UNData/2026_04_14T22_03_10_008652_07_00"
+  },
+  {
+    "name": "USDA_AgricultureCensus",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_usda/nass_census/USDA_AgricultureCensus/2026_04_15T03_03_29_593900_07_00"
+  },
+  {
+    "name": "US_Urban_Schools_Teachers_And_Staff",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_urban_school/teachers/US_Urban_Schools_Teachers_And_Staff/2026_04_14T22_03_46_800853_07_00"
+  },
+  {
+    "name": "WorldBank_CommodityMarket",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/world_bank/commodity_market/WorldBank_CommodityMarket/2026_04_15T03_03_07_754856_07_00"
+  },
+  {
+    "name": "EPA_GHGRP",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_epa/ghgrp/EPA_GHGRP"
+  },
+  {
+    "name": "NOAA_GPCC_StandardardizedPrecipitationIndex",
+    "gcs_path": "gs://datcom-prod-imports/scripts/noaa/gpcc_spi/NOAA_GPCC_StandardardizedPrecipitationIndex"
+  },
+  {
+    "name": "USFEMA_NationalRiskIndex",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_fema/national_risk_index/USFEMA_NationalRiskIndex"
+  },
+  {
+    "name": "CDC_NORS_NonInfectious",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_cdc/non_infectious_diseases/CDC_NORS_NonInfectious/2026_04_14T19_04_02_250638_07_00"
+  },
+  {
+    "name": "UNEnergy",
+    "gcs_path": "gs://datcom-prod-imports/scripts/un/energy/UNEnergy/2026_04_14T21_03_57_720991_07_00"
+  },
+  {
+    "name": "Singapore_Census",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/singapore_census/Singapore_Census/2026_04_13T22_33_47_626683_07_00"
+  },
+  {
+    "name": "NCSES_Median_Annual_Salary_Import",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/ncses/ncses_median_annual_salary/NCSES_Median_Annual_Salary_Import/2026_04_12T22_33_21_419277_07_00"
+  },
+  {
+    "name": "NCSES_Demographics_SEH_Import",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/ncses/ncses_demographics_seh_import/NCSES_Demographics_SEH_Import/2026_04_11T22_33_06_318141_07_00"
+  },
+  {
+    "name": "NCSES_Research_Doctorate_Recipients_Import",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/ncses/research_doctorate_recipients/NCSES_Research_Doctorate_Recipients_Import/2026_04_11T22_33_21_949716_07_00"
+  },
+  {
+    "name": "Denmark_Demographics",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/denmark_demographics/Denmark_Demographics/2026_04_09T10_43_28_709738_07_00"
+  },
+  {
+    "name": "Google_COVID19Mobility",
+    "gcs_path": "gs://datcom-prod-imports/scripts/google_covid/mobility/Google_COVID19Mobility/2026_04_09T19_33_17_783403_07_00"
+  },
+  {
+    "name": "US_SAT_ACT_Participation",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_urban_school/sat_act_participation/school/US_SAT_ACT_Participation/2026_04_07T22_02_55_612807_07_00"
+  },
+  {
+    "name": "US_SAT_ACT_Participation_state",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_urban_school/sat_act_participation/state/US_SAT_ACT_Participation_state/2026_04_07T22_03_37_113112_07_00"
+  },
+  {
+    "name": "WorldBank_IDS",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/world_bank/worldbank_ids/WorldBank_IDS/2026_04_06T21_03_34_296985_07_00"
+  },
+  {
+    "name": "Finland_Census",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/finland_census/Finland_Census/2026_04_07T03_07_33_037329_07_00"
+  },
+  {
+    "name": "WorldBankDatasets",
+    "gcs_path": "gs://datcom-prod-imports/scripts/world_bank/datasets/WorldBankDatasets/2026_04_06T01_30_20_048283_07_00"
+  },
+  {
+    "name": "USBTS_Tract_Household_Transportation",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_bts/latch/USBTS_Tract_Household_Transportation/2026_04_05T18_03_00_219467_07_00"
+  },
+  {
+    "name": "USNationalPrisonerStatistics",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_bjs/nps/USNationalPrisonerStatistics/2026_04_05T02_03_16_477345_07_00"
+  },
+  {
+    "name": "CensusCountyBusinessPatterns",
+    "gcs_path": "gs://datcom-prod-imports/scripts/census_county_business_patterns/CensusCountyBusinessPatterns"
+  },
+  {
+    "name": "CDC_OzoneCounty",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_cdc/environmental_health_toxicology/CDC_OzoneCounty/2026_04_04T18_03_24_399430_07_00"
+  },
+  {
+    "name": "CDC_PM25County",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_cdc/environmental_health_toxicology/CDC_PM25County/2026_04_03T18_03_04_069113_07_00"
+  },
+  {
+    "name": "EuroStatHealth_BodyMassIndex",
+    "gcs_path": "gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_BodyMassIndex/2026_04_02T00_03_17_745575_07_00"
+  },
+  {
+    "name": "EPHHeatRelatedIllness",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_cdc/heat_related_illness/EPHHeatRelatedIllness/2026_04_02T20_03_11_687005_07_00"
+  },
+  {
+    "name": "EuroStatHealth_PhysicalActivity",
+    "gcs_path": "gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_PhysicalActivity/2026_04_01T22_03_19_219817_07_00"
+  },
+  {
+    "name": "EuroStatHealth_AlcoholConsumption",
+    "gcs_path": "gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_AlcoholConsumption/2026_04_01T19_03_31_977881_07_00"
+  },
+  {
+    "name": "EuroStatHealth_FruitsAndVegetables",
+    "gcs_path": "gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_FruitsAndVegetables/2026_04_01T23_03_21_197723_07_00"
+  },
+  {
+    "name": "EuroStatHealth_SocialEnvironment",
+    "gcs_path": "gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_SocialEnvironment/2026_04_01T21_03_50_051488_07_00"
+  },
+  {
+    "name": "EurostatHealth_Tobacco_Consumption",
+    "gcs_path": "gs://datcom-prod-imports/scripts/eurostat/health_determinants/EurostatHealth_Tobacco_Consumption/2026_04_01T20_03_08_191503_07_00"
+  },
+  {
+    "name": "WHO_COVID19",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/who_covid19/WHO_COVID19/2026_04_01T02_03_24_325103_07_00"
+  },
+  {
+    "name": "FBIGovCrime",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/fbi/fbigovcrime/FBIGovCrime/2026_03_31T22_33_30_061280_07_00"
+  },
+  {
+    "name": "OECDQuarterlyGDP",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/oecd/quarterly_gdp/OECDQuarterlyGDP/2026_04_01T01_03_21_760807_07_00"
+  },
+  {
+    "name": "CDC_PM25CensusTract",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_cdc/environmental_health_toxicology/CDC_PM25CensusTract"
+  },
+  {
+    "name": "USFEMA_FloodInsuranceClaims",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/fema/flood_insurance_claims/USFEMA_FloodInsuranceClaims"
+  },
+  {
+    "name": "EPA_AirPollutantEmission_Level1",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_epa/national_emissions_inventory/EPA_AirPollutantEmission_Level1/2026_03_31T17_03_14_106547_07_00"
+  },
+  {
+    "name": "NCBI_Taxonomy",
+    "gcs_path": "gs://datcom-prod-imports/scripts/biomedical/NCBI_Taxonomy/NCBI_Taxonomy/2026_03_31T17_03_22_818904_07_00"
+  },
+  {
+    "name": "NewYork_Education",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/us_education/new_york_education/NewYork_Education/2026_03_31T17_03_27_028394_07_00"
+  },
+  {
+    "name": "statistics_poland",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/statistics_poland/statistics_poland/2026_03_31T17_03_14_291758_07_00"
+  },
+  {
+    "name": "Zurich_Population",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population/2026_03_29T04_33_18_201535_07_00"
+  },
+  {
+    "name": "Zurich_Population_By_Age",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_By_Age/2026_03_28T23_03_10_992601_07_00"
+  },
+  {
+    "name": "Zurich_Population_By_Sex",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_By_Sex/2026_03_29T03_58_15_106120_07_00"
+  },
+  {
+    "name": "Zurich_Population_Number_Of_Birth",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Birth/2026_03_29T13_03_15_247903_07_00"
+  },
+  {
+    "name": "Zurich_Population_Number_Of_Birth_By_Origin",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Birth_By_Origin/2026_03_29T08_48_14_286018_07_00"
+  },
+  {
+    "name": "Zurich_Population_Number_Of_Birth_By_Sex",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Birth_By_Sex/2026_03_29T12_10_15_725245_07_00"
+  },
+  {
+    "name": "Zurich_Population_By_Origin",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_By_Origin/2026_03_28T18_17_59_920425_07_00"
+  },
+  {
+    "name": "Zurich_Population_Number_Of_Company_Workplace_Employees",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Company_Workplace_Employees/2026_03_28T19_03_22_627107_07_00"
+  },
+  {
+    "name": "Brazil_SIDRA_IBGE",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/brazil_sidra_ibge/Brazil_SIDRA_IBGE"
+  },
+  {
+    "name": "AutoGeneratedStatVars",
+    "gcs_path": "gs://datcom-prod-imports/google3/AutoGeneratedStatVars/2026-03-12"
+  },
+  {
+    "name": "RawStatVars",
+    "gcs_path": "gs://datcom-prod-imports/google3/RawStatVars/2026-03-12"
+  },
+  {
+    "name": "USDA_AgricultureSurvey",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_usda/quickstats/USDA_AgricultureSurvey/2026_03_09T20_33_25_300333_07_00"
+  },
+  {
+    "name": "NCES_SchoolDistrict",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_nces/demographics/school_district/NCES_SchoolDistrict/2026_03_02T19_33_36_033728_08_00"
+  },
+  {
+    "name": "NCES_PublicSchool",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_nces/demographics/public_school/NCES_PublicSchool"
+  },
+  {
+    "name": "crdc_instructional_wifi_devices",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/crdc/instructional_wifi_devices/crdc_instructional_wifi_devices/2026_02_28T16_03_26_687926_08_00"
+  },
+  {
+    "name": "NCES_PrivateSchool",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_nces/demographics/private_school/NCES_PrivateSchool/2026_02_28T19_33_08_259989_08_00"
+  },
+  {
+    "name": "IndiaNSS_HealthAilments",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/india_ndap/india_nss_health_ailments/IndiaNSS_HealthAilments"
+  },
+  {
+    "name": "BEA_USStatesQuarterlyGDP",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_bea/states_gdp/BEA_USStatesQuarterlyGDP/2026_01_30T02_33_34_554028_08_00"
+  },
+  {
+    "name": "EPAAirQualityIndex",
+    "gcs_path": "gs://datcom-prod-imports/scripts/us_epa/airqualityindex/EPAAirQualityIndex"
+  },
+  {
+    "name": "CRDC_EducationSchool_HarassmentOrBullying",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/crdc_import/crdc_harassment_or_bullying/CRDC_EducationSchool_HarassmentOrBullying/2025_12_30T02_06_23_695740_08_00"
+  },
+  {
+    "name": "IPEDS_StudentToFacultyRatio",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/ipeds/student_to_faculty_ratio/IPEDS_StudentToFacultyRatio/2025_12_29T12_23_18_145130_08_00"
+  },
+  {
+    "name": "CensusSAHIE",
+    "gcs_path": "gs://datcom-prod-imports/statvar_imports/census_v2/sahie/CensusSAHIE/2025_12_14T16_03_17_928130_08_00"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "NASA_VIIRSActiveFiresEvents",
+  "importList": "[{\"importName\": \"NASA_VIIRSActiveFiresEvents\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fires/firms/NASA_VIIRSActiveFiresEvents/2026_01_31T21_03_41_104986_08_00/import_metadata_mcf.mcf\"}, {\"importName\": \"NASA_VIIRSActiveFiresEvents\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fires/firms/NASA_VIIRSActiveFiresEvents/2026_02_28T21_03_23_845650_08_00/provenance/genmcf/import_metadata_mcf.mcf\"}, {\"importName\": \"NASA_VIIRSActiveFiresEvents\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fires/firms/NASA_VIIRSActiveFiresEvents/2026_03_31T22_03_25_597969_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}, {\"importName\": \"NASA_VIIRSActiveFiresEvents\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fires/firms/NASA_VIIRSActiveFiresEvents/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

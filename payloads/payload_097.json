@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "India_LifeExpectancy",
+  "importList": "[{\"importName\": \"India_LifeExpectancy\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/india_ndap/ndap/India_LifeExpectancy/2026_04_15T04_03_15_742415_07_00/input0/genmcf/table_mcf_nodes_India_LifeExpectancy.mcf\"}, {\"importName\": \"India_LifeExpectancy\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/india_ndap/ndap/India_LifeExpectancy/2026_04_15T04_03_15_742415_07_00/provenance/genmcf/India_LifeExpectancy.mcf\"}, {\"importName\": \"India_LifeExpectancy\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/india_ndap/ndap/India_LifeExpectancy/2026_04_15T04_03_15_742415_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

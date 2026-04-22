@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EurostatData_Fertility",
+  "importList": "[{\"importName\": \"EurostatData_Fertility\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/fertility_rate_mother_age/EurostatData_Fertility/2026_04_21T02_21_58_883838_07_00/input0/genmcf/table_mcf_nodes_Eurostats_NUTS3_FRate_Age.mcf\"}, {\"importName\": \"EurostatData_Fertility\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/fertility_rate_mother_age/EurostatData_Fertility/2026_04_21T02_21_58_883838_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

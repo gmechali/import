@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "CDC_PM25CensusTract",
+  "importList": "[{\"importName\": \"CDC_PM25CensusTract\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/environmental_health_toxicology/CDC_PM25CensusTract/2025_01_18T00_30_29_831165_08_00/PM2.5CensusTract_0.csv\"}, {\"importName\": \"CDC_PM25CensusTract\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/environmental_health_toxicology/CDC_PM25CensusTract/2025_01_18T00_30_29_831165_08_00/PM25CensusTractPollution.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

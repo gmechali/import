@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EPA_AirPollutantEmission_Level1",
+  "importList": "[{\"importName\": \"EPA_AirPollutantEmission_Level1\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/national_emissions_inventory/EPA_AirPollutantEmission_Level1/2026_03_31T17_03_14_106547_07_00/national_emissions/genmcf/table_mcf_nodes_national_emissions.mcf\"}, {\"importName\": \"EPA_AirPollutantEmission_Level1\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/national_emissions_inventory/EPA_AirPollutantEmission_Level1/2026_03_31T17_03_14_106547_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

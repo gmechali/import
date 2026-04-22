@@ -1,0 +1,1523 @@
+[
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "FARS_CrashData",
+    "importList": "[{\"importName\": \"FARS_CrashData\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_crash/fars_crashdata/FARS_CrashData/2026_04_20T22_03_41_072048_07_00/data.csv\"}, {\"importName\": \"FARS_CrashData\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_crash/fars_crashdata/FARS_CrashData/2026_04_20T22_03_41_072048_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "FBIHateCrime",
+    "importList": "[{\"importName\": \"FBIHateCrime\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fbi/hate_crime/aggregations/FBIHateCrime/2026_04_21T03_03_16_728044_07_00/data.csv\"}, {\"importName\": \"FBIHateCrime\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fbi/hate_crime/aggregations/FBIHateCrime/2026_04_21T03_03_16_728044_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "FBIHateCrimePublications",
+    "importList": "[{\"importName\": \"FBIHateCrimePublications\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fbi/hate_crime/FBIHateCrimePublications/2026_04_21T03_03_49_397312_07_00/data.csv\"}, {\"importName\": \"FBIHateCrimePublications\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fbi/hate_crime/FBIHateCrimePublications/2026_04_21T03_03_49_397312_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Schema",
+    "importList": "[{\"importName\": \"Schema\", \"graphPath\": \"gs://datcom-prod-imports/scripts/entities/Schema/2026-04-21/data.csv\"}, {\"importName\": \"Schema\", \"graphPath\": \"gs://datcom-prod-imports/scripts/entities/Schema/2026-04-21/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "US_CPI",
+    "importList": "[{\"importName\": \"US_CPI\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_bls/us_cpi/US_CPI/2026_04_21T03_03_44_337746_07_00/data.csv\"}, {\"importName\": \"US_CPI\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_bls/us_cpi/US_CPI/2026_04_21T03_03_44_337746_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "WorldDevelopmentIndicators",
+    "importList": "[{\"importName\": \"WorldDevelopmentIndicators\", \"graphPath\": \"gs://datcom-prod-imports/scripts/world_bank/wdi/WorldDevelopmentIndicators/2026_04_21T04_03_35_425895_07_00/data.csv\"}, {\"importName\": \"WorldDevelopmentIndicators\", \"graphPath\": \"gs://datcom-prod-imports/scripts/world_bank/wdi/WorldDevelopmentIndicators/2026_04_21T04_03_35_425895_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "BEAGDPv2",
+    "importList": "[{\"importName\": \"BEAGDPv2\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/gdp_by_county_metro_and_other_areas/beagdpv2/BEAGDPv2/2026_04_21T00_04_11_744304_07_00/data.csv\"}, {\"importName\": \"BEAGDPv2\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/gdp_by_county_metro_and_other_areas/beagdpv2/BEAGDPv2/2026_04_21T00_04_11_744304_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EurostatData_GDP",
+    "importList": "[{\"importName\": \"EurostatData_GDP\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/gdp/EurostatData_GDP/2026_04_20T21_33_34_309956_07_00/data.csv\"}, {\"importName\": \"EurostatData_GDP\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/gdp/EurostatData_GDP/2026_04_20T21_33_34_309956_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EurostatData_LifeExpectancy",
+    "importList": "[{\"importName\": \"EurostatData_LifeExpectancy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/life_expectancy/EurostatData_LifeExpectancy/2026_04_21T05_54_06_056700_07_00/data.csv\"}, {\"importName\": \"EurostatData_LifeExpectancy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/life_expectancy/EurostatData_LifeExpectancy/2026_04_21T05_54_06_056700_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EurostatData_PopulationDensity",
+    "importList": "[{\"importName\": \"EurostatData_PopulationDensity\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/population_density/EurostatData_PopulationDensity/2026_04_20T22_33_25_922347_07_00/data.csv\"}, {\"importName\": \"EurostatData_PopulationDensity\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/population_density/EurostatData_PopulationDensity/2026_04_20T22_33_25_922347_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Event",
+    "importList": "[{\"importName\": \"Event\", \"graphPath\": \"gs://datcom-prod-imports/scripts/entities/Event/2026-04-21/data.csv\"}, {\"importName\": \"Event\", \"graphPath\": \"gs://datcom-prod-imports/scripts/entities/Event/2026-04-21/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "New_Zealand_Census",
+    "importList": "[{\"importName\": \"New_Zealand_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/statistics_new_zealand/new_zealand_census/New_Zealand_Census/2026_04_20T23_03_37_506031_07_00/data.csv\"}, {\"importName\": \"New_Zealand_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/statistics_new_zealand/new_zealand_census/New_Zealand_Census/2026_04_20T23_03_37_506031_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Provenance",
+    "importList": "[{\"importName\": \"Provenance\", \"graphPath\": \"gs://datcom-prod-imports/scripts/entities/Provenance/2026-04-21/data.csv\"}, {\"importName\": \"Provenance\", \"graphPath\": \"gs://datcom-prod-imports/scripts/entities/Provenance/2026-04-21/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "usa_child_birth",
+    "importList": "[{\"importName\": \"usa_child_birth\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/child_birth/usa_child_birth/2026_04_21T00_04_05_028535_07_00/data.csv\"}, {\"importName\": \"usa_child_birth\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/child_birth/usa_child_birth/2026_04_21T00_04_05_028535_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NOAA_GlobalForecastSystem",
+    "importList": "[{\"importName\": \"NOAA_GlobalForecastSystem\", \"graphPath\": \"gs://datcom-prod-imports/scripts/noaa_gfs/NOAA_GlobalForecastSystem/2026_04_21T09_33_16_251621_07_00/data.csv\"}, {\"importName\": \"NOAA_GlobalForecastSystem\", \"graphPath\": \"gs://datcom-prod-imports/scripts/noaa_gfs/NOAA_GlobalForecastSystem/2026_04_21T09_33_16_251621_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "BLS_CPI_Category",
+    "importList": "[{\"importName\": \"BLS_CPI_Category\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_bls/cpi_category/BLS_CPI_Category/2026_04_21T03_04_07_725454_07_00/data.csv\"}, {\"importName\": \"BLS_CPI_Category\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_bls/cpi_category/BLS_CPI_Category/2026_04_21T03_04_07_725454_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EurostatData_Fertility",
+    "importList": "[{\"importName\": \"EurostatData_Fertility\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/fertility_rate_mother_age/EurostatData_Fertility/2026_04_21T02_21_58_883838_07_00/data.csv\"}, {\"importName\": \"EurostatData_Fertility\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/fertility_rate_mother_age/EurostatData_Fertility/2026_04_21T02_21_58_883838_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "France_Demographics",
+    "importList": "[{\"importName\": \"France_Demographics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/france_demographics/France_Demographics/2026_04_21T03_03_44_084179_07_00/data.csv\"}, {\"importName\": \"France_Demographics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/france_demographics/France_Demographics/2026_04_21T03_03_44_084179_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USCensusPEP_Annual_Population",
+    "importList": "[{\"importName\": \"USCensusPEP_Annual_Population\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/annual_population/USCensusPEP_Annual_Population/2026_04_21T03_04_22_032631_07_00/data.csv\"}, {\"importName\": \"USCensusPEP_Annual_Population\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/annual_population/USCensusPEP_Annual_Population/2026_04_21T03_04_22_032631_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USFed_ConstantMaturityRates_Test",
+    "importList": "[{\"importName\": \"USFed_ConstantMaturityRates_Test\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_fed/treasury_constant_maturity_rates/USFed_ConstantMaturityRates_Test/2026_04_21T02_16_21_525319_07_00/data.csv\"}, {\"importName\": \"USFed_ConstantMaturityRates_Test\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_fed/treasury_constant_maturity_rates/USFed_ConstantMaturityRates_Test/2026_04_21T02_16_21_525319_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NASA_VIIRSActiveFiresEvents",
+    "importList": "[{\"importName\": \"NASA_VIIRSActiveFiresEvents\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fires/firms/NASA_VIIRSActiveFiresEvents/data.csv\"}, {\"importName\": \"NASA_VIIRSActiveFiresEvents\", \"graphPath\": \"gs://datcom-prod-imports/scripts/fires/firms/NASA_VIIRSActiveFiresEvents/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EIA_Electricity",
+    "importList": "[{\"importName\": \"EIA_Electricity\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_Electricity/2026_04_20T00_03_59_927580_07_00/data.csv\"}, {\"importName\": \"EIA_Electricity\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_Electricity/2026_04_20T00_03_59_927580_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "BLS_CES_State",
+    "importList": "[{\"importName\": \"BLS_CES_State\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_bls/bls_ces_state/BLS_CES_State/2026_04_20T00_16_42_274738_07_00/data.csv\"}, {\"importName\": \"BLS_CES_State\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_bls/bls_ces_state/BLS_CES_State/2026_04_20T00_16_42_274738_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EIA_NaturalGas",
+    "importList": "[{\"importName\": \"EIA_NaturalGas\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_NaturalGas/2026_04_20T01_03_48_024797_07_00/data.csv\"}, {\"importName\": \"EIA_NaturalGas\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_NaturalGas/2026_04_20T01_03_48_024797_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EIA_Petroleum",
+    "importList": "[{\"importName\": \"EIA_Petroleum\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_Petroleum/2026_04_20T03_03_56_156290_07_00/data.csv\"}, {\"importName\": \"EIA_Petroleum\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_Petroleum/2026_04_20T03_03_56_156290_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EIA_SEDS",
+    "importList": "[{\"importName\": \"EIA_SEDS\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_SEDS/2026_04_20T05_04_07_517712_07_00/data.csv\"}, {\"importName\": \"EIA_SEDS\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_SEDS/2026_04_20T05_04_07_517712_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EurostatData_Demographic_Balance_Crude_Rates",
+    "importList": "[{\"importName\": \"EurostatData_Demographic_Balance_Crude_Rates\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/birth_death_migration/EurostatData_Demographic_Balance_Crude_Rates/2026_04_20T19_03_35_348962_07_00/data.csv\"}, {\"importName\": \"EurostatData_Demographic_Balance_Crude_Rates\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/birth_death_migration/EurostatData_Demographic_Balance_Crude_Rates/2026_04_20T19_03_35_348962_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EurostatData_Education_Attainment",
+    "importList": "[{\"importName\": \"EurostatData_Education_Attainment\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/education_attainment/EurostatData_Education_Attainment/2026_04_20T19_33_37_648778_07_00/data.csv\"}, {\"importName\": \"EurostatData_Education_Attainment\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/education_attainment/EurostatData_Education_Attainment/2026_04_20T19_33_37_648778_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EurostatData_Education_Enrollment",
+    "importList": "[{\"importName\": \"EurostatData_Education_Enrollment\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/education_enrollment/EurostatData_Education_Enrollment/2026_04_20T20_03_47_914285_07_00/data.csv\"}, {\"importName\": \"EurostatData_Education_Enrollment\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/education_enrollment/EurostatData_Education_Enrollment/2026_04_20T20_03_47_914285_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "India_RBI_State_Statistics",
+    "importList": "[{\"importName\": \"India_RBI_State_Statistics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/database_on_indian_economy/india_rbi_state_statistics/India_RBI_State_Statistics/2026_04_20T03_04_14_746079_07_00/data.csv\"}, {\"importName\": \"India_RBI_State_Statistics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/database_on_indian_economy/india_rbi_state_statistics/India_RBI_State_Statistics/2026_04_20T03_04_14_746079_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EurostatData_Employment_Per_Sector",
+    "importList": "[{\"importName\": \"EurostatData_Employment_Per_Sector\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/employed_per_sector/EurostatData_Employment_Per_Sector/2026_04_20T20_33_31_173850_07_00/data.csv\"}, {\"importName\": \"EurostatData_Employment_Per_Sector\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/regional_statistics_by_nuts/employed_per_sector/EurostatData_Employment_Per_Sector/2026_04_20T20_33_31_173850_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CDC_Social_Vulnerability_Index",
+    "importList": "[{\"importName\": \"CDC_Social_Vulnerability_Index\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/cdc/social_vulnerability_index/CDC_Social_Vulnerability_Index/2026_04_19T22_36_37_665861_07_00/data.csv\"}, {\"importName\": \"CDC_Social_Vulnerability_Index\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/cdc/social_vulnerability_index/CDC_Social_Vulnerability_Index/2026_04_19T22_36_37_665861_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Commerce_EDA",
+    "importList": "[{\"importName\": \"Commerce_EDA\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/commerce_eda/Commerce_EDA/2026_04_19T22_33_51_590436_07_00/data.csv\"}, {\"importName\": \"Commerce_EDA\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/commerce_eda/Commerce_EDA/2026_04_19T22_33_51_590436_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EIA_Coal",
+    "importList": "[{\"importName\": \"EIA_Coal\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_Coal/2026_04_20T07_03_52_487568_07_00/data.csv\"}, {\"importName\": \"EIA_Coal\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_Coal/2026_04_20T07_03_52_487568_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EIA_NuclearOutages",
+    "importList": "[{\"importName\": \"EIA_NuclearOutages\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_NuclearOutages/2026_04_20T02_03_53_698552_07_00/data.csv\"}, {\"importName\": \"EIA_NuclearOutages\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_NuclearOutages/2026_04_20T02_03_53_698552_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EIA_TotalEnergy",
+    "importList": "[{\"importName\": \"EIA_TotalEnergy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_TotalEnergy/2026_04_20T06_04_16_245329_07_00/data.csv\"}, {\"importName\": \"EIA_TotalEnergy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_TotalEnergy/2026_04_20T06_04_16_245329_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "BLS_CES",
+    "importList": "[{\"importName\": \"BLS_CES\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_bls/bls_ces/BLS_CES/2026_04_19T23_03_36_907761_07_00/data.csv\"}, {\"importName\": \"BLS_CES\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_bls/bls_ces/BLS_CES/2026_04_19T23_03_36_907761_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "India_NFHS",
+    "importList": "[{\"importName\": \"India_NFHS\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/india_nfhs/India_NFHS/2026_04_19T22_33_42_653542_07_00/data.csv\"}, {\"importName\": \"India_NFHS\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/india_nfhs/India_NFHS/2026_04_19T22_33_42_653542_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NCHS_BRFSS_Asthma",
+    "importList": "[{\"importName\": \"NCHS_BRFSS_Asthma\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brfss_nchs_asthma_prevalence/nchs_brfss_asthma/NCHS_BRFSS_Asthma/2026_04_20T19_03_20_610053_07_00/data.csv\"}, {\"importName\": \"NCHS_BRFSS_Asthma\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brfss_nchs_asthma_prevalence/nchs_brfss_asthma/NCHS_BRFSS_Asthma/2026_04_20T19_03_20_610053_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NCSES_DoctorateDegreeEmployment",
+    "importList": "[{\"importName\": \"NCSES_DoctorateDegreeEmployment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/doctoratedegreeemployment/NCSES_DoctorateDegreeEmployment/2026_04_19T22_33_53_936992_07_00/data.csv\"}, {\"importName\": \"NCSES_DoctorateDegreeEmployment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/doctoratedegreeemployment/NCSES_DoctorateDegreeEmployment/2026_04_19T22_33_53_936992_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "OECDRegionalDemography_Deaths",
+    "importList": "[{\"importName\": \"OECDRegionalDemography_Deaths\", \"graphPath\": \"gs://datcom-prod-imports/scripts/oecd/regional_demography/deaths/OECDRegionalDemography_Deaths/2026_04_20T03_47_42_607148_07_00/data.csv\"}, {\"importName\": \"OECDRegionalDemography_Deaths\", \"graphPath\": \"gs://datcom-prod-imports/scripts/oecd/regional_demography/deaths/OECDRegionalDemography_Deaths/2026_04_20T03_47_42_607148_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Place",
+    "importList": "[{\"importName\": \"Place\", \"graphPath\": \"gs://datcom-prod-imports/scripts/entities/Place/2026-04-21/data.csv\"}, {\"importName\": \"Place\", \"graphPath\": \"gs://datcom-prod-imports/scripts/entities/Place/2026-04-21/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USCensusPEP_AgeSexRace",
+    "importList": "[{\"importName\": \"USCensusPEP_AgeSexRace\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/population_estimates_by_asr/USCensusPEP_AgeSexRace/2026_04_19T22_04_00_566995_07_00/data.csv\"}, {\"importName\": \"USCensusPEP_AgeSexRace\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/population_estimates_by_asr/USCensusPEP_AgeSexRace/2026_04_19T22_04_00_566995_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USCensusPEP_By_SexRaceHispanicOrigin",
+    "importList": "[{\"importName\": \"USCensusPEP_By_SexRaceHispanicOrigin\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/pep_by_srh/USCensusPEP_By_SexRaceHispanicOrigin/2026_04_19T23_04_06_846977_07_00/data.csv\"}, {\"importName\": \"USCensusPEP_By_SexRaceHispanicOrigin\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/pep_by_srh/USCensusPEP_By_SexRaceHispanicOrigin/2026_04_19T23_04_06_846977_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USCensusPEP_By_Sex_Race",
+    "importList": "[{\"importName\": \"USCensusPEP_By_Sex_Race\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/us_pep_sexrace/USCensusPEP_By_Sex_Race/2026_04_20T03_03_40_140345_07_00/data.csv\"}, {\"importName\": \"USCensusPEP_By_Sex_Race\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/us_pep_sexrace/USCensusPEP_By_Sex_Race/2026_04_20T03_03_40_140345_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USCensusPEP_PopulationEstimatebyRace",
+    "importList": "[{\"importName\": \"USCensusPEP_PopulationEstimatebyRace\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/population_estimate_by_race/USCensusPEP_PopulationEstimatebyRace/2026_04_20T03_14_09_436589_07_00/data.csv\"}, {\"importName\": \"USCensusPEP_PopulationEstimatebyRace\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/population_estimate_by_race/USCensusPEP_PopulationEstimatebyRace/2026_04_20T03_14_09_436589_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USCensusPEP_Sex",
+    "importList": "[{\"importName\": \"USCensusPEP_Sex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/us_pep_sex/USCensusPEP_Sex/2026_04_20T03_31_39_461747_07_00/data.csv\"}, {\"importName\": \"USCensusPEP_Sex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/us_pep_sex/USCensusPEP_Sex/2026_04_20T03_31_39_461747_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USFed_ConstantMaturityRates",
+    "importList": "[{\"importName\": \"USFed_ConstantMaturityRates\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_fed/treasury_constant_maturity_rates/USFed_ConstantMaturityRates/2026_04_20T20_18_27_983867_07_00/data.csv\"}, {\"importName\": \"USFed_ConstantMaturityRates\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_fed/treasury_constant_maturity_rates/USFed_ConstantMaturityRates/2026_04_20T20_18_27_983867_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USMonthlyRetailSales",
+    "importList": "[{\"importName\": \"USMonthlyRetailSales\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_census/us_monthly_retail_sales/USMonthlyRetailSales/2026_04_19T22_36_18_092447_07_00/data.csv\"}, {\"importName\": \"USMonthlyRetailSales\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_census/us_monthly_retail_sales/USMonthlyRetailSales/2026_04_19T22_36_18_092447_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "OECDRegionalDemography_Population",
+    "importList": "[{\"importName\": \"OECDRegionalDemography_Population\", \"graphPath\": \"gs://datcom-prod-imports/scripts/oecd/regional_demography/population/OECDRegionalDemography_Population/2026_04_20T04_30_00_557546_07_00/data.csv\"}, {\"importName\": \"OECDRegionalDemography_Population\", \"graphPath\": \"gs://datcom-prod-imports/scripts/oecd/regional_demography/population/OECDRegionalDemography_Population/2026_04_20T04_30_00_557546_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USCensusPEP_AgeSexRaceHispanicOrigin",
+    "importList": "[{\"importName\": \"USCensusPEP_AgeSexRaceHispanicOrigin\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_census/pep/us_census_pep_asrh/USCensusPEP_AgeSexRaceHispanicOrigin/data.csv\"}, {\"importName\": \"USCensusPEP_AgeSexRaceHispanicOrigin\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_census/pep/us_census_pep_asrh/USCensusPEP_AgeSexRaceHispanicOrigin/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "GenderIncomeInequality",
+    "importList": "[{\"importName\": \"GenderIncomeInequality\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/gender_income_inequality/GenderIncomeInequality/2026_04_19T20_05_09_948681_07_00/data.csv\"}, {\"importName\": \"GenderIncomeInequality\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/gender_income_inequality/GenderIncomeInequality/2026_04_19T20_05_09_948681_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CDC500_States",
+    "importList": "[{\"importName\": \"CDC500_States\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/cdc500_state/CDC500_States/2026_04_19T18_04_18_320538_07_00/data.csv\"}, {\"importName\": \"CDC500_States\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/cdc500_state/CDC500_States/2026_04_19T18_04_18_320538_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "HUD_IncomeLimits",
+    "importList": "[{\"importName\": \"HUD_IncomeLimits\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_hud/income/HUD_IncomeLimits/2026_04_19T16_19_37_879092_07_00/data.csv\"}, {\"importName\": \"HUD_IncomeLimits\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_hud/income/HUD_IncomeLimits/2026_04_19T16_19_37_879092_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Rwanda_Census",
+    "importList": "[{\"importName\": \"Rwanda_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/opendataforafrica/rwanda_census/Rwanda_Census/data.csv\"}, {\"importName\": \"Rwanda_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/opendataforafrica/rwanda_census/Rwanda_Census/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "UAE_Population",
+    "importList": "[{\"importName\": \"UAE_Population\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/uae_bayanat/uae_population/UAE_Population/data.csv\"}, {\"importName\": \"UAE_Population\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/uae_bayanat/uae_population/UAE_Population/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "India_RBIStateDomesticProduct",
+    "importList": "[{\"importName\": \"India_RBIStateDomesticProduct\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/india_rbistatedomesticproduct/India_RBIStateDomesticProduct/2026_04_18T02_03_44_555304_07_00/data.csv\"}, {\"importName\": \"India_RBIStateDomesticProduct\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/india_rbistatedomesticproduct/India_RBIStateDomesticProduct/2026_04_18T02_03_44_555304_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "US_UrbanSchool_Enrollment",
+    "importList": "[{\"importName\": \"US_UrbanSchool_Enrollment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/enrollment/US_UrbanSchool_Enrollment/2026_04_16T22_03_35_036283_07_00/data.csv\"}, {\"importName\": \"US_UrbanSchool_Enrollment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/enrollment/US_UrbanSchool_Enrollment/2026_04_16T22_03_35_036283_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CDC_Mortality_UnderlyingCause_SingleRace",
+    "importList": "[{\"importName\": \"CDC_Mortality_UnderlyingCause_SingleRace\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_cdc/single_race/CDC_Mortality_UnderlyingCause_SingleRace/2026_04_18T01_34_11_292258_07_00/data.csv\"}, {\"importName\": \"CDC_Mortality_UnderlyingCause_SingleRace\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_cdc/single_race/CDC_Mortality_UnderlyingCause_SingleRace/2026_04_18T01_34_11_292258_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NCES_STEM_Degrees_Import",
+    "importList": "[{\"importName\": \"NCES_STEM_Degrees_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_steam_degrees_data/nces_stem_degrees_import/NCES_STEM_Degrees_Import/2026_04_17T22_04_05_395772_07_00/data.csv\"}, {\"importName\": \"NCES_STEM_Degrees_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_steam_degrees_data/nces_stem_degrees_import/NCES_STEM_Degrees_Import/2026_04_17T22_04_05_395772_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NCSES_Employed_College_Grads_Import",
+    "importList": "[{\"importName\": \"NCSES_Employed_College_Grads_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_nces/nces_employed_college_grads/NCSES_Employed_College_Grads_Import/2026_04_18T00_03_39_460490_07_00/data.csv\"}, {\"importName\": \"NCSES_Employed_College_Grads_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_nces/nces_employed_college_grads/NCSES_Employed_College_Grads_Import/2026_04_18T00_03_39_460490_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Subnational_Demographics_Stats",
+    "importList": "[{\"importName\": \"Subnational_Demographics_Stats\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/world_bank/subnational_demographics_stats/Subnational_Demographics_Stats/2026_04_17T23_04_06_872945_07_00/data.csv\"}, {\"importName\": \"Subnational_Demographics_Stats\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/world_bank/subnational_demographics_stats/Subnational_Demographics_Stats/2026_04_17T23_04_06_872945_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USCensusPEP_MonthlyPopulation",
+    "importList": "[{\"importName\": \"USCensusPEP_MonthlyPopulation\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/monthly_population_estimate/USCensusPEP_MonthlyPopulation/2026_04_18T00_04_17_717414_07_00/data.csv\"}, {\"importName\": \"USCensusPEP_MonthlyPopulation\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/monthly_population_estimate/USCensusPEP_MonthlyPopulation/2026_04_18T00_04_17_717414_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "US_Federal_Rates",
+    "importList": "[{\"importName\": \"US_Federal_Rates\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_federal_reserve_h15_interest_rates/us_federal_rates/US_Federal_Rates/2026_04_17T23_04_33_135545_07_00/data.csv\"}, {\"importName\": \"US_Federal_Rates\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_federal_reserve_h15_interest_rates/us_federal_rates/US_Federal_Rates/2026_04_17T23_04_33_135545_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Brazil_RuralDevelopmentProgram",
+    "importList": "[{\"importName\": \"Brazil_RuralDevelopmentProgram\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brazil_visdata/brazil_rural_development_program/Brazil_RuralDevelopmentProgram/2026_04_16T23_03_34_255424_07_00/data.csv\"}, {\"importName\": \"Brazil_RuralDevelopmentProgram\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brazil_visdata/brazil_rural_development_program/Brazil_RuralDevelopmentProgram/2026_04_16T23_03_34_255424_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Mongolia_Employment",
+    "importList": "[{\"importName\": \"Mongolia_Employment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_employment/Mongolia_Employment/2026_04_17T19_04_14_172259_07_00/data.csv\"}, {\"importName\": \"Mongolia_Employment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_employment/Mongolia_Employment/2026_04_17T19_04_14_172259_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "BIS_CentralBankPolicyRate",
+    "importList": "[{\"importName\": \"BIS_CentralBankPolicyRate\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/bis/bis_central_bank_policy_rate/BIS_CentralBankPolicyRate/2026_04_17T22_03_45_968213_07_00/data.csv\"}, {\"importName\": \"BIS_CentralBankPolicyRate\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/bis/bis_central_bank_policy_rate/BIS_CentralBankPolicyRate/2026_04_17T22_03_45_968213_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "BLS_CPI",
+    "importList": "[{\"importName\": \"BLS_CPI\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bls/cpi/BLS_CPI/2026_04_16T23_47_00_867641_07_00/data.csv\"}, {\"importName\": \"BLS_CPI\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bls/cpi/BLS_CPI/2026_04_16T23_47_00_867641_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CDC500",
+    "importList": "[{\"importName\": \"CDC500\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/500_places/CDC500/2026_04_17T02_21_07_570547_07_00/data.csv\"}, {\"importName\": \"CDC500\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/500_places/CDC500/2026_04_17T02_21_07_570547_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CanadaStatisticsAgeGender",
+    "importList": "[{\"importName\": \"CanadaStatisticsAgeGender\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/canada_statistics_age_gender/CanadaStatisticsAgeGender/2026_04_17T02_11_11_284243_07_00/data.csv\"}, {\"importName\": \"CanadaStatisticsAgeGender\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/canada_statistics_age_gender/CanadaStatisticsAgeGender/2026_04_17T02_11_11_284243_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CensusSAIPE",
+    "importList": "[{\"importName\": \"CensusSAIPE\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/census_v2/saipe/CensusSAIPE/2026_04_16T22_03_56_001307_07_00/data.csv\"}, {\"importName\": \"CensusSAIPE\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/census_v2/saipe/CensusSAIPE/2026_04_16T22_03_56_001307_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Commerce_NTIA",
+    "importList": "[{\"importName\": \"Commerce_NTIA\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ntia_internet_use_survey/commerce_ntia/Commerce_NTIA/2026_04_16T23_03_44_171311_07_00/data.csv\"}, {\"importName\": \"Commerce_NTIA\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ntia_internet_use_survey/commerce_ntia/Commerce_NTIA/2026_04_16T23_03_44_171311_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NCES_HBCU_Enrollment_Import",
+    "importList": "[{\"importName\": \"NCES_HBCU_Enrollment_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_hbcu_data/nces_hbcu_enrollment_import/NCES_HBCU_Enrollment_Import/2026_04_17T00_04_03_718275_07_00/data.csv\"}, {\"importName\": \"NCES_HBCU_Enrollment_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_hbcu_data/nces_hbcu_enrollment_import/NCES_HBCU_Enrollment_Import/2026_04_17T00_04_03_718275_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NYU_Tennessee_Diabetes",
+    "importList": "[{\"importName\": \"NYU_Tennessee_Diabetes\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/nyu_diabetes/tennessee/NYU_Tennessee_Diabetes/2026_04_16T22_04_03_179194_07_00/data.csv\"}, {\"importName\": \"NYU_Tennessee_Diabetes\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/nyu_diabetes/tennessee/NYU_Tennessee_Diabetes/2026_04_16T22_04_03_179194_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USA_DOL_Wages",
+    "importList": "[{\"importName\": \"USA_DOL_Wages\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/usa_dol/minimum_wage/USA_DOL_Wages/2026_04_17T02_33_47_211771_07_00/data.csv\"}, {\"importName\": \"USA_DOL_Wages\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/usa_dol/minimum_wage/USA_DOL_Wages/2026_04_17T02_33_47_211771_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "US_CCD_Enrollment",
+    "importList": "[{\"importName\": \"US_CCD_Enrollment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ccd/enrollment/US_CCD_Enrollment/2026_04_16T23_03_36_550747_07_00/data.csv\"}, {\"importName\": \"US_CCD_Enrollment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ccd/enrollment/US_CCD_Enrollment/2026_04_16T23_03_36_550747_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "US_UrbanSchool_Covid_Directional_Indicators",
+    "importList": "[{\"importName\": \"US_UrbanSchool_Covid_Directional_Indicators\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/covid_directional_indicators/US_UrbanSchool_Covid_Directional_Indicators/2026_04_16T22_04_04_770948_07_00/data.csv\"}, {\"importName\": \"US_UrbanSchool_Covid_Directional_Indicators\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/covid_directional_indicators/US_UrbanSchool_Covid_Directional_Indicators/2026_04_16T22_04_04_770948_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "US_UrbanSchool_Finances",
+    "importList": "[{\"importName\": \"US_UrbanSchool_Finances\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/school_finance/US_UrbanSchool_Finances/2026_04_17T03_43_42_863390_07_00/data.csv\"}, {\"importName\": \"US_UrbanSchool_Finances\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/school_finance/US_UrbanSchool_Finances/2026_04_17T03_43_42_863390_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "US_Urban_MathsAndScience_Course_Enrollment",
+    "importList": "[{\"importName\": \"US_Urban_MathsAndScience_Course_Enrollment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/maths_and_science_enrollment/US_Urban_MathsAndScience_Course_Enrollment/2026_04_16T21_03_13_246746_07_00/data.csv\"}, {\"importName\": \"US_Urban_MathsAndScience_Course_Enrollment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/maths_and_science_enrollment/US_Urban_MathsAndScience_Course_Enrollment/2026_04_16T21_03_13_246746_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "WHO_TuberculosisAndHIVTreatmentOutcome",
+    "importList": "[{\"importName\": \"WHO_TuberculosisAndHIVTreatmentOutcome\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/who_tuberculosis/treatmentoutcome_tb_hiv/WHO_TuberculosisAndHIVTreatmentOutcome/2026_04_17T00_25_30_832113_07_00/data.csv\"}, {\"importName\": \"WHO_TuberculosisAndHIVTreatmentOutcome\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/who_tuberculosis/treatmentoutcome_tb_hiv/WHO_TuberculosisAndHIVTreatmentOutcome/2026_04_17T00_25_30_832113_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Mongolia_Demographics",
+    "importList": "[{\"importName\": \"Mongolia_Demographics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_demographics/Mongolia_Demographics/data.csv\"}, {\"importName\": \"Mongolia_Demographics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_demographics/Mongolia_Demographics/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Mongolia_Education",
+    "importList": "[{\"importName\": \"Mongolia_Education\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_education/Mongolia_Education/data.csv\"}, {\"importName\": \"Mongolia_Education\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_education/Mongolia_Education/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Mongolia_Health",
+    "importList": "[{\"importName\": \"Mongolia_Health\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_health/Mongolia_Health/data.csv\"}, {\"importName\": \"Mongolia_Health\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_health/Mongolia_Health/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "FAO_Currency_statvar",
+    "importList": "[{\"importName\": \"FAO_Currency_statvar\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/fao_currency_and_exchange_rate/fao_currency_statvar/FAO_Currency_statvar/2026_04_16T00_04_11_658127_07_00/data.csv\"}, {\"importName\": \"FAO_Currency_statvar\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/fao_currency_and_exchange_rate/fao_currency_statvar/FAO_Currency_statvar/2026_04_16T00_04_11_658127_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "BLS_JOLTS",
+    "importList": "[{\"importName\": \"BLS_JOLTS\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bls/jolts/BLS_JOLTS/2026_04_16T19_33_38_949650_07_00/data.csv\"}, {\"importName\": \"BLS_JOLTS\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bls/jolts/BLS_JOLTS/2026_04_16T19_33_38_949650_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "ClimateTrace_GHG_Emissions",
+    "importList": "[{\"importName\": \"ClimateTrace_GHG_Emissions\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/climate_trace/ClimateTrace_GHG_Emissions/2026_04_16T05_16_45_004266_07_00/data.csv\"}, {\"importName\": \"ClimateTrace_GHG_Emissions\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/climate_trace/ClimateTrace_GHG_Emissions/2026_04_16T05_16_45_004266_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NCES_Bachelors_Degree_By_Field_Import",
+    "importList": "[{\"importName\": \"NCES_Bachelors_Degree_By_Field_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_bachelors_degree_data/nces_bachelors_degree_by_field_import/NCES_Bachelors_Degree_By_Field_Import/2026_04_15T22_03_40_864120_07_00/data.csv\"}, {\"importName\": \"NCES_Bachelors_Degree_By_Field_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_bachelors_degree_data/nces_bachelors_degree_by_field_import/NCES_Bachelors_Degree_By_Field_Import/2026_04_15T22_03_40_864120_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Ireland_Census",
+    "importList": "[{\"importName\": \"Ireland_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ireland_census/Ireland_Census/data.csv\"}, {\"importName\": \"Ireland_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ireland_census/Ireland_Census/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CDC_StandardizedPrecipitationIndex",
+    "importList": "[{\"importName\": \"CDC_StandardizedPrecipitationIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/cdc_standardized_precipitation/index/CDC_StandardizedPrecipitationIndex/2026_04_15T04_03_11_681668_07_00/data.csv\"}, {\"importName\": \"CDC_StandardizedPrecipitationIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/cdc_standardized_precipitation/index/CDC_StandardizedPrecipitationIndex/2026_04_15T04_03_11_681668_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EPA_USAirPollutantEmissionTrends_NationalAndState",
+    "importList": "[{\"importName\": \"EPA_USAirPollutantEmissionTrends_NationalAndState\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/air_emissions_inventory/national_state/EPA_USAirPollutantEmissionTrends_NationalAndState/2026_04_15T03_03_51_884474_07_00/data.csv\"}, {\"importName\": \"EPA_USAirPollutantEmissionTrends_NationalAndState\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/air_emissions_inventory/national_state/EPA_USAirPollutantEmissionTrends_NationalAndState/2026_04_15T03_03_51_884474_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "MexicoCensus_AA2",
+    "importList": "[{\"importName\": \"MexicoCensus_AA2\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mexico_subnational_population_statistics/mexico_census_aa2/MexicoCensus_AA2/2026_04_15T00_03_12_317697_07_00/data.csv\"}, {\"importName\": \"MexicoCensus_AA2\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mexico_subnational_population_statistics/mexico_census_aa2/MexicoCensus_AA2/2026_04_15T00_03_12_317697_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "OECDRegionalEducation",
+    "importList": "[{\"importName\": \"OECDRegionalEducation\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/oecd/regional_education/OECDRegionalEducation/2026_04_15T03_03_51_257393_07_00/data.csv\"}, {\"importName\": \"OECDRegionalEducation\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/oecd/regional_education/OECDRegionalEducation/2026_04_15T03_03_51_257393_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "SouthKorea_Employment",
+    "importList": "[{\"importName\": \"SouthKorea_Employment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/southkorea_statistics/employment/SouthKorea_Employment/2026_04_15T03_03_31_015206_07_00/data.csv\"}, {\"importName\": \"SouthKorea_Employment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/southkorea_statistics/employment/SouthKorea_Employment/2026_04_15T03_03_31_015206_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "OECDRegionalDemography_LifeExpectancy",
+    "importList": "[{\"importName\": \"OECDRegionalDemography_LifeExpectancy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/oecd/regional_demography/life_expectancy/OECDRegionalDemography_LifeExpectancy/2026_04_15T01_08_16_445951_07_00/data.csv\"}, {\"importName\": \"OECDRegionalDemography_LifeExpectancy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/oecd/regional_demography/life_expectancy/OECDRegionalDemography_LifeExpectancy/2026_04_15T01_08_16_445951_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CDC_StandardizedPrecipitationEvapotranspirationIndex",
+    "importList": "[{\"importName\": \"CDC_StandardizedPrecipitationEvapotranspirationIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/cdc_standardized_precipitation/evapotranspiration_index/CDC_StandardizedPrecipitationEvapotranspirationIndex/2026_04_15T03_03_28_687974_07_00/data.csv\"}, {\"importName\": \"CDC_StandardizedPrecipitationEvapotranspirationIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/cdc_standardized_precipitation/evapotranspiration_index/CDC_StandardizedPrecipitationEvapotranspirationIndex/2026_04_15T03_03_28_687974_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CRDC_Education_Discipline_Attendance",
+    "importList": "[{\"importName\": \"CRDC_Education_Discipline_Attendance\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/crdc_import/CRDC_Education_Discipline_Attendance/2026_04_15T01_08_12_051405_07_00/data.csv\"}, {\"importName\": \"CRDC_Education_Discipline_Attendance\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/crdc_import/CRDC_Education_Discipline_Attendance/2026_04_15T01_08_12_051405_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EPA_EJSCREEN",
+    "importList": "[{\"importName\": \"EPA_EJSCREEN\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/ejscreen/EPA_EJSCREEN/2026_04_15T03_03_23_664441_07_00/data.csv\"}, {\"importName\": \"EPA_EJSCREEN\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/ejscreen/EPA_EJSCREEN/2026_04_15T03_03_23_664441_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Google_SustainabilityFinancialIncentives",
+    "importList": "[{\"importName\": \"Google_SustainabilityFinancialIncentives\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/google_sustainability_financial_incentives/Google_SustainabilityFinancialIncentives/2026_04_14T23_03_38_560784_07_00/data.csv\"}, {\"importName\": \"Google_SustainabilityFinancialIncentives\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/google_sustainability_financial_incentives/Google_SustainabilityFinancialIncentives/2026_04_14T23_03_38_560784_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "INPE_Fire_Event_Count",
+    "importList": "[{\"importName\": \"INPE_Fire_Event_Count\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/inpe_fire/INPE_Fire_Event_Count/2026_04_15T04_03_25_913540_07_00/data.csv\"}, {\"importName\": \"INPE_Fire_Event_Count\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/inpe_fire/INPE_Fire_Event_Count/2026_04_15T04_03_25_913540_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "India_LifeExpectancy",
+    "importList": "[{\"importName\": \"India_LifeExpectancy\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/india_ndap/ndap/India_LifeExpectancy/2026_04_15T04_03_15_742415_07_00/data.csv\"}, {\"importName\": \"India_LifeExpectancy\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/india_ndap/ndap/India_LifeExpectancy/2026_04_15T04_03_15_742415_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CDC_PalmerDroughtSeverityIndex",
+    "importList": "[{\"importName\": \"CDC_PalmerDroughtSeverityIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/cdc_standardized_precipitation/palmer_drought/CDC_PalmerDroughtSeverityIndex/2026_04_15T05_03_22_850371_07_00/data.csv\"}, {\"importName\": \"CDC_PalmerDroughtSeverityIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/cdc_standardized_precipitation/palmer_drought/CDC_PalmerDroughtSeverityIndex/2026_04_15T05_03_22_850371_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "OECDRegionalDemography_PopulationDensity",
+    "importList": "[{\"importName\": \"OECDRegionalDemography_PopulationDensity\", \"graphPath\": \"gs://datcom-prod-imports/scripts/oecd/regional_demography/pop_density/OECDRegionalDemography_PopulationDensity/2026_04_15T02_03_33_202736_07_00/data.csv\"}, {\"importName\": \"OECDRegionalDemography_PopulationDensity\", \"graphPath\": \"gs://datcom-prod-imports/scripts/oecd/regional_demography/pop_density/OECDRegionalDemography_PopulationDensity/2026_04_15T02_03_33_202736_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "OECD_Waste_Water_Treatment",
+    "importList": "[{\"importName\": \"OECD_Waste_Water_Treatment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/oecd/wastewater_treatment/OECD_Waste_Water_Treatment/2026_04_15T03_03_33_840654_07_00/data.csv\"}, {\"importName\": \"OECD_Waste_Water_Treatment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/oecd/wastewater_treatment/OECD_Waste_Water_Treatment/2026_04_15T03_03_33_840654_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "SouthKorea_Demographics",
+    "importList": "[{\"importName\": \"SouthKorea_Demographics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/southkorea_statistics/demographics/SouthKorea_Demographics/2026_04_15T03_03_33_767818_07_00/data.csv\"}, {\"importName\": \"SouthKorea_Demographics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/southkorea_statistics/demographics/SouthKorea_Demographics/2026_04_15T03_03_33_767818_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "SouthKorea_Education",
+    "importList": "[{\"importName\": \"SouthKorea_Education\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/southkorea_statistics/education/SouthKorea_Education/2026_04_15T03_03_19_085892_07_00/data.csv\"}, {\"importName\": \"SouthKorea_Education\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/southkorea_statistics/education/SouthKorea_Education/2026_04_15T03_03_19_085892_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "SouthKorea_Health",
+    "importList": "[{\"importName\": \"SouthKorea_Health\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/southkorea_statistics/health/SouthKorea_Health/2026_04_15T03_03_28_936762_07_00/data.csv\"}, {\"importName\": \"SouthKorea_Health\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/southkorea_statistics/health/SouthKorea_Health/2026_04_15T03_03_28_936762_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "UNData",
+    "importList": "[{\"importName\": \"UNData\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/undata/UNData/2026_04_14T22_03_10_008652_07_00/data.csv\"}, {\"importName\": \"UNData\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/undata/UNData/2026_04_14T22_03_10_008652_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USDA_AgricultureCensus",
+    "importList": "[{\"importName\": \"USDA_AgricultureCensus\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_usda/nass_census/USDA_AgricultureCensus/2026_04_15T03_03_29_593900_07_00/data.csv\"}, {\"importName\": \"USDA_AgricultureCensus\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_usda/nass_census/USDA_AgricultureCensus/2026_04_15T03_03_29_593900_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "US_Urban_Schools_Teachers_And_Staff",
+    "importList": "[{\"importName\": \"US_Urban_Schools_Teachers_And_Staff\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/teachers/US_Urban_Schools_Teachers_And_Staff/2026_04_14T22_03_46_800853_07_00/data.csv\"}, {\"importName\": \"US_Urban_Schools_Teachers_And_Staff\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/teachers/US_Urban_Schools_Teachers_And_Staff/2026_04_14T22_03_46_800853_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "WorldBank_CommodityMarket",
+    "importList": "[{\"importName\": \"WorldBank_CommodityMarket\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/world_bank/commodity_market/WorldBank_CommodityMarket/2026_04_15T03_03_07_754856_07_00/data.csv\"}, {\"importName\": \"WorldBank_CommodityMarket\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/world_bank/commodity_market/WorldBank_CommodityMarket/2026_04_15T03_03_07_754856_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EPA_GHGRP",
+    "importList": "[{\"importName\": \"EPA_GHGRP\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/ghgrp/EPA_GHGRP/data.csv\"}, {\"importName\": \"EPA_GHGRP\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/ghgrp/EPA_GHGRP/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NOAA_GPCC_StandardardizedPrecipitationIndex",
+    "importList": "[{\"importName\": \"NOAA_GPCC_StandardardizedPrecipitationIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/noaa/gpcc_spi/NOAA_GPCC_StandardardizedPrecipitationIndex/data.csv\"}, {\"importName\": \"NOAA_GPCC_StandardardizedPrecipitationIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/noaa/gpcc_spi/NOAA_GPCC_StandardardizedPrecipitationIndex/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USFEMA_NationalRiskIndex",
+    "importList": "[{\"importName\": \"USFEMA_NationalRiskIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_fema/national_risk_index/USFEMA_NationalRiskIndex/data.csv\"}, {\"importName\": \"USFEMA_NationalRiskIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_fema/national_risk_index/USFEMA_NationalRiskIndex/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CDC_NORS_NonInfectious",
+    "importList": "[{\"importName\": \"CDC_NORS_NonInfectious\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/non_infectious_diseases/CDC_NORS_NonInfectious/2026_04_14T19_04_02_250638_07_00/data.csv\"}, {\"importName\": \"CDC_NORS_NonInfectious\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/non_infectious_diseases/CDC_NORS_NonInfectious/2026_04_14T19_04_02_250638_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "UNEnergy",
+    "importList": "[{\"importName\": \"UNEnergy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/un/energy/UNEnergy/2026_04_14T21_03_57_720991_07_00/data.csv\"}, {\"importName\": \"UNEnergy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/un/energy/UNEnergy/2026_04_14T21_03_57_720991_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Singapore_Census",
+    "importList": "[{\"importName\": \"Singapore_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/singapore_census/Singapore_Census/2026_04_13T22_33_47_626683_07_00/data.csv\"}, {\"importName\": \"Singapore_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/singapore_census/Singapore_Census/2026_04_13T22_33_47_626683_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NCSES_Median_Annual_Salary_Import",
+    "importList": "[{\"importName\": \"NCSES_Median_Annual_Salary_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ncses/ncses_median_annual_salary/NCSES_Median_Annual_Salary_Import/2026_04_12T22_33_21_419277_07_00/data.csv\"}, {\"importName\": \"NCSES_Median_Annual_Salary_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ncses/ncses_median_annual_salary/NCSES_Median_Annual_Salary_Import/2026_04_12T22_33_21_419277_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NCSES_Demographics_SEH_Import",
+    "importList": "[{\"importName\": \"NCSES_Demographics_SEH_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ncses/ncses_demographics_seh_import/NCSES_Demographics_SEH_Import/2026_04_11T22_33_06_318141_07_00/data.csv\"}, {\"importName\": \"NCSES_Demographics_SEH_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ncses/ncses_demographics_seh_import/NCSES_Demographics_SEH_Import/2026_04_11T22_33_06_318141_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NCSES_Research_Doctorate_Recipients_Import",
+    "importList": "[{\"importName\": \"NCSES_Research_Doctorate_Recipients_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ncses/research_doctorate_recipients/NCSES_Research_Doctorate_Recipients_Import/2026_04_11T22_33_21_949716_07_00/data.csv\"}, {\"importName\": \"NCSES_Research_Doctorate_Recipients_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ncses/research_doctorate_recipients/NCSES_Research_Doctorate_Recipients_Import/2026_04_11T22_33_21_949716_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Denmark_Demographics",
+    "importList": "[{\"importName\": \"Denmark_Demographics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/denmark_demographics/Denmark_Demographics/2026_04_09T10_43_28_709738_07_00/data.csv\"}, {\"importName\": \"Denmark_Demographics\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/denmark_demographics/Denmark_Demographics/2026_04_09T10_43_28_709738_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Google_COVID19Mobility",
+    "importList": "[{\"importName\": \"Google_COVID19Mobility\", \"graphPath\": \"gs://datcom-prod-imports/scripts/google_covid/mobility/Google_COVID19Mobility/2026_04_09T19_33_17_783403_07_00/data.csv\"}, {\"importName\": \"Google_COVID19Mobility\", \"graphPath\": \"gs://datcom-prod-imports/scripts/google_covid/mobility/Google_COVID19Mobility/2026_04_09T19_33_17_783403_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "US_SAT_ACT_Participation",
+    "importList": "[{\"importName\": \"US_SAT_ACT_Participation\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/sat_act_participation/school/US_SAT_ACT_Participation/2026_04_07T22_02_55_612807_07_00/data.csv\"}, {\"importName\": \"US_SAT_ACT_Participation\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/sat_act_participation/school/US_SAT_ACT_Participation/2026_04_07T22_02_55_612807_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "US_SAT_ACT_Participation_state",
+    "importList": "[{\"importName\": \"US_SAT_ACT_Participation_state\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/sat_act_participation/state/US_SAT_ACT_Participation_state/2026_04_07T22_03_37_113112_07_00/data.csv\"}, {\"importName\": \"US_SAT_ACT_Participation_state\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/sat_act_participation/state/US_SAT_ACT_Participation_state/2026_04_07T22_03_37_113112_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "WorldBank_IDS",
+    "importList": "[{\"importName\": \"WorldBank_IDS\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/world_bank/worldbank_ids/WorldBank_IDS/2026_04_06T21_03_34_296985_07_00/data.csv\"}, {\"importName\": \"WorldBank_IDS\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/world_bank/worldbank_ids/WorldBank_IDS/2026_04_06T21_03_34_296985_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Finland_Census",
+    "importList": "[{\"importName\": \"Finland_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/finland_census/Finland_Census/2026_04_07T03_07_33_037329_07_00/data.csv\"}, {\"importName\": \"Finland_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/finland_census/Finland_Census/2026_04_07T03_07_33_037329_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "WorldBankDatasets",
+    "importList": "[{\"importName\": \"WorldBankDatasets\", \"graphPath\": \"gs://datcom-prod-imports/scripts/world_bank/datasets/WorldBankDatasets/2026_04_06T01_30_20_048283_07_00/data.csv\"}, {\"importName\": \"WorldBankDatasets\", \"graphPath\": \"gs://datcom-prod-imports/scripts/world_bank/datasets/WorldBankDatasets/2026_04_06T01_30_20_048283_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USBTS_Tract_Household_Transportation",
+    "importList": "[{\"importName\": \"USBTS_Tract_Household_Transportation\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bts/latch/USBTS_Tract_Household_Transportation/2026_04_05T18_03_00_219467_07_00/data.csv\"}, {\"importName\": \"USBTS_Tract_Household_Transportation\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bts/latch/USBTS_Tract_Household_Transportation/2026_04_05T18_03_00_219467_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USNationalPrisonerStatistics",
+    "importList": "[{\"importName\": \"USNationalPrisonerStatistics\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bjs/nps/USNationalPrisonerStatistics/2026_04_05T02_03_16_477345_07_00/data.csv\"}, {\"importName\": \"USNationalPrisonerStatistics\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bjs/nps/USNationalPrisonerStatistics/2026_04_05T02_03_16_477345_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CensusCountyBusinessPatterns",
+    "importList": "[{\"importName\": \"CensusCountyBusinessPatterns\", \"graphPath\": \"gs://datcom-prod-imports/scripts/census_county_business_patterns/CensusCountyBusinessPatterns/data.csv\"}, {\"importName\": \"CensusCountyBusinessPatterns\", \"graphPath\": \"gs://datcom-prod-imports/scripts/census_county_business_patterns/CensusCountyBusinessPatterns/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CDC_OzoneCounty",
+    "importList": "[{\"importName\": \"CDC_OzoneCounty\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/environmental_health_toxicology/CDC_OzoneCounty/2026_04_04T18_03_24_399430_07_00/data.csv\"}, {\"importName\": \"CDC_OzoneCounty\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/environmental_health_toxicology/CDC_OzoneCounty/2026_04_04T18_03_24_399430_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CDC_PM25County",
+    "importList": "[{\"importName\": \"CDC_PM25County\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/environmental_health_toxicology/CDC_PM25County/2026_04_03T18_03_04_069113_07_00/data.csv\"}, {\"importName\": \"CDC_PM25County\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/environmental_health_toxicology/CDC_PM25County/2026_04_03T18_03_04_069113_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EuroStatHealth_BodyMassIndex",
+    "importList": "[{\"importName\": \"EuroStatHealth_BodyMassIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_BodyMassIndex/2026_04_02T00_03_17_745575_07_00/data.csv\"}, {\"importName\": \"EuroStatHealth_BodyMassIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_BodyMassIndex/2026_04_02T00_03_17_745575_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EPHHeatRelatedIllness",
+    "importList": "[{\"importName\": \"EPHHeatRelatedIllness\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/heat_related_illness/EPHHeatRelatedIllness/2026_04_02T20_03_11_687005_07_00/data.csv\"}, {\"importName\": \"EPHHeatRelatedIllness\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/heat_related_illness/EPHHeatRelatedIllness/2026_04_02T20_03_11_687005_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EuroStatHealth_PhysicalActivity",
+    "importList": "[{\"importName\": \"EuroStatHealth_PhysicalActivity\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_PhysicalActivity/2026_04_01T22_03_19_219817_07_00/data.csv\"}, {\"importName\": \"EuroStatHealth_PhysicalActivity\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_PhysicalActivity/2026_04_01T22_03_19_219817_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EuroStatHealth_AlcoholConsumption",
+    "importList": "[{\"importName\": \"EuroStatHealth_AlcoholConsumption\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_AlcoholConsumption/2026_04_01T19_03_31_977881_07_00/data.csv\"}, {\"importName\": \"EuroStatHealth_AlcoholConsumption\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_AlcoholConsumption/2026_04_01T19_03_31_977881_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EuroStatHealth_FruitsAndVegetables",
+    "importList": "[{\"importName\": \"EuroStatHealth_FruitsAndVegetables\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_FruitsAndVegetables/2026_04_01T23_03_21_197723_07_00/data.csv\"}, {\"importName\": \"EuroStatHealth_FruitsAndVegetables\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_FruitsAndVegetables/2026_04_01T23_03_21_197723_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EuroStatHealth_SocialEnvironment",
+    "importList": "[{\"importName\": \"EuroStatHealth_SocialEnvironment\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_SocialEnvironment/2026_04_01T21_03_50_051488_07_00/data.csv\"}, {\"importName\": \"EuroStatHealth_SocialEnvironment\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_SocialEnvironment/2026_04_01T21_03_50_051488_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EurostatHealth_Tobacco_Consumption",
+    "importList": "[{\"importName\": \"EurostatHealth_Tobacco_Consumption\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EurostatHealth_Tobacco_Consumption/2026_04_01T20_03_08_191503_07_00/data.csv\"}, {\"importName\": \"EurostatHealth_Tobacco_Consumption\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EurostatHealth_Tobacco_Consumption/2026_04_01T20_03_08_191503_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "WHO_COVID19",
+    "importList": "[{\"importName\": \"WHO_COVID19\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/who_covid19/WHO_COVID19/2026_04_01T02_03_24_325103_07_00/data.csv\"}, {\"importName\": \"WHO_COVID19\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/who_covid19/WHO_COVID19/2026_04_01T02_03_24_325103_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "FBIGovCrime",
+    "importList": "[{\"importName\": \"FBIGovCrime\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/fbi/fbigovcrime/FBIGovCrime/2026_03_31T22_33_30_061280_07_00/data.csv\"}, {\"importName\": \"FBIGovCrime\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/fbi/fbigovcrime/FBIGovCrime/2026_03_31T22_33_30_061280_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "OECDQuarterlyGDP",
+    "importList": "[{\"importName\": \"OECDQuarterlyGDP\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/oecd/quarterly_gdp/OECDQuarterlyGDP/2026_04_01T01_03_21_760807_07_00/data.csv\"}, {\"importName\": \"OECDQuarterlyGDP\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/oecd/quarterly_gdp/OECDQuarterlyGDP/2026_04_01T01_03_21_760807_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CDC_PM25CensusTract",
+    "importList": "[{\"importName\": \"CDC_PM25CensusTract\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/environmental_health_toxicology/CDC_PM25CensusTract/data.csv\"}, {\"importName\": \"CDC_PM25CensusTract\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/environmental_health_toxicology/CDC_PM25CensusTract/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USFEMA_FloodInsuranceClaims",
+    "importList": "[{\"importName\": \"USFEMA_FloodInsuranceClaims\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/fema/flood_insurance_claims/USFEMA_FloodInsuranceClaims/data.csv\"}, {\"importName\": \"USFEMA_FloodInsuranceClaims\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/fema/flood_insurance_claims/USFEMA_FloodInsuranceClaims/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EPA_AirPollutantEmission_Level1",
+    "importList": "[{\"importName\": \"EPA_AirPollutantEmission_Level1\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/national_emissions_inventory/EPA_AirPollutantEmission_Level1/2026_03_31T17_03_14_106547_07_00/data.csv\"}, {\"importName\": \"EPA_AirPollutantEmission_Level1\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/national_emissions_inventory/EPA_AirPollutantEmission_Level1/2026_03_31T17_03_14_106547_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NCBI_Taxonomy",
+    "importList": "[{\"importName\": \"NCBI_Taxonomy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/biomedical/NCBI_Taxonomy/NCBI_Taxonomy/2026_03_31T17_03_22_818904_07_00/data.csv\"}, {\"importName\": \"NCBI_Taxonomy\", \"graphPath\": \"gs://datcom-prod-imports/scripts/biomedical/NCBI_Taxonomy/NCBI_Taxonomy/2026_03_31T17_03_22_818904_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NewYork_Education",
+    "importList": "[{\"importName\": \"NewYork_Education\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_education/new_york_education/NewYork_Education/2026_03_31T17_03_27_028394_07_00/data.csv\"}, {\"importName\": \"NewYork_Education\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_education/new_york_education/NewYork_Education/2026_03_31T17_03_27_028394_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "statistics_poland",
+    "importList": "[{\"importName\": \"statistics_poland\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/statistics_poland/statistics_poland/2026_03_31T17_03_14_291758_07_00/data.csv\"}, {\"importName\": \"statistics_poland\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/statistics_poland/statistics_poland/2026_03_31T17_03_14_291758_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Zurich_Population",
+    "importList": "[{\"importName\": \"Zurich_Population\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population/2026_03_29T04_33_18_201535_07_00/data.csv\"}, {\"importName\": \"Zurich_Population\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population/2026_03_29T04_33_18_201535_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Zurich_Population_By_Age",
+    "importList": "[{\"importName\": \"Zurich_Population_By_Age\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_By_Age/2026_03_28T23_03_10_992601_07_00/data.csv\"}, {\"importName\": \"Zurich_Population_By_Age\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_By_Age/2026_03_28T23_03_10_992601_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Zurich_Population_By_Sex",
+    "importList": "[{\"importName\": \"Zurich_Population_By_Sex\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_By_Sex/2026_03_29T03_58_15_106120_07_00/data.csv\"}, {\"importName\": \"Zurich_Population_By_Sex\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_By_Sex/2026_03_29T03_58_15_106120_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Zurich_Population_Number_Of_Birth",
+    "importList": "[{\"importName\": \"Zurich_Population_Number_Of_Birth\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Birth/2026_03_29T13_03_15_247903_07_00/data.csv\"}, {\"importName\": \"Zurich_Population_Number_Of_Birth\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Birth/2026_03_29T13_03_15_247903_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Zurich_Population_Number_Of_Birth_By_Origin",
+    "importList": "[{\"importName\": \"Zurich_Population_Number_Of_Birth_By_Origin\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Birth_By_Origin/2026_03_29T08_48_14_286018_07_00/data.csv\"}, {\"importName\": \"Zurich_Population_Number_Of_Birth_By_Origin\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Birth_By_Origin/2026_03_29T08_48_14_286018_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Zurich_Population_Number_Of_Birth_By_Sex",
+    "importList": "[{\"importName\": \"Zurich_Population_Number_Of_Birth_By_Sex\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Birth_By_Sex/2026_03_29T12_10_15_725245_07_00/data.csv\"}, {\"importName\": \"Zurich_Population_Number_Of_Birth_By_Sex\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Birth_By_Sex/2026_03_29T12_10_15_725245_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Zurich_Population_By_Origin",
+    "importList": "[{\"importName\": \"Zurich_Population_By_Origin\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_By_Origin/2026_03_28T18_17_59_920425_07_00/data.csv\"}, {\"importName\": \"Zurich_Population_By_Origin\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_By_Origin/2026_03_28T18_17_59_920425_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Zurich_Population_Number_Of_Company_Workplace_Employees",
+    "importList": "[{\"importName\": \"Zurich_Population_Number_Of_Company_Workplace_Employees\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Company_Workplace_Employees/2026_03_28T19_03_22_627107_07_00/data.csv\"}, {\"importName\": \"Zurich_Population_Number_Of_Company_Workplace_Employees\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Company_Workplace_Employees/2026_03_28T19_03_22_627107_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "Brazil_SIDRA_IBGE",
+    "importList": "[{\"importName\": \"Brazil_SIDRA_IBGE\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brazil_sidra_ibge/Brazil_SIDRA_IBGE/data.csv\"}, {\"importName\": \"Brazil_SIDRA_IBGE\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/brazil_sidra_ibge/Brazil_SIDRA_IBGE/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "AutoGeneratedStatVars",
+    "importList": "[{\"importName\": \"AutoGeneratedStatVars\", \"graphPath\": \"gs://datcom-prod-imports/google3/AutoGeneratedStatVars/2026-03-12/data.csv\"}, {\"importName\": \"AutoGeneratedStatVars\", \"graphPath\": \"gs://datcom-prod-imports/google3/AutoGeneratedStatVars/2026-03-12/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "RawStatVars",
+    "importList": "[{\"importName\": \"RawStatVars\", \"graphPath\": \"gs://datcom-prod-imports/google3/RawStatVars/2026-03-12/data.csv\"}, {\"importName\": \"RawStatVars\", \"graphPath\": \"gs://datcom-prod-imports/google3/RawStatVars/2026-03-12/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "USDA_AgricultureSurvey",
+    "importList": "[{\"importName\": \"USDA_AgricultureSurvey\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_usda/quickstats/USDA_AgricultureSurvey/2026_03_09T20_33_25_300333_07_00/data.csv\"}, {\"importName\": \"USDA_AgricultureSurvey\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_usda/quickstats/USDA_AgricultureSurvey/2026_03_09T20_33_25_300333_07_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NCES_SchoolDistrict",
+    "importList": "[{\"importName\": \"NCES_SchoolDistrict\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_nces/demographics/school_district/NCES_SchoolDistrict/2026_03_02T19_33_36_033728_08_00/data.csv\"}, {\"importName\": \"NCES_SchoolDistrict\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_nces/demographics/school_district/NCES_SchoolDistrict/2026_03_02T19_33_36_033728_08_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NCES_PublicSchool",
+    "importList": "[{\"importName\": \"NCES_PublicSchool\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_nces/demographics/public_school/NCES_PublicSchool/data.csv\"}, {\"importName\": \"NCES_PublicSchool\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_nces/demographics/public_school/NCES_PublicSchool/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "crdc_instructional_wifi_devices",
+    "importList": "[{\"importName\": \"crdc_instructional_wifi_devices\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/crdc/instructional_wifi_devices/crdc_instructional_wifi_devices/2026_02_28T16_03_26_687926_08_00/data.csv\"}, {\"importName\": \"crdc_instructional_wifi_devices\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/crdc/instructional_wifi_devices/crdc_instructional_wifi_devices/2026_02_28T16_03_26_687926_08_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "NCES_PrivateSchool",
+    "importList": "[{\"importName\": \"NCES_PrivateSchool\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_nces/demographics/private_school/NCES_PrivateSchool/2026_02_28T19_33_08_259989_08_00/data.csv\"}, {\"importName\": \"NCES_PrivateSchool\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_nces/demographics/private_school/NCES_PrivateSchool/2026_02_28T19_33_08_259989_08_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "IndiaNSS_HealthAilments",
+    "importList": "[{\"importName\": \"IndiaNSS_HealthAilments\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/india_ndap/india_nss_health_ailments/IndiaNSS_HealthAilments/data.csv\"}, {\"importName\": \"IndiaNSS_HealthAilments\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/india_ndap/india_nss_health_ailments/IndiaNSS_HealthAilments/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "BEA_USStatesQuarterlyGDP",
+    "importList": "[{\"importName\": \"BEA_USStatesQuarterlyGDP\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bea/states_gdp/BEA_USStatesQuarterlyGDP/2026_01_30T02_33_34_554028_08_00/data.csv\"}, {\"importName\": \"BEA_USStatesQuarterlyGDP\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bea/states_gdp/BEA_USStatesQuarterlyGDP/2026_01_30T02_33_34_554028_08_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "EPAAirQualityIndex",
+    "importList": "[{\"importName\": \"EPAAirQualityIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/airqualityindex/EPAAirQualityIndex/data.csv\"}, {\"importName\": \"EPAAirQualityIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/airqualityindex/EPAAirQualityIndex/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CRDC_EducationSchool_HarassmentOrBullying",
+    "importList": "[{\"importName\": \"CRDC_EducationSchool_HarassmentOrBullying\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/crdc_import/crdc_harassment_or_bullying/CRDC_EducationSchool_HarassmentOrBullying/2025_12_30T02_06_23_695740_08_00/data.csv\"}, {\"importName\": \"CRDC_EducationSchool_HarassmentOrBullying\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/crdc_import/crdc_harassment_or_bullying/CRDC_EducationSchool_HarassmentOrBullying/2025_12_30T02_06_23_695740_08_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "IPEDS_StudentToFacultyRatio",
+    "importList": "[{\"importName\": \"IPEDS_StudentToFacultyRatio\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ipeds/student_to_faculty_ratio/IPEDS_StudentToFacultyRatio/2025_12_29T12_23_18_145130_08_00/data.csv\"}, {\"importName\": \"IPEDS_StudentToFacultyRatio\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ipeds/student_to_faculty_ratio/IPEDS_StudentToFacultyRatio/2025_12_29T12_23_18_145130_08_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  },
+  {
+    "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+    "region": "us-central1",
+    "spannerInstanceId": "hpho-datacommons-2",
+    "spannerDatabaseId": "gabe-test-dcp-db",
+    "importName": "CensusSAHIE",
+    "importList": "[{\"importName\": \"CensusSAHIE\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/census_v2/sahie/CensusSAHIE/2025_12_14T16_03_17_928130_08_00/data.csv\"}, {\"importName\": \"CensusSAHIE\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/census_v2/sahie/CensusSAHIE/2025_12_14T16_03_17_928130_08_00/mapping.tmcf\"}]",
+    "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+  }
+]

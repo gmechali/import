@@ -1,0 +1,85 @@
+main:
+  params: [args]
+  steps:
+    - init:
+        assign:
+          - project: "datcom-website-dev"
+          - location: "us-central1"
+          - bucket: "gabe-test-ingestion-bucket-datcom-website-dev"
+          - prefix: "temp/payloads/"
+          - child_workflow: "projects/datcom-website-dev/locations/us-central1/workflows/gabe-test-ingestion-orchestrator"
+    - list_payloads:
+        call: googleapis.storage.v1.objects.list
+        args:
+          bucket: ${bucket}
+          prefix: ${prefix}
+        result: file_list
+    - check_empty:
+        switch:
+          - condition: ${not("items" in file_list)}
+            next: return_empty
+    - loop_payloads:
+        for:
+          value: file_info
+          in: ${file_list.items}
+          steps:
+            - read_payload:
+                call: http.get
+                args:
+                  url: ${"https://storage.googleapis.com/storage/v1/b/" + bucket + "/o/" + text.url_encode(file_info.name)}
+                  query:
+                    alt: media
+                  auth:
+                    type: OAuth2
+                result: http_response
+            - parse_json:
+                assign:
+                  - payload: ${http_response.body}
+                  - argument_string: '${"{\"templateLocation\": \"" + payload.templateLocation + "\", \"region\": \"" + payload.region + "\", \"spannerInstanceId\": \"" + payload.spannerInstanceId + "\", \"spannerDatabaseId\": \"" + payload.spannerDatabaseId + "\", \"importName\": \"" + payload.importName + "\", \"importList\": \"" + payload.importList + "\", \"tempLocation\": \"" + payload.tempLocation + "\"}"}'
+            - trigger_child:
+                call: googleapis.workflowexecutions.v1.projects.locations.workflows.executions.create
+                args:
+                  parent: ${child_workflow}
+                  body:
+                    argument: ${argument_string}
+                result: execution
+            - wait_for_completion:
+                call: wait_for_execution
+                args:
+                  execution_id: ${execution.name}
+                result: current_status
+            - check_failure:
+                switch:
+                  - condition: ${current_status.state != "SUCCEEDED"}
+                    next: fail_import
+            - continue_loop:
+                next: end_of_loop
+            - fail_import:
+                raise: ${"Workflow execution failed for import " + payload.importName + " with state " + current_status.state}
+            - end_of_loop:
+                assign:
+                  - temp: true
+    - return_success:
+        return: "All workflows completed successfully."
+    - return_empty:
+        return: "No payloads found in directory."
+
+wait_for_execution:
+  params: [execution_id]
+  steps:
+    - check_status:
+        call: googleapis.workflowexecutions.v1.projects.locations.workflows.executions.get
+        args:
+          name: ${execution_id}
+        result: status
+    - evaluate_state:
+        switch:
+          - condition: ${status.state == "ACTIVE"}
+            next: sleep_and_retry
+    - return_result:
+        return: ${status}
+    - sleep_and_retry:
+        call: sys.sleep
+        args:
+          seconds: 60
+        next: check_status

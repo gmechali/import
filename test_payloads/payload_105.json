@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "USDA_AgricultureCensus",
+  "importList": "[{\"importName\": \"USDA_AgricultureCensus\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_usda/nass_census/USDA_AgricultureCensus/2026_04_15T03_03_29_593900_07_00/data.csv\"}, {\"importName\": \"USDA_AgricultureCensus\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_usda/nass_census/USDA_AgricultureCensus/2026_04_15T03_03_29_593900_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

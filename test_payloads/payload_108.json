@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EPA_GHGRP",
+  "importList": "[{\"importName\": \"EPA_GHGRP\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/ghgrp/EPA_GHGRP/data.csv\"}, {\"importName\": \"EPA_GHGRP\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/ghgrp/EPA_GHGRP/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

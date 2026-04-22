@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "FAO_Currency_statvar",
+  "importList": "[{\"importName\": \"FAO_Currency_statvar\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/fao_currency_and_exchange_rate/fao_currency_statvar/FAO_Currency_statvar/2026_04_16T00_04_11_658127_07_00/input0/genmcf/table_mcf_nodes_CurrencyFAO_output.mcf\"}, {\"importName\": \"FAO_Currency_statvar\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/fao_currency_and_exchange_rate/fao_currency_statvar/FAO_Currency_statvar/2026_04_16T00_04_11_658127_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

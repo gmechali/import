@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "USFEMA_NationalRiskIndex",
+  "importList": "[{\"importName\": \"USFEMA_NationalRiskIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_fema/national_risk_index/USFEMA_NationalRiskIndex/2025_01_30T02_01_30_819188_08_00/nri_counties_table_2023-03.csv\"}, {\"importName\": \"USFEMA_NationalRiskIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_fema/national_risk_index/USFEMA_NationalRiskIndex/2025_01_30T02_01_30_819188_08_00/us_fema_national_risk_index_fema_nri_counties.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

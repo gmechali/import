@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Commerce_NTIA",
+  "importList": "[{\"importName\": \"Commerce_NTIA\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ntia_internet_use_survey/commerce_ntia/Commerce_NTIA/2026_04_16T23_03_44_171311_07_00/input0/genmcf/table_mcf_nodes_ntia_output.mcf\"}, {\"importName\": \"Commerce_NTIA\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ntia_internet_use_survey/commerce_ntia/Commerce_NTIA/2026_04_16T23_03_44_171311_07_00/input1/genmcf/table_mcf_nodes_ntia_age_output.mcf\"}, {\"importName\": \"Commerce_NTIA\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ntia_internet_use_survey/commerce_ntia/Commerce_NTIA/2026_04_16T23_03_44_171311_07_00/provenance/genmcf/Commerce_NTIA.mcf\"}, {\"importName\": \"Commerce_NTIA\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ntia_internet_use_survey/commerce_ntia/Commerce_NTIA/2026_04_16T23_03_44_171311_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

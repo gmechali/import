@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "US_Urban_Schools_Teachers_And_Staff",
+  "importList": "[{\"importName\": \"US_Urban_Schools_Teachers_And_Staff\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/teachers/US_Urban_Schools_Teachers_And_Staff/2026_04_14T22_03_46_800853_07_00/teachers_and_staff_2010_2014_output/genmcf/table_mcf_nodes_teachers_and_staff_2010_2014_output.mcf\"}, {\"importName\": \"US_Urban_Schools_Teachers_And_Staff\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/teachers/US_Urban_Schools_Teachers_And_Staff/2026_04_14T22_03_46_800853_07_00/teachers_and_staff_2016_output/genmcf/table_mcf_nodes_teachers_and_staff_2016_output.mcf\"}, {\"importName\": \"US_Urban_Schools_Teachers_And_Staff\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/teachers/US_Urban_Schools_Teachers_And_Staff/2026_04_14T22_03_46_800853_07_00/teachers_and_staff_2018_2022_output/genmcf/table_mcf_nodes_teachers_and_staff_2018_2022_output.mcf\"}, {\"importName\": \"US_Urban_Schools_Teachers_And_Staff\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/teachers/US_Urban_Schools_Teachers_And_Staff/2026_04_14T22_03_46_800853_07_00/provenance/genmcf/US_Urban_Schools_Teachers_And_Staff.mcf\"}, {\"importName\": \"US_Urban_Schools_Teachers_And_Staff\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/teachers/US_Urban_Schools_Teachers_And_Staff/2026_04_14T22_03_46_800853_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

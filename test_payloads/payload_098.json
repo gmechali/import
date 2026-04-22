@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "CDC_PalmerDroughtSeverityIndex",
+  "importList": "[{\"importName\": \"CDC_PalmerDroughtSeverityIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/cdc_standardized_precipitation/palmer_drought/CDC_PalmerDroughtSeverityIndex/2026_04_15T05_03_22_850371_07_00/data.csv\"}, {\"importName\": \"CDC_PalmerDroughtSeverityIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_cdc/cdc_standardized_precipitation/palmer_drought/CDC_PalmerDroughtSeverityIndex/2026_04_15T05_03_22_850371_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

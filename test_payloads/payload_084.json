@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "NCES_Bachelors_Degree_By_Field_Import",
+  "importList": "[{\"importName\": \"NCES_Bachelors_Degree_By_Field_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_bachelors_degree_data/nces_bachelors_degree_by_field_import/NCES_Bachelors_Degree_By_Field_Import/2026_04_15T22_03_40_864120_07_00/data.csv\"}, {\"importName\": \"NCES_Bachelors_Degree_By_Field_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_bachelors_degree_data/nces_bachelors_degree_by_field_import/NCES_Bachelors_Degree_By_Field_Import/2026_04_15T22_03_40_864120_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "OECD_Waste_Water_Treatment",
+  "importList": "[{\"importName\": \"OECD_Waste_Water_Treatment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/oecd/wastewater_treatment/OECD_Waste_Water_Treatment/2026_04_15T03_03_33_840654_07_00/data.csv\"}, {\"importName\": \"OECD_Waste_Water_Treatment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/oecd/wastewater_treatment/OECD_Waste_Water_Treatment/2026_04_15T03_03_33_840654_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

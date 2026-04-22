@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "NCSES_Demographics_SEH_Import",
+  "importList": "[{\"importName\": \"NCSES_Demographics_SEH_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ncses/ncses_demographics_seh_import/NCSES_Demographics_SEH_Import/2026_04_11T22_33_06_318141_07_00/ncses_demographics_seh_import/genmcf/table_mcf_nodes_ncses_demographics_seh_import.mcf\"}, {\"importName\": \"NCSES_Demographics_SEH_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ncses/ncses_demographics_seh_import/NCSES_Demographics_SEH_Import/2026_04_11T22_33_06_318141_07_00/provenance/genmcf/NCSES_Demographics_SEH_Import.mcf\"}, {\"importName\": \"NCSES_Demographics_SEH_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ncses/ncses_demographics_seh_import/NCSES_Demographics_SEH_Import/2026_04_11T22_33_06_318141_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

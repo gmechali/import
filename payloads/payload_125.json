@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "USNationalPrisonerStatistics",
+  "importList": "[{\"importName\": \"USNationalPrisonerStatistics\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bjs/nps/USNationalPrisonerStatistics/2026_04_05T02_03_16_477345_07_00/national_prison_stats/genmcf/table_mcf_nodes_national_prison_stats.mcf\"}, {\"importName\": \"USNationalPrisonerStatistics\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bjs/nps/USNationalPrisonerStatistics/2026_04_05T02_03_16_477345_07_00/provenance/genmcf/USNationalPrisonerStatistics.mcf\"}, {\"importName\": \"USNationalPrisonerStatistics\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bjs/nps/USNationalPrisonerStatistics/2026_04_05T02_03_16_477345_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

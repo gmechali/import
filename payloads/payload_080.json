@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Mongolia_Health",
+  "importList": "[{\"importName\": \"Mongolia_Health\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_health/Mongolia_Health/2025_09_03T10_24_24_777052_07_00/deaths_by_month_and_region_output.csv\"}, {\"importName\": \"Mongolia_Health\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_health/Mongolia_Health/2025_09_03T10_24_24_777052_07_00/deaths_by_month_and_region_output.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

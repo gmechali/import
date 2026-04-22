@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "OECDRegionalEducation",
+  "importList": "[{\"importName\": \"OECDRegionalEducation\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/oecd/regional_education/OECDRegionalEducation/2026_04_15T03_03_51_257393_07_00/input0/genmcf/table_mcf_nodes_oecd_regional_education.mcf\"}, {\"importName\": \"OECDRegionalEducation\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/oecd/regional_education/OECDRegionalEducation/2026_04_15T03_03_51_257393_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

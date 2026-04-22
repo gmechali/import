@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "USCensusPEP_PopulationEstimatebyRace",
+  "importList": "[{\"importName\": \"USCensusPEP_PopulationEstimatebyRace\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/population_estimate_by_race/USCensusPEP_PopulationEstimatebyRace/2026_04_20T03_14_09_436589_07_00/input0/genmcf/table_mcf_nodes_USA_Population_Count_by_Race_National_state_2000.mcf\"}, {\"importName\": \"USCensusPEP_PopulationEstimatebyRace\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/population_estimate_by_race/USCensusPEP_PopulationEstimatebyRace/2026_04_20T03_14_09_436589_07_00/input1/genmcf/table_mcf_nodes_USA_Population_Count_by_Race_before_2000.mcf\"}, {\"importName\": \"USCensusPEP_PopulationEstimatebyRace\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/population_estimate_by_race/USCensusPEP_PopulationEstimatebyRace/2026_04_20T03_14_09_436589_07_00/input2/genmcf/table_mcf_nodes_USA_Population_Count_by_Race_county_after_2000.mcf\"}, {\"importName\": \"USCensusPEP_PopulationEstimatebyRace\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/population_estimate_by_race/USCensusPEP_PopulationEstimatebyRace/2026_04_20T03_14_09_436589_07_00/provenance/genmcf/USCensusPEP_PopulationEstimatebyRace.mcf\"}, {\"importName\": \"USCensusPEP_PopulationEstimatebyRace\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/population_estimate_by_race/USCensusPEP_PopulationEstimatebyRace/2026_04_20T03_14_09_436589_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

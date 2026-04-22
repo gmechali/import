@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "OECDRegionalDemography_Deaths",
+  "importList": "[{\"importName\": \"OECDRegionalDemography_Deaths\", \"graphPath\": \"gs://datcom-prod-imports/scripts/oecd/regional_demography/deaths/OECDRegionalDemography_Deaths/2026_04_20T03_47_42_607148_07_00/input0/genmcf/table_mcf_nodes_OECD_deaths_cleaned.mcf\"}, {\"importName\": \"OECDRegionalDemography_Deaths\", \"graphPath\": \"gs://datcom-prod-imports/scripts/oecd/regional_demography/deaths/OECDRegionalDemography_Deaths/2026_04_20T03_47_42_607148_07_00/provenance/genmcf/OECDRegionalDemography_Deaths.mcf\"}, {\"importName\": \"OECDRegionalDemography_Deaths\", \"graphPath\": \"gs://datcom-prod-imports/scripts/oecd/regional_demography/deaths/OECDRegionalDemography_Deaths/2026_04_20T03_47_42_607148_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

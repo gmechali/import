@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EIA_Petroleum",
+  "importList": "[{\"importName\": \"EIA_Petroleum\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_Petroleum/2026_04_20T03_03_56_156290_07_00/data.csv\"}, {\"importName\": \"EIA_Petroleum\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_eia/opendata/EIA_Petroleum/2026_04_20T03_03_56_156290_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

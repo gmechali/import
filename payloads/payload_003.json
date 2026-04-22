@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "WorldDevelopmentIndicators",
+  "importList": "[{\"importName\": \"WorldDevelopmentIndicators\", \"graphPath\": \"gs://datcom-prod-imports/scripts/world_bank/wdi/WorldDevelopmentIndicators/2026_04_21T04_03_35_425895_07_00/input0/genmcf/table_mcf_nodes_WorldBank.mcf\"}, {\"importName\": \"WorldDevelopmentIndicators\", \"graphPath\": \"gs://datcom-prod-imports/scripts/world_bank/wdi/WorldDevelopmentIndicators/2026_04_21T04_03_35_425895_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

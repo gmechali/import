@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "BLS_CPI",
+  "importList": "[{\"importName\": \"BLS_CPI\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bls/cpi/BLS_CPI/2026_04_16T23_47_00_867641_07_00/input0/genmcf/table_mcf_nodes_cpi_u.mcf\"}, {\"importName\": \"BLS_CPI\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bls/cpi/BLS_CPI/2026_04_16T23_47_00_867641_07_00/input1/genmcf/table_mcf_nodes_cpi_w.mcf\"}, {\"importName\": \"BLS_CPI\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bls/cpi/BLS_CPI/2026_04_16T23_47_00_867641_07_00/input2/genmcf/table_mcf_nodes_c_cpi_u.mcf\"}, {\"importName\": \"BLS_CPI\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bls/cpi/BLS_CPI/2026_04_16T23_47_00_867641_07_00/provenance/genmcf/BLS_CPI.mcf\"}, {\"importName\": \"BLS_CPI\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bls/cpi/BLS_CPI/2026_04_16T23_47_00_867641_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

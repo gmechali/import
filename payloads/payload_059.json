@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Subnational_Demographics_Stats",
+  "importList": "[{\"importName\": \"Subnational_Demographics_Stats\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/world_bank/subnational_demographics_stats/Subnational_Demographics_Stats/2026_04_17T23_04_06_872945_07_00/input0/genmcf/table_mcf_nodes_wb_subnational_output.mcf\"}, {\"importName\": \"Subnational_Demographics_Stats\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/world_bank/subnational_demographics_stats/Subnational_Demographics_Stats/2026_04_17T23_04_06_872945_07_00/provenance/genmcf/Subnational_Demographics_Stats.mcf\"}, {\"importName\": \"Subnational_Demographics_Stats\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/world_bank/subnational_demographics_stats/Subnational_Demographics_Stats/2026_04_17T23_04_06_872945_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

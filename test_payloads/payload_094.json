@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EPA_EJSCREEN",
+  "importList": "[{\"importName\": \"EPA_EJSCREEN\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/ejscreen/EPA_EJSCREEN/2026_04_15T03_03_23_664441_07_00/data.csv\"}, {\"importName\": \"EPA_EJSCREEN\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/ejscreen/EPA_EJSCREEN/2026_04_15T03_03_23_664441_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

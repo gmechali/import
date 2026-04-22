@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "USCensusPEP_MonthlyPopulation",
+  "importList": "[{\"importName\": \"USCensusPEP_MonthlyPopulation\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/monthly_population_estimate/USCensusPEP_MonthlyPopulation/2026_04_18T00_04_17_717414_07_00/input0/genmcf/table_mcf_nodes_USA_Population_Count.mcf\"}, {\"importName\": \"USCensusPEP_MonthlyPopulation\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/monthly_population_estimate/USCensusPEP_MonthlyPopulation/2026_04_18T00_04_17_717414_07_00/provenance/genmcf/USCensusPEP_MonthlyPopulation.mcf\"}, {\"importName\": \"USCensusPEP_MonthlyPopulation\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/monthly_population_estimate/USCensusPEP_MonthlyPopulation/2026_04_18T00_04_17_717414_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

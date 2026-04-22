@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "NCSES_Research_Doctorate_Recipients_Import",
+  "importList": "[{\"importName\": \"NCSES_Research_Doctorate_Recipients_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ncses/research_doctorate_recipients/NCSES_Research_Doctorate_Recipients_Import/2026_04_11T22_33_21_949716_07_00/data.csv\"}, {\"importName\": \"NCSES_Research_Doctorate_Recipients_Import\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ncses/research_doctorate_recipients/NCSES_Research_Doctorate_Recipients_Import/2026_04_11T22_33_21_949716_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

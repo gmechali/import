@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "US_UrbanSchool_Covid_Directional_Indicators",
+  "importList": "[{\"importName\": \"US_UrbanSchool_Covid_Directional_Indicators\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/covid_directional_indicators/US_UrbanSchool_Covid_Directional_Indicators/2026_04_16T22_04_04_770948_07_00/input0/genmcf/table_mcf_nodes_covid_directional_indicators_output1.mcf\"}, {\"importName\": \"US_UrbanSchool_Covid_Directional_Indicators\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/covid_directional_indicators/US_UrbanSchool_Covid_Directional_Indicators/2026_04_16T22_04_04_770948_07_00/input1/genmcf/table_mcf_nodes_covid_directional_indicators_output2.mcf\"}, {\"importName\": \"US_UrbanSchool_Covid_Directional_Indicators\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/covid_directional_indicators/US_UrbanSchool_Covid_Directional_Indicators/2026_04_16T22_04_04_770948_07_00/input2/genmcf/table_mcf_nodes_covid_directional_indicators_output3.mcf\"}, {\"importName\": \"US_UrbanSchool_Covid_Directional_Indicators\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/covid_directional_indicators/US_UrbanSchool_Covid_Directional_Indicators/2026_04_16T22_04_04_770948_07_00/input3/genmcf/table_mcf_nodes_covid_directional_indicators_output4.mcf\"}, {\"importName\": \"US_UrbanSchool_Covid_Directional_Indicators\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_urban_school/covid_directional_indicators/US_UrbanSchool_Covid_Directional_Indicators/2026_04_16T22_04_04_770948_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

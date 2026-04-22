@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "MexicoCensus_AA2",
+  "importList": "[{\"importName\": \"MexicoCensus_AA2\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mexico_subnational_population_statistics/mexico_census_aa2/MexicoCensus_AA2/2026_04_15T00_03_12_317697_07_00/data.csv\"}, {\"importName\": \"MexicoCensus_AA2\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mexico_subnational_population_statistics/mexico_census_aa2/MexicoCensus_AA2/2026_04_15T00_03_12_317697_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

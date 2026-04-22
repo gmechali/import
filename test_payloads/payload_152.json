@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Zurich_Population_Number_Of_Company_Workplace_Employees",
+  "importList": "[{\"importName\": \"Zurich_Population_Number_Of_Company_Workplace_Employees\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Company_Workplace_Employees/2026_03_28T19_03_22_627107_07_00/data.csv\"}, {\"importName\": \"Zurich_Population_Number_Of_Company_Workplace_Employees\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/zurich/Zurich_Population_Number_Of_Company_Workplace_Employees/2026_03_28T19_03_22_627107_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

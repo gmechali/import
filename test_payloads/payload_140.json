@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "USFEMA_FloodInsuranceClaims",
+  "importList": "[{\"importName\": \"USFEMA_FloodInsuranceClaims\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/fema/flood_insurance_claims/USFEMA_FloodInsuranceClaims/data.csv\"}, {\"importName\": \"USFEMA_FloodInsuranceClaims\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/fema/flood_insurance_claims/USFEMA_FloodInsuranceClaims/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

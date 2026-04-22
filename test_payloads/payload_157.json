@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "NCES_SchoolDistrict",
+  "importList": "[{\"importName\": \"NCES_SchoolDistrict\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_nces/demographics/school_district/NCES_SchoolDistrict/2026_03_02T19_33_36_033728_08_00/data.csv\"}, {\"importName\": \"NCES_SchoolDistrict\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_nces/demographics/school_district/NCES_SchoolDistrict/2026_03_02T19_33_36_033728_08_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

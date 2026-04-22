@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Mongolia_Education",
+  "importList": "[{\"importName\": \"Mongolia_Education\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_education/Mongolia_Education/data.csv\"}, {\"importName\": \"Mongolia_Education\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/mongolia_imports/mongolia_education/Mongolia_Education/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

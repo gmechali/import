@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "India_NFHS",
+  "importList": "[{\"importName\": \"India_NFHS\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/india_nfhs/India_NFHS/2026_04_19T22_33_42_653542_07_00/data.csv\"}, {\"importName\": \"India_NFHS\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/india_nfhs/India_NFHS/2026_04_19T22_33_42_653542_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "USCensusPEP_Sex",
+  "importList": "[{\"importName\": \"USCensusPEP_Sex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/us_pep_sex/USCensusPEP_Sex/2026_04_20T03_31_39_461747_07_00/input0/genmcf/table_mcf_nodes_population_estimate_sex.mcf\"}, {\"importName\": \"USCensusPEP_Sex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/us_pep_sex/USCensusPEP_Sex/2026_04_20T03_31_39_461747_07_00/provenance/genmcf/USCensusPEP_Sex.mcf\"}, {\"importName\": \"USCensusPEP_Sex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_census/pep/us_pep_sex/USCensusPEP_Sex/2026_04_20T03_31_39_461747_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

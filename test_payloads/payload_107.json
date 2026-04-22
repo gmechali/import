@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "WorldBank_CommodityMarket",
+  "importList": "[{\"importName\": \"WorldBank_CommodityMarket\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/world_bank/commodity_market/WorldBank_CommodityMarket/2026_04_15T03_03_07_754856_07_00/data.csv\"}, {\"importName\": \"WorldBank_CommodityMarket\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/world_bank/commodity_market/WorldBank_CommodityMarket/2026_04_15T03_03_07_754856_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

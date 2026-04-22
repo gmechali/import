@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "USCensusPEP_AgeSexRaceHispanicOrigin",
+  "importList": "[{\"importName\": \"USCensusPEP_AgeSexRaceHispanicOrigin\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_census/pep/us_census_pep_asrh/USCensusPEP_AgeSexRaceHispanicOrigin/data.csv\"}, {\"importName\": \"USCensusPEP_AgeSexRaceHispanicOrigin\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_census/pep/us_census_pep_asrh/USCensusPEP_AgeSexRaceHispanicOrigin/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

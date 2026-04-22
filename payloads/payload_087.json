@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EPA_USAirPollutantEmissionTrends_NationalAndState",
+  "importList": "[{\"importName\": \"EPA_USAirPollutantEmissionTrends_NationalAndState\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/air_emissions_inventory/national_state/EPA_USAirPollutantEmissionTrends_NationalAndState/2026_04_15T03_03_51_884474_07_00/input0/genmcf/table_mcf_nodes_airpollution_emission_trends_tier1.mcf\"}, {\"importName\": \"EPA_USAirPollutantEmissionTrends_NationalAndState\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_epa/air_emissions_inventory/national_state/EPA_USAirPollutantEmissionTrends_NationalAndState/2026_04_15T03_03_51_884474_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "US_CCD_Enrollment",
+  "importList": "[{\"importName\": \"US_CCD_Enrollment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ccd/enrollment/US_CCD_Enrollment/2026_04_16T23_03_36_550747_07_00/input0/genmcf/table_mcf_nodes_CCD_Enrollment_output.mcf\"}, {\"importName\": \"US_CCD_Enrollment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ccd/enrollment/US_CCD_Enrollment/2026_04_16T23_03_36_550747_07_00/provenance/genmcf/US_CCD_Enrollment.mcf\"}, {\"importName\": \"US_CCD_Enrollment\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/ccd/enrollment/US_CCD_Enrollment/2026_04_16T23_03_36_550747_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

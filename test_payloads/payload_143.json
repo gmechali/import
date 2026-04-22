@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "NewYork_Education",
+  "importList": "[{\"importName\": \"NewYork_Education\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_education/new_york_education/NewYork_Education/2026_03_31T17_03_27_028394_07_00/data.csv\"}, {\"importName\": \"NewYork_Education\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/us_education/new_york_education/NewYork_Education/2026_03_31T17_03_27_028394_07_00/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

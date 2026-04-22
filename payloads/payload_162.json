@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "BEA_USStatesQuarterlyGDP",
+  "importList": "[{\"importName\": \"BEA_USStatesQuarterlyGDP\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bea/states_gdp/BEA_USStatesQuarterlyGDP/2026_01_30T02_33_34_554028_08_00/source_files/input_data/SQGDP11_AK_2005_2025.csv\"}, {\"importName\": \"BEA_USStatesQuarterlyGDP\", \"graphPath\": \"gs://datcom-prod-imports/scripts/us_bea/states_gdp/BEA_USStatesQuarterlyGDP/2026_01_30T02_33_34_554028_08_00/states_gdp.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

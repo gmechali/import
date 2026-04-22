@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "NOAA_GPCC_StandardardizedPrecipitationIndex",
+  "importList": "[{\"importName\": \"NOAA_GPCC_StandardardizedPrecipitationIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/noaa/gpcc_spi/NOAA_GPCC_StandardardizedPrecipitationIndex/data.csv\"}, {\"importName\": \"NOAA_GPCC_StandardardizedPrecipitationIndex\", \"graphPath\": \"gs://datcom-prod-imports/scripts/noaa/gpcc_spi/NOAA_GPCC_StandardardizedPrecipitationIndex/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

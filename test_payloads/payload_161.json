@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "IndiaNSS_HealthAilments",
+  "importList": "[{\"importName\": \"IndiaNSS_HealthAilments\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/india_ndap/india_nss_health_ailments/IndiaNSS_HealthAilments/data.csv\"}, {\"importName\": \"IndiaNSS_HealthAilments\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/india_ndap/india_nss_health_ailments/IndiaNSS_HealthAilments/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

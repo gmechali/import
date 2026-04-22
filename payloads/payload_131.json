@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "EuroStatHealth_PhysicalActivity",
+  "importList": "[{\"importName\": \"EuroStatHealth_PhysicalActivity\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_PhysicalActivity/2026_04_01T22_03_19_219817_07_00/eurostat_population_physicalactivity/genmcf/table_mcf_nodes_eurostat_population_physicalactivity.mcf\"}, {\"importName\": \"EuroStatHealth_PhysicalActivity\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_PhysicalActivity/2026_04_01T22_03_19_219817_07_00/provenance/genmcf/EuroStatHealth_PhysicalActivity.mcf\"}, {\"importName\": \"EuroStatHealth_PhysicalActivity\", \"graphPath\": \"gs://datcom-prod-imports/scripts/eurostat/health_determinants/EuroStatHealth_PhysicalActivity/2026_04_01T22_03_19_219817_07_00/provenance/genmcf/import_metadata_mcf.mcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}

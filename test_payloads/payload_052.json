@@ -1,0 +1,9 @@
+{
+  "templateLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/template/newtemplate.json",
+  "region": "us-central1",
+  "spannerInstanceId": "hpho-datacommons-2",
+  "spannerDatabaseId": "gabe-test-dcp-db",
+  "importName": "Rwanda_Census",
+  "importList": "[{\"importName\": \"Rwanda_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/opendataforafrica/rwanda_census/Rwanda_Census/data.csv\"}, {\"importName\": \"Rwanda_Census\", \"graphPath\": \"gs://datcom-prod-imports/statvar_imports/opendataforafrica/rwanda_census/Rwanda_Census/mapping.tmcf\"}]",
+  "tempLocation": "gs://gabe-test-ingestion-bucket-datcom-website-dev/temp"
+}
