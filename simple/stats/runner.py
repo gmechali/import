@@ -91,9 +91,21 @@ def _create_importer_for_file(
     nodes: Nodes,
     mode: Optional[RunMode] = None,
 ) -> Importer:
+  if input_file.path.endswith(".mcf"):
+    output_file = process_dir.open_file(input_file.path) if mode == RunMode.MAIN_DC else None
+    return McfImporter(
+        input_file=input_file,
+        output_file=output_file,
+        db=db,
+        reporter=reporter,
+        is_main_dc=(mode == RunMode.MAIN_DC),
+        nodes=nodes,
+    )
+
   import_type = config.import_type(input_file)
 
   match import_type:
+
     case ImportType.OBSERVATIONS:
       mappings = config.column_mappings(input_file)
       if not mappings and mode == RunMode.DCP_BRIDGE:
@@ -135,42 +147,57 @@ def _create_importer_for_file(
 
 def _run_single_csv_import_proc(args: tuple):
   file_rel_path, input_dir_path, output_dir_path, process_dir_path, import_names, config_json_str, jsonld_dir_name = args
-  input_dir = create_store(input_dir_path).as_dir()
-  output_store = create_store(output_dir_path).as_dir()
-  process_store = create_store(process_dir_path).as_dir()
-  input_store = input_dir.open_file(file_rel_path)
+  with create_store(input_dir_path) as input_store_obj, \
+       create_store(output_dir_path) as output_store_obj, \
+       create_store(process_dir_path) as process_store_obj:
+    input_dir = input_store_obj.as_dir()
+    output_store = output_store_obj.as_dir()
+    process_store = process_store_obj.as_dir()
+    input_store = input_dir.open_file(file_rel_path)
 
-  config = Config(json.loads(config_json_str))
-  nodes = Nodes(config=config)
-  db = JsonLdStreamDb(output_store,
-                      import_names,
-                      nodes,
-                      jsonld_dir_name=jsonld_dir_name)
+    config = Config(json.loads(config_json_str))
+    nodes = Nodes(config=config)
+    db = JsonLdStreamDb(output_store,
+                        import_names,
+                        nodes,
+                        jsonld_dir_name=jsonld_dir_name)
 
-  sanitized_path = input_store.full_path().replace("://", "_").replace("/", "_")
-  report_file = process_store.open_file(f"report_{sanitized_path}.json")
-  reporter = ImportReporter(report_file).get_file_reporter(input_store)
+    sanitized_path = input_store.full_path().replace("://", "_").replace("/", "_")
+    report_file = process_store.open_file(f"report_{sanitized_path}.json")
+    reporter = ImportReporter(report_file).get_file_reporter(input_store)
 
-  importer = _create_importer_for_file(config,
-                                       input_store,
-                                       process_store,
-                                       db,
-                                       reporter,
-                                       nodes,
-                                       mode=RunMode.DCP_BRIDGE)
-  importer.do_import()
-  db.commit_and_close()
+    importer = _create_importer_for_file(config,
+                                         input_store,
+                                         process_store,
+                                         db,
+                                         reporter,
+                                         nodes,
+                                         mode=RunMode.DCP_BRIDGE)
+    importer.do_import()
+    db.commit_and_close()
 
-  resolved_entities = {
-      e.entity_dcid: e.entity_type for e in nodes.entities.values()
-  }
-  return (
-      file_rel_path,
-      db.obs_collision_count,
-      dict(db.file_collision_counts),
-      dict(db.file_sample_collisions),
-      resolved_entities,
-  )
+    resolved_entities = {
+        e.entity_dcid: e.entity_type for e in nodes.entities.values()
+    }
+    event_types = dict(nodes.event_types)
+    entity_types = dict(nodes.entity_types)
+    variables = dict(nodes.variables)
+    sources = dict(nodes.sources)
+    provenances = dict(nodes.provenances)
+    groups = dict(nodes.groups)
+    return (
+        file_rel_path,
+        db.obs_collision_count,
+        dict(db.file_collision_counts),
+        dict(db.file_sample_collisions),
+        resolved_entities,
+        event_types,
+        entity_types,
+        variables,
+        sources,
+        provenances,
+        groups,
+    )
 
 
 class Runner:
@@ -928,26 +955,9 @@ class Runner:
     self._total_files_count = len(csv_files) + len(mcf_files)
     self._counter_lock = threading.Lock()
 
-    # 1. Process MCF files first (contains schema/provenances)
-    if mcf_files:
-      logging.info("Importing %d MCF files first...", len(mcf_files))
-      if self.mode == RunMode.DCP_BRIDGE:
-        num_mcf_threads = min(32, len(mcf_files))
-        with concurrent.futures.ThreadPoolExecutor(
-            max_workers=num_mcf_threads) as executor:
-          futures = [
-              executor.submit(self._run_single_mcf_import, file)
-              for file in mcf_files
-          ]
-          for future in concurrent.futures.as_completed(futures):
-            future.result()
-      else:
-        for file in mcf_files:
-          self._run_single_mcf_import(file)
-
-    # 2. Process CSV files next (contains data observations/entities)
-    if csv_files:
-      logging.info("Importing %d CSV files next...", len(csv_files))
+    all_files = list(mcf_files) + list(csv_files)
+    if all_files:
+      logging.info("Importing %d files (%d MCF, %d CSV)...", len(all_files), len(mcf_files), len(csv_files))
       if self.mode == RunMode.DCP_BRIDGE:
         import unittest.mock as mock_module
 
@@ -957,17 +967,17 @@ class Runner:
             mock_module.MagicMock)
 
         if is_mocked:
-          num_csv_threads = min(32, len(csv_files))
+          num_threads = min(32, len(all_files))
           with concurrent.futures.ThreadPoolExecutor(
-              max_workers=num_csv_threads) as executor:
+              max_workers=num_threads) as executor:
             futures = [
                 executor.submit(self._run_single_import, file)
-                for file in csv_files
+                for file in all_files
             ]
             for future in concurrent.futures.as_completed(futures):
               future.result()
         else:
-          num_csv_processes = min(32, len(csv_files))
+          num_processes = min(32, len(all_files))
           config_json_str = json.dumps(self.config.data)
           input_dir_path = self.input_stores[0].full_path()
           jsonld_dir_name = self.db.jsonld_dir.name()
@@ -979,19 +989,32 @@ class Runner:
               self.import_names,
               config_json_str,
               jsonld_dir_name,
-          ) for file in csv_files]
+          ) for file in all_files]
           with concurrent.futures.ProcessPoolExecutor(
-              max_workers=num_csv_processes) as executor:
+              max_workers=num_processes) as executor:
             futures = [
                 executor.submit(_run_single_csv_import_proc, arg)
                 for arg in proc_args
             ]
             for future in concurrent.futures.as_completed(futures):
-              res_path, collisions, file_counts, file_samples, resolved_entities = future.result(
-              )
-              self._log_file_progress("Imported CSV file", res_path)
+              (res_path, collisions, file_counts, file_samples,
+               resolved_entities, event_types, entity_types,
+               variables, sources, provenances, groups) = future.result()
+              self._log_file_progress("Imported file", res_path)
               if resolved_entities:
                 self.nodes.entities_with_types(resolved_entities)
+              if event_types:
+                self.nodes.event_types.update(event_types)
+              if entity_types:
+                self.nodes.entity_types.update(entity_types)
+              if variables:
+                self.nodes.variables.update(variables)
+              if sources:
+                self.nodes.sources.update(sources)
+              if provenances:
+                self.nodes.provenances.update(provenances)
+              if groups:
+                self.nodes.groups.update(groups)
               if collisions and hasattr(self.db, "obs_collision_count"):
                 self.db.obs_collision_count += collisions
                 for f_name, count in file_counts.items():
@@ -999,6 +1022,8 @@ class Runner:
                   self.db.file_sample_collisions[f_name].extend(
                       file_samples.get(f_name, []))
       else:
+        for file in mcf_files:
+          self._run_single_mcf_import(file)
         for file in csv_files:
           self._run_single_import(file)
 

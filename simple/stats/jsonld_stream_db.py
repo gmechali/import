@@ -196,11 +196,8 @@ def _write_observation_shard(chunk_or_args,
   compacted_jsonld = {"@context": ns_map, "@graph": graph_list}
 
   if file_name:
-    file_stem = os.path.basename(file_name).rsplit(".", 1)[0]
-    if file_stem and file_stem != "data":
-      shard_name = f"observation-{file_stem}-{shard_index:05d}.jsonld"
-    else:
-      shard_name = f"observation-{shard_index:05d}.jsonld"
+    sanitized_stem = file_name.replace("/", "_").rsplit(".", 1)[0]
+    shard_name = f"observation-{sanitized_stem}-{shard_index:05d}.jsonld"
   else:
     shard_name = f"observation-{shard_index:05d}.jsonld"
   with create_store(jsonld_dir_path) as store:
