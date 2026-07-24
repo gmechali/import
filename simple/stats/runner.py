@@ -200,6 +200,7 @@ def _run_single_csv_import_proc(args: tuple):
     sources = dict(nodes.sources)
     provenances = dict(nodes.provenances)
     groups = dict(nodes.groups)
+    properties = dict(nodes.properties)
     return (
         file_rel_path,
         db.obs_collision_count,
@@ -212,6 +213,7 @@ def _run_single_csv_import_proc(args: tuple):
         sources,
         provenances,
         groups,
+        properties,
     )
 
 
@@ -995,11 +997,10 @@ class Runner:
         else:
           num_processes = min(32, len(all_files))
           config_json_str = json.dumps(self.config.data)
-          input_dir_path = self.input_stores[0].full_path()
           jsonld_dir_name = self.db.jsonld_dir.name()
           proc_args = [(
               file.path,
-              input_dir_path,
+              file._store.root_path,
               self.output_dir.full_path(),
               self.process_dir.full_path(),
               self.import_names,
@@ -1015,7 +1016,7 @@ class Runner:
             for future in concurrent.futures.as_completed(futures):
               (res_path, collisions, file_counts, file_samples,
                resolved_entities, event_types, entity_types, variables, sources,
-               provenances, groups) = future.result()
+               provenances, groups, properties) = future.result()
               self._log_file_progress("Imported file", res_path)
               if resolved_entities:
                 self.nodes.entities_with_types(resolved_entities)
@@ -1031,6 +1032,10 @@ class Runner:
                 self.nodes.provenances.update(provenances)
               if groups:
                 self.nodes.groups.update(groups)
+                for svg in groups.values():
+                  self.nodes.ids_to_groups[svg.id] = svg
+              if properties:
+                self.nodes.properties.update(properties)
               if collisions and hasattr(self.db, "obs_collision_count"):
                 self.db.obs_collision_count += collisions
                 for f_name, count in file_counts.items():
