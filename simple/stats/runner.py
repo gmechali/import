@@ -92,7 +92,8 @@ def _create_importer_for_file(
     mode: Optional[RunMode] = None,
 ) -> Importer:
   if input_file.path.endswith(".mcf"):
-    output_file = process_dir.open_file(input_file.path) if mode == RunMode.MAIN_DC else None
+    output_file = process_dir.open_file(
+        input_file.path) if mode == RunMode.MAIN_DC else None
     return McfImporter(
         input_file=input_file,
         output_file=output_file,
@@ -107,14 +108,27 @@ def _create_importer_for_file(
   match import_type:
 
     case ImportType.OBSERVATIONS:
-      mappings = config.column_mappings(input_file)
-      if not mappings and mode == RunMode.DCP_BRIDGE:
-        raise ValueError(
-            f"Missing column mappings for file '{input_file.path}' in config.json"
+      input_file_format = config.format(input_file)
+      if input_file_format == InputFileFormat.VARIABLE_PER_ROW:
+        mappings = config.column_mappings(input_file)
+        if not mappings and mode == RunMode.DCP_BRIDGE:
+          raise ValueError(
+              f"Missing column mappings for file '{input_file.path}' in config.json"
+          )
+        return VariablePerRowImporter(
+            input_file=input_file,
+            db=db,
+            reporter=reporter,
+            nodes=nodes,
         )
-      return VariablePerRowImporter(
+      sanitized_path = input_file.full_path().replace("://", "_").replace("/", "_")
+      debug_resolve_file = process_dir.open_file(
+          f"{constants.DEBUG_RESOLVE_FILE_NAME_PREFIX}_{sanitized_path}"
+      )
+      return ObservationsImporter(
           input_file=input_file,
           db=db,
+          debug_resolve_file=debug_resolve_file,
           reporter=reporter,
           nodes=nodes,
       )
@@ -162,7 +176,8 @@ def _run_single_csv_import_proc(args: tuple):
                         nodes,
                         jsonld_dir_name=jsonld_dir_name)
 
-    sanitized_path = input_store.full_path().replace("://", "_").replace("/", "_")
+    sanitized_path = input_store.full_path().replace("://",
+                                                     "_").replace("/", "_")
     report_file = process_store.open_file(f"report_{sanitized_path}.json")
     reporter = ImportReporter(report_file).get_file_reporter(input_store)
 
@@ -957,7 +972,8 @@ class Runner:
 
     all_files = list(mcf_files) + list(csv_files)
     if all_files:
-      logging.info("Importing %d files (%d MCF, %d CSV)...", len(all_files), len(mcf_files), len(csv_files))
+      logging.info("Importing %d files (%d MCF, %d CSV)...", len(all_files),
+                   len(mcf_files), len(csv_files))
       if self.mode == RunMode.DCP_BRIDGE:
         import unittest.mock as mock_module
 
@@ -998,8 +1014,8 @@ class Runner:
             ]
             for future in concurrent.futures.as_completed(futures):
               (res_path, collisions, file_counts, file_samples,
-               resolved_entities, event_types, entity_types,
-               variables, sources, provenances, groups) = future.result()
+               resolved_entities, event_types, entity_types, variables, sources,
+               provenances, groups) = future.result()
               self._log_file_progress("Imported file", res_path)
               if resolved_entities:
                 self.nodes.entities_with_types(resolved_entities)
