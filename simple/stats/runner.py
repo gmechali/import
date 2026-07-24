@@ -1028,9 +1028,17 @@ class Runner:
               if variables:
                 self.nodes.variables.update(variables)
               if sources:
-                self.nodes.sources.update(sources)
+                for src in sources.values():
+                  self.nodes.register_source(
+                      id=src.id, name=src.name, url=src.url)
               if provenances:
-                self.nodes.provenances.update(provenances)
+                for prov in provenances.values():
+                  self.nodes.register_provenance(
+                      id=prov.id,
+                      name=prov.name,
+                      url=prov.url,
+                      source_id=prov.source_id,
+                      properties=prov.properties)
               if groups:
                 self.nodes.groups.update(groups)
                 for svg in groups.values():
