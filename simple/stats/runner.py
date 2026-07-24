@@ -121,10 +121,10 @@ def _create_importer_for_file(
             reporter=reporter,
             nodes=nodes,
         )
-      sanitized_path = input_file.full_path().replace("://", "_").replace("/", "_")
+      sanitized_path = input_file.full_path().replace("://",
+                                                      "_").replace("/", "_")
       debug_resolve_file = process_dir.open_file(
-          f"{constants.DEBUG_RESOLVE_FILE_NAME_PREFIX}_{sanitized_path}"
-      )
+          f"{constants.DEBUG_RESOLVE_FILE_NAME_PREFIX}_{sanitized_path}")
       return ObservationsImporter(
           input_file=input_file,
           db=db,
