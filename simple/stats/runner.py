@@ -21,6 +21,7 @@ import logging
 import os
 import threading
 from typing import Optional
+import unittest.mock as mock_module
 
 import fs.path as fspath
 from stats import constants
@@ -64,6 +65,7 @@ import stats.schema_constants as sc
 from stats.svg_cache import generate_svg_cache
 from stats.validation import MetadataValidator
 from stats.variable_per_row_importer import VariablePerRowImporter
+from util import dc_client
 from util.file_match import match
 from util.filesystem import create_store
 from util.filesystem import Dir
@@ -977,9 +979,7 @@ class Runner:
       logging.info("Importing %d files (%d MCF, %d CSV)...", len(all_files),
                    len(mcf_files), len(csv_files))
       if self.mode == RunMode.DCP_BRIDGE:
-        import unittest.mock as mock_module
-
-        from util import dc_client
+        # TODO(gmechali): Remove thread fallback mock check once unit tests mock dc_client inside process pool.
         is_mocked = isinstance(
             getattr(dc_client, 'get_property_of_entities', None),
             mock_module.MagicMock)
