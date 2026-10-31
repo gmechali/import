@@ -15,6 +15,7 @@
 
 from dataclasses import dataclass
 from dataclasses import field
+from dataclasses import replace
 from enum import StrEnum
 from typing import Self
 from urllib.parse import urlparse
@@ -22,7 +23,6 @@ from urllib.parse import urlparse
 import pandas as pd
 from stats import constants
 from stats import schema_constants as sc
-from stats.util import is_uri_or_namespace
 
 _PREDICATE_TYPE_OF = "typeOf"
 _PREDICATE_NAME = "name"
@@ -73,7 +73,8 @@ class Provenance:
   source_id: str
   name: str
   url: str = ""
-  properties: dict[str, str] = field(default_factory=dict)
+  # Triples of predicates without a field above, as parsed from MCF.
+  custom_triples: list[Triple] = field(default_factory=list)
   provenance_id: str = ""
 
   def triples(self) -> list[Triple]:
@@ -85,18 +86,7 @@ class Provenance:
     ])
     if self.url:
       triples.append(Triple(self.id, _PREDICATE_URL, object_value=self.url))
-
-    # Dynamically serialize any custom properties
-    for pred, val in self.properties.items():
-      # Skip hardcoded fields to prevent duplication
-      if pred in ["typeOf", "name", "sourceLink", "source", "url"]:
-        continue
-      if is_uri_or_namespace(val):
-        triples.append(Triple(self.id, pred, object_id=val))
-      else:
-        triples.append(Triple(self.id, pred, object_value=val))
-
-    return triples
+    return triples + _with_subject(self.id, self.custom_triples)
 
 
 @dataclass
@@ -105,7 +95,8 @@ class Source:
   name: str
   url: str = ""
   domain: str = field(init=False)
-  properties: dict[str, str] = field(default_factory=dict)
+  # Triples of predicates without a field above, as parsed from MCF.
+  custom_triples: list[Triple] = field(default_factory=list)
   provenance_id: str = ""
 
   def __post_init__(self):
@@ -122,18 +113,12 @@ class Source:
     if self.domain:
       triples.append(
           Triple(self.id, _PREDICATE_DOMAIN, object_value=self.domain))
+    return triples + _with_subject(self.id, self.custom_triples)
 
-    # Dynamically serialize any custom properties
-    for pred, val in self.properties.items():
-      # Skip hardcoded fields to prevent duplication
-      if pred in ["typeOf", "name", "url", "domain"]:
-        continue
-      if is_uri_or_namespace(val):
-        triples.append(Triple(self.id, pred, object_id=val))
-      else:
-        triples.append(Triple(self.id, pred, object_value=val))
 
-    return triples
+def _with_subject(subject_id: str, triples: list[Triple]) -> list[Triple]:
+  """Returns copies of `triples` about `subject_id`."""
+  return [replace(t, subject_id=subject_id) for t in triples]
 
 
 @dataclass

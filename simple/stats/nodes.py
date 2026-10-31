@@ -86,7 +86,7 @@ class Nodes:
       name: str = "",
       url: str = "",
       source_id: str = "",
-      properties: dict[str, str] | None = None) -> Provenance:
+      custom_triples: list[Triple] | None = None) -> Provenance:
     self.has_custom_mcf_nodes = True
     clean_id = _clean_metadata_id(id)
     clean_source_id = _clean_metadata_id(source_id) if source_id else ""
@@ -102,8 +102,7 @@ class Nodes:
     prov.url = prov.url or url
     prov.source_id = prov.source_id or clean_source_id
     prov.provenance_id = prov.provenance_id or clean_id
-    if properties:
-      prov.properties.update(properties)
+    _extend_unique(prov.custom_triples, custom_triples)
     return prov
 
   @thread_safe
@@ -111,7 +110,7 @@ class Nodes:
                       id: str,
                       name: str = "",
                       url: str = "",
-                      properties: dict[str, str] | None = None,
+                      custom_triples: list[Triple] | None = None,
                       provenance_id: str = "") -> Source:
     self.has_custom_mcf_nodes = True
     clean_id = _clean_metadata_id(id)
@@ -127,8 +126,7 @@ class Nodes:
     if url and not src.url:
       src.url = url
       src.domain = src.domain or Source(id="", name="", url=url).domain
-    if properties:
-      src.properties.update(properties)
+    _extend_unique(src.custom_triples, custom_triples)
     src.provenance_id = src.provenance_id or provenance_id
     return src
 
@@ -147,14 +145,14 @@ class Nodes:
       self.register_source(id=src.id,
                            name=src.name,
                            url=src.url,
-                           properties=src.properties,
+                           custom_triples=src.custom_triples,
                            provenance_id=src.provenance_id)
     for prov in provenances.values():
       self.register_provenance(id=prov.id,
                                name=prov.name,
                                url=prov.url,
                                source_id=prov.source_id,
-                               properties=prov.properties)
+                               custom_triples=prov.custom_triples)
 
   @thread_safe
   def merge_properties(self, properties: dict[str, Property]) -> None:
@@ -274,6 +272,14 @@ def _provenance_dirs_for_node(node: Property) -> set[str]:
   if not node.provenance_ids:
     return {"_global"}
   return {strip_namespace(p) for p in node.provenance_ids}
+
+
+def _extend_unique(triples: list[Triple],
+                   new_triples: list[Triple] | None) -> None:
+  """Appends the `new_triples` that `triples` does not hold yet."""
+  for triple in new_triples or []:
+    if triple not in triples:
+      triples.append(triple)
 
 
 def _dedupe_triples(triples: list[Triple]) -> list[Triple]:

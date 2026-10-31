@@ -19,6 +19,8 @@ a source. Most tests here replace the shared provenance.mcf (see
 _provenance_mcf) to vary that.
 """
 
+import json
+
 from testsuite.lib import builders as b
 from testsuite.lib.builders import Case
 from testsuite.lib.builders import cases
@@ -53,9 +55,8 @@ def _provenance_mcf(with_source: bool = True,
 
 # --- Registered nodes ---------------------------------------------------------
 #
-# Source and Provenance nodes are written twice into the same folder: once
-# from the MCF triples and once from the node registry, which adds `domain`
-# and, when missing, a `name` equal to the id.
+# Source and Provenance nodes are written once, from the node registry, which
+# adds `domain` and, when missing, a `name` equal to the id.
 
 
 def test_source_url_adds_a_domain():
@@ -64,12 +65,13 @@ def test_source_url_adds_a_domain():
                  typeOf="dcs:Source",
                  name='"Other Source"',
                  url='"https://data.example.com/path"'))
-  from_mcf = b.record("OtherSource",
-                      "Source",
-                      name="Other Source",
-                      url="https://data.example.com/path")
-  from_registry = {**from_mcf, "dcid:domain": "data.example.com"}
-  b.assert_records(result.added, [from_mcf, from_registry])
+  b.assert_records(result.added, [
+      b.record("OtherSource",
+               "Source",
+               name="Other Source",
+               url="https://data.example.com/path",
+               domain="data.example.com")
+  ])
 
 
 def test_provenance_without_a_name_gets_its_id_as_name():
@@ -80,21 +82,123 @@ def test_provenance_without_a_name_gets_its_id_as_name():
       b.mcf_node("dcid:OtherProvenance",
                  typeOf="dcs:Provenance",
                  source="dcid:OtherSource2"))
-  source = b.record("OtherSource2", "Source", url="https://other.example.com")
-  provenance = b.record("OtherProvenance",
-                        "Provenance",
-                        source=b.ref("OtherSource2"))
   b.assert_records(result.added, [
-      source,
-      {
-          **source, "dcid:name": "OtherSource2",
-          "dcid:domain": "other.example.com"
-      },
-      provenance,
-      {
-          **provenance, "dcid:name": "OtherProvenance"
-      },
+      b.record("OtherSource2",
+               "Source",
+               name="OtherSource2",
+               url="https://other.example.com",
+               domain="other.example.com"),
+      b.record("OtherProvenance",
+               "Provenance",
+               name="OtherProvenance",
+               source=b.ref("OtherSource2")),
   ])
+
+
+# Predicates without a dedicated field are written as they are in MCF: every
+# value, with its MCF type.
+_METADATA_WITH_CUSTOM_PROPERTIES = (
+    b.mcf_node("dcid:OtherSource3",
+               typeOf="dcs:Source",
+               name='"Other Source"',
+               description='"A source"',
+               established="1990"),
+    b.mcf_node("dcid:OtherProvenance3",
+               typeOf="dcs:Provenance",
+               name='"Other Provenance"',
+               source="dcid:OtherSource3",
+               sourceLink='"https://other.example.com/link"',
+               isPartOf="dcid:CollectionA, dcid:CollectionB",
+               license="undata:Other"),
+)
+_SOURCE_WITH_CUSTOM_PROPERTIES = b.record("OtherSource3",
+                                          "Source",
+                                          name="Other Source",
+                                          description="A source",
+                                          established=1990)
+_PROVENANCE_WITH_CUSTOM_PROPERTIES = b.record(
+    "OtherProvenance3",
+    "Provenance",
+    name="Other Provenance",
+    source=b.ref("OtherSource3"),
+    sourceLink="https://other.example.com/link",
+    isPartOf=[b.ref("CollectionA"), b.ref("CollectionB")],
+    license="undata:Other")
+
+
+def test_custom_properties_of_metadata_nodes_are_kept():
+  result = b.run_mcf(*_METADATA_WITH_CUSTOM_PROPERTIES)
+  b.assert_records(
+      result.added,
+      [_SOURCE_WITH_CUSTOM_PROPERTIES, _PROVENANCE_WITH_CUSTOM_PROPERTIES])
+
+
+def test_custom_properties_of_metadata_nodes_survive_the_production_path():
+  result = b.run_mcf(*_METADATA_WITH_CUSTOM_PROPERTIES, mode="production")
+  b.assert_records(
+      result.added,
+      [_SOURCE_WITH_CUSTOM_PROPERTIES, _PROVENANCE_WITH_CUSTOM_PROPERTIES])
+
+
+def test_sources_are_written_to_the_folder_of_their_mcf_file():
+  result = b.run_dir(_TWO_IMPORTS,
+                     runner_kwargs={"import_names": ["ALL_IMPORTS"]})
+  assert result.error is None, result.error
+  assert _folders_of(result, "Source") == {
+      "dcid:AlphaSource": ["AlphaProvenance"],
+      "dcid:BetaSource": ["BetaProvenance"],
+  }
+
+
+def test_global_nodes_go_to_the_alphabetically_first_import_folder():
+  result = b.run_dir(_TWO_IMPORTS,
+                     runner_kwargs={"import_names": ["ALL_IMPORTS"]})
+  assert result.error is None, result.error
+  assert _folders_of(result, "StatVarGroup") == {
+      "dcid:dc/g/Root": ["AlphaProvenance"]
+  }
+
+
+def _import_dir(name: str) -> dict[str, str]:
+  """An import subdirectory whose provenance.mcf defines its own source."""
+  config = {
+      "inputFiles": [
+          {
+              "pattern": "*.mcf",
+              "provenance": f"dcid:{name}Provenance"
+          },
+          {
+              "pattern": "*.csv",
+              "provenance": f"dcid:{name}Provenance",
+              "columnMappings": b.OBS_MAPPINGS
+          },
+      ]
+  }
+  provenance_mcf = b.mcf(
+      b.mcf_node(f"dcid:{name}Source",
+                 typeOf="dcs:Source",
+                 url=f'"https://{name.lower()}.example.org"'),
+      b.mcf_node(f"dcid:{name}Provenance",
+                 typeOf="dcs:Provenance",
+                 source=f"dcid:{name}Source"))
+  return {
+      f"{name}/config.json": json.dumps(config),
+      f"{name}/provenance.mcf": provenance_mcf,
+      f"{name}/data.csv": b.csv_file(b.obs_row()),
+  }
+
+
+# Beta comes first so that processing order would favour it.
+_TWO_IMPORTS = {**_import_dir("Beta"), **_import_dir("Alpha")}
+
+
+def _folders_of(result: b.Result, type_name: str) -> dict[str, list[str]]:
+  """{@id: sorted import folders} of every record of one type."""
+  folders: dict[str, list[str]] = {}
+  for folder, _, rec in result.output["records"]:
+    if rec.get("@type") == f"dcid:{type_name}":
+      folders.setdefault(rec["@id"], []).append(folder)
+  return {rid: sorted(f) for rid, f in folders.items()}
 
 
 # --- Provenance URL on observations -------------------------------------------

@@ -133,8 +133,8 @@ def test_type(given, expect):
 # One case per node shape: given is the node's MCF properties (typeOf included),
 # expect is the record's types and properties. Every property must pass
 # through, and nothing else may be added. To pin a new shape, add a case.
-# Source and Provenance nodes are special (they are also registered and written
-# a second time); they are covered in test_provenance.py.
+# Source and Provenance nodes are special (they are registered, and written by
+# the node registry); they are covered in test_provenance.py.
 
 NODES = [
     Case("statistical variable",
@@ -254,6 +254,18 @@ def test_one_node_in_two_blocks_is_merged():
                      b.mcf_node("dcid:T", typeOf=None, description='"Second"'))
   b.assert_records(result.added,
                    [b.record("T", "Thing", name="First", description="Second")])
+
+
+def test_a_node_is_never_split_across_shards():
+  """With shards of about one triple (tiny_chunks), nodes still stay whole."""
+  result = b.run_mcf(b.mcf_node("dcid:T", name='"First"'),
+                     b.mcf_node("dcid:Other", name='"Other"'),
+                     b.mcf_node("dcid:T", typeOf=None, description='"Second"'),
+                     mode="tiny_chunks")
+  b.assert_records(result.added, [
+      b.record("T", "Thing", name="First", description="Second"),
+      b.record("Other", "Thing", name="Other"),
+  ])
 
 
 def test_comments_and_blank_lines_are_ignored():

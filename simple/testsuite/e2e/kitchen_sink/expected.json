@@ -17,12 +17,6 @@
         "dcid:domain": "kitchen.example.org",
         "dcid:name": "Kitchen Source",
         "dcid:url": "https://kitchen.example.org"
-      },
-      {
-        "@id": "dcid:KitchenSource",
-        "@type": "dcid:Source",
-        "dcid:name": "Kitchen Source",
-        "dcid:url": "https://kitchen.example.org"
       }
     ],
     "folders": {
@@ -51,26 +45,15 @@
               "@id": "dcid:measuredValue"
             }
           },
-          "dcid:KitchenProvenance": [
-            {
-              "@id": "dcid:KitchenProvenance",
-              "@type": "dcid:Provenance",
-              "dcid:name": "Kitchen Provenance",
-              "dcid:source": {
-                "@id": "dcid:KitchenSource"
-              },
-              "dcid:url": "https://kitchen.example.org/dataset"
+          "dcid:KitchenProvenance": {
+            "@id": "dcid:KitchenProvenance",
+            "@type": "dcid:Provenance",
+            "dcid:name": "Kitchen Provenance",
+            "dcid:source": {
+              "@id": "dcid:KitchenSource"
             },
-            {
-              "@id": "dcid:KitchenProvenance",
-              "@type": "dcid:Provenance",
-              "dcid:name": "Kitchen Provenance",
-              "dcid:source": {
-                "@id": "dcid:KitchenSource"
-              },
-              "dcid:url": "https://kitchen.example.org/dataset"
-            }
-          ],
+            "dcid:url": "https://kitchen.example.org/dataset"
+          },
           "dcid:Median_Age_Person": {
             "@id": "dcid:Median_Age_Person",
             "@type": "dcid:StatisticalVariable",

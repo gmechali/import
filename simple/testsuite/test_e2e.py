@@ -61,19 +61,11 @@ ASPECTS = ("records", "report", "handshake", "error")
 # must then be removed. Non-strict ones are for nondeterministic bugs.
 # Keys: (dataset, mode, aspect); "*" matches any value.
 _REPORT = "with use_multiprocessing, report.json leaves every file NOT_STARTED"
-_SPLIT_NODE = ("node shards are cut without keeping a subject's triples"
-               " together, so a node is split across shards")
-_GCS_CONFIG = (
-    "--config_file on GCS fails with 'Not a file': create_store() opens"
-    " the path as a directory first, which always works on GCS")
 
 KNOWN_ISSUES: dict[tuple[str, str, str], tuple[str, bool]] = {
-    ("multi_import", "tiny_chunks", "records"): (_SPLIT_NODE, True),
     ("kitchen_sink", "production", "report"): (_REPORT, True),
+    ("config_file_driven", "production", "report"): (_REPORT, True),
     ("multi_import", "production", "report"): (_REPORT, True),
-    ("kitchen_sink", "tiny_chunks", "records"): (_SPLIT_NODE, True),
-    ("config_file_driven", "tiny_chunks", "records"): (_SPLIT_NODE, True),
-    ("config_file_driven", "production", "*"): (_GCS_CONFIG, True),
 }
 
 

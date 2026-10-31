@@ -387,7 +387,7 @@ class Runner:
       raw_config = config_file_dir.open_file(config_file_path,
                                              create_if_missing=False).read()
     else:
-      with create_store(config_file_path) as config_store:
+      with create_store(config_file_path, treat_as_file=True) as config_store:
         raw_config = config_store.as_file().read()
 
     config_data = json.loads(raw_config) if raw_config else {}

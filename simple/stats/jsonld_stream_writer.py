@@ -23,7 +23,7 @@ import logging
 import os
 import tempfile
 import threading
-from typing import Callable, Optional
+from typing import Callable, Iterator, Optional
 import uuid
 
 from google.api_core.exceptions import GoogleAPICallError
@@ -209,6 +209,35 @@ def _append_unique_value(subject_dict: dict, key: str, val: object) -> None:
     subject_dict[key] = [existing, val]
 
 
+def _node_id(subject_id: str) -> str:
+  """Returns the JSON-LD `@id` that the triples of `subject_id` are written under."""
+  sub_id = _rewrite_custom_ns_to_dcid(subject_id)
+  if is_uri_or_namespace(sub_id):
+    return sub_id
+  return f"dcid:{sub_id.lstrip('/')}"
+
+
+def _chunk_by_node(triples: list[Triple],
+                   chunk_size: int) -> Iterator[list[Triple]]:
+  """Splits `triples` into chunks of about `chunk_size` whole nodes.
+
+  Triples are grouped by node `@id` first, so a node's triples always land in
+  a single chunk; a chunk exceeds `chunk_size` only to finish its last node.
+  """
+  ordered = sorted(((_node_id(t.subject_id), t) for t in triples),
+                   key=lambda keyed: keyed[0])
+  chunk: list[Triple] = []
+  chunk_node_id = None
+  for node_id, triple in ordered:
+    if node_id != chunk_node_id and len(chunk) >= chunk_size:
+      yield chunk
+      chunk = []
+    chunk.append(triple)
+    chunk_node_id = node_id
+  if chunk:
+    yield chunk
+
+
 # TODO(gmechali): When parallelizing node shard exports (MCF and Entities CSV files),
 # include the sanitized file_name in the shard name (e.g., node-{sanitized_stem}-{shard_index:05d}.jsonld)
 # to prevent shard filename collisions across parallel workers, similar to observation shards.
@@ -217,13 +246,9 @@ def _write_node_shard(args):
   subjects = {}
 
   for row in chunk:
-    sub_id = _rewrite_custom_ns_to_dcid(row.subject_id)
+    sub_id = _node_id(row.subject_id)
     if sub_id not in subjects:
-      subjects[sub_id] = {
-          "@id":
-              sub_id
-              if is_uri_or_namespace(sub_id) else f"dcid:{sub_id.lstrip('/')}"
-      }
+      subjects[sub_id] = {"@id": sub_id}
 
     pred = _rewrite_custom_ns_to_dcid(row.predicate)
     pred_key = "@type" if pred == "typeOf" else (
@@ -378,24 +403,14 @@ class JsonLdStreamWriter(GraphWriter):
         self._node_streaming_started.add(import_name)
 
   def _write_triples_to_disk(self, triples: list[Triple], import_name: str):
+    """Writes `triples` as node shards in `import_name`'s folder.
+
+    Shards hold whole nodes: a node's triples are never split across shards.
+    """
     dir_name = import_name.replace("/", "_")
     import_temp_dir = os.path.join(self.temp_local_dir, dir_name)
     with self.lock:
-      i = 0
-      n = len(triples)
-      while i < n:
-        chunk = []
-        end = min(i + _CHUNK_SIZE, n)
-        chunk.extend(triples[i:end])
-        i = end
-
-        # Expand boundary to keep subject together
-        if i < n:
-          boundary_subject = chunk[-1].subject_id
-          while i < n and triples[i].subject_id == boundary_subject:
-            chunk.append(triples[i])
-            i += 1
-
+      for chunk in _chunk_by_node(triples, _CHUNK_SIZE):
         _write_node_shard(
             (chunk, self.node_shard_index, import_temp_dir, self.ns_map))
         self.node_shard_index += 1
@@ -418,22 +433,23 @@ class JsonLdStreamWriter(GraphWriter):
     self._init_import_export_dir(provenance_dir)
     self._write_triples_to_disk(triples, provenance_dir)
 
+  def _global_triples_import(self) -> str:
+    """Returns the import whose folder global triples are written to.
+
+    The run's own import name if it has a folder (or no import has one), else
+    the alphabetically first processed import, so that the choice does not
+    depend on processing order.
+    """
+    if not self._processed_imports or self.import_name in self._processed_imports:
+      return self.import_name
+    return min(self._processed_imports)
+
   def commit_and_close(self):
     global_triples = self._triples.pop("_global", [])
-    if not self._processed_imports:
-      self._processed_imports.add(self.import_name)
-
     if global_triples:
-      target_import = self.import_name if self.import_name in self._processed_imports else next(
-          iter(self._processed_imports))
-      dir_name = target_import.replace("/", "_")
-      import_temp_dir = os.path.join(self.temp_local_dir, dir_name)
-      os.makedirs(import_temp_dir, exist_ok=True)
-      for i in range(0, len(global_triples), _CHUNK_SIZE):
-        chunk = global_triples[i:i + _CHUNK_SIZE]
-        _write_node_shard(
-            (chunk, self.node_shard_index, import_temp_dir, self.ns_map))
-        self.node_shard_index += 1
+      target_import = self._global_triples_import()
+      self._init_import_export_dir(target_import)
+      self._write_triples_to_disk(global_triples, target_import)
 
     has_local_files = any(os.scandir(self.temp_local_dir)) if os.path.exists(
         self.temp_local_dir) else False
