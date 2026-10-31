@@ -97,7 +97,6 @@ class ImportProcResult:
   obs_collision_count: int
   file_collision_counts: dict
   file_sample_collisions: dict
-  entity_types: dict
   sources: dict
   provenances: dict
   properties: dict
@@ -143,7 +142,6 @@ def _run_single_csv_import_proc(
         obs_collision_count=graph_writer.obs_collision_count,
         file_collision_counts=dict(graph_writer.file_collision_counts),
         file_sample_collisions=dict(graph_writer.file_sample_collisions),
-        entity_types=dict(nodes.entity_types),
         sources=dict(nodes.sources),
         provenances=dict(nodes.provenances),
         properties=dict(nodes.properties),
@@ -637,7 +635,6 @@ class Runner:
   def _merge_worker_result(self, res: ImportProcResult) -> None:
     """Merges a worker process's `ImportProcResult` into the coordinator."""
     self._log_file_progress("Imported file", res.file_rel_path)
-    self.nodes.entity_types.update(res.entity_types)
     for src in res.sources.values():
       self.nodes.register_source(id=src.id,
                                  name=src.name,
