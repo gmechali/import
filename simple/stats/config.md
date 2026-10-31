@@ -96,7 +96,17 @@ custom dimension properties) applied as defaults to every row in the file.
 #### `rowEntityType`
 
 Required when `importType` is `"entities"`. The type (class DCID) assigned to
-each row entity in the CSV.
+each row entity in the CSV. The importer only writes a `typeOf` reference to
+this type on each row; the `Class` node itself is not created. If the type is
+not already in the Data Commons schema, define it (with its `name` and
+`description`) in an MCF file matched by an `inputFiles` entry, for example:
+
+```
+Node: dcid:Author
+typeOf: dcs:Class
+name: "Author"
+description: "A person who wrote an article"
+```
 
 #### `idColumn`
 
@@ -109,10 +119,11 @@ Optional, for `"entities"` imports. The list of columns whose cell values are
 entity DCID references (or comma-separated lists of entity DCIDs) rather than
 literal values.
 
-## `entities`
+## `entities` _(removed)_
 
-Optional. Provides display `name` and `description` metadata for `Class` nodes
-created by `"entities"` imports, keyed by `rowEntityType`.
+No longer supported. A config.json with a top-level `entities` block is
+rejected. Define `Class` nodes for entity types in an MCF file instead (see
+[`rowEntityType`](#rowentitytype)).
 
 ## `includeInputSubdirs`
 
