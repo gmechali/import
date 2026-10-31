@@ -133,6 +133,38 @@ class Nodes:
     return src
 
   @thread_safe
+  def merge_metadata(self, provenances: dict[str, Provenance],
+                     sources: dict[str, Source]) -> None:
+    """Registers Provenance and Source nodes held by another `Nodes`.
+
+    Worker processes each build their own `Nodes`, so this is how metadata
+    crosses process boundaries in both directions: worker results are merged
+    into the coordinator, and the coordinator's MCF-defined nodes seed CSV
+    workers. Registration only fills in missing fields, so merging the same
+    node more than once (e.g. under both its id and name keys) is harmless.
+    """
+    for src in sources.values():
+      self.register_source(id=src.id,
+                           name=src.name,
+                           url=src.url,
+                           properties=src.properties,
+                           provenance_id=src.provenance_id)
+    for prov in provenances.values():
+      self.register_provenance(id=prov.id,
+                               name=prov.name,
+                               url=prov.url,
+                               source_id=prov.source_id,
+                               properties=prov.properties)
+
+  @thread_safe
+  def merge_properties(self, properties: dict[str, Property]) -> None:
+    """Adds Property nodes held by another `Nodes`, unioning provenances."""
+    for column_name, prop in properties.items():
+      existing = self.properties.setdefault(column_name, prop)
+      if existing is not prop:
+        existing.provenance_ids.update(prop.provenance_ids)
+
+  @thread_safe
   def provenance(self, input_file: File) -> Provenance:
     prov_name = self.config.provenance_name(input_file)
     if not prov_name:

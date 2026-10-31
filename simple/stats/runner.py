@@ -25,6 +25,8 @@ from stats import constants
 from stats.config import Config
 from stats.data import FileValidationError
 from stats.data import ImportType
+from stats.data import Provenance
+from stats.data import Source
 from stats.data import ValidationErrorType
 from stats.entities_importer import EntitiesImporter
 from stats.graph_writer import GraphWriter
@@ -103,7 +105,7 @@ class ImportProcResult:
   processed_imports: set
 
 
-def _run_single_csv_import_proc(
+def _run_single_import_proc(
     file_rel_path: str,
     input_dir_path: str,
     output_dir_path: str,
@@ -111,7 +113,15 @@ def _run_single_csv_import_proc(
     import_names: dict,
     config_json_str: str,
     jsonld_dir_name: str,
+    provenances: dict[str, Provenance],
+    sources: dict[str, Source],
 ) -> ImportProcResult:
+  """Imports one file in a worker process and returns what it registered.
+
+  `provenances` and `sources` are the coordinator's nodes when the worker is
+  submitted. Seeding them lets a CSV worker find the provenance (and URL) that
+  an MCF file in the same import defines, instead of auto-creating one.
+  """
   with create_store(input_dir_path) as input_store_obj, \
        create_store(output_dir_path) as output_store_obj, \
        create_store(process_dir_path) as process_store_obj:
@@ -122,6 +132,7 @@ def _run_single_csv_import_proc(
 
     config = Config(json.loads(config_json_str))
     nodes = Nodes(config=config)
+    nodes.merge_metadata(provenances, sources)
     graph_writer = JsonLdStreamWriter(output_store,
                                       import_names,
                                       nodes,
@@ -582,27 +593,47 @@ class Runner:
         for future in concurrent.futures.as_completed(futures):
           future.result()
 
-  def _run_multiprocess_imports(self, all_files: list[File]) -> None:
-    """Runs all file imports across a process pool and merges worker results."""
-    num_processes = min(32, len(all_files))
-    config_json_str = json.dumps(self.config.data)
-    jsonld_dir_name = self.graph_writer.jsonld_dir.name()
+  def _run_multiprocess_imports(self, mcf_files: list[File],
+                                csv_files: list[File]) -> None:
+    """Runs MCF imports followed by CSV imports across a process pool.
+
+    Like `_run_threaded_imports`, the MCF group is imported to completion and
+    merged into `self.nodes` before the CSV group starts, so CSV workers are
+    seeded with the Provenance and Source nodes the MCF files define.
+    """
+    num_processes = min(32, max(len(mcf_files), len(csv_files)))
     with concurrent.futures.ProcessPoolExecutor(
         max_workers=num_processes) as executor:
-      futures = [
-          executor.submit(
-              _run_single_csv_import_proc,
-              file.path,
-              file._store.root_path,
-              self.output_dir.full_path(),
-              self.process_dir.full_path(),
-              self.import_names,
-              config_json_str,
-              jsonld_dir_name,
-          ) for file in all_files
-      ]
-      for future in concurrent.futures.as_completed(futures):
-        self._merge_worker_result(future.result())
+      for file_group in (mcf_files, csv_files):
+        self._run_worker_stage(executor, file_group)
+
+  def _run_worker_stage(self, executor: concurrent.futures.Executor,
+                        files: list[File]) -> None:
+    """Imports `files` in worker processes and merges every result.
+
+    Workers are seeded with the coordinator's Provenance and Source nodes as
+    they are when the stage starts.
+    """
+    if not files:
+      return
+    config_json_str = json.dumps(self.config.data)
+    jsonld_dir_name = self.graph_writer.jsonld_dir.name()
+    futures = [
+        executor.submit(
+            _run_single_import_proc,
+            file.path,
+            file._store.root_path,
+            self.output_dir.full_path(),
+            self.process_dir.full_path(),
+            self.import_names,
+            config_json_str,
+            jsonld_dir_name,
+            provenances=self.nodes.provenances,
+            sources=self.nodes.sources,
+        ) for file in files
+    ]
+    for future in concurrent.futures.as_completed(futures):
+      self._merge_worker_result(future.result())
 
   def _run_all_data_imports(self):
     """Orchestrates file scanning, thread-pool configuration, and file ingestion."""
@@ -622,44 +653,32 @@ class Runner:
     self._total_files_count = len(csv_files) + len(mcf_files)
     self._counter_lock = threading.Lock()
 
-    all_files = list(mcf_files) + list(csv_files)
-    if not all_files:
+    if not self._total_files_count:
       return
-    logging.info("Importing %d files (%d MCF, %d CSV)...", len(all_files),
-                 len(mcf_files), len(csv_files))
+    logging.info("Importing %d files (%d MCF, %d CSV)...",
+                 self._total_files_count, len(mcf_files), len(csv_files))
     if not self.use_multiprocessing:
       self._run_threaded_imports(mcf_files, csv_files)
     else:
-      self._run_multiprocess_imports(all_files)
+      self._run_multiprocess_imports(mcf_files, csv_files)
 
   def _merge_worker_result(self, res: ImportProcResult) -> None:
     """Merges a worker process's `ImportProcResult` into the coordinator."""
     self._log_file_progress("Imported file", res.file_rel_path)
-    for src in res.sources.values():
-      self.nodes.register_source(id=src.id,
-                                 name=src.name,
-                                 url=src.url,
-                                 provenance_id=src.provenance_id)
-    for prov in res.provenances.values():
-      self.nodes.register_provenance(id=prov.id,
-                                     name=prov.name,
-                                     url=prov.url,
-                                     source_id=prov.source_id,
-                                     properties=prov.properties)
-    for prop_name, prop_obj in res.properties.items():
-      if prop_name not in self.nodes.properties:
-        self.nodes.properties[prop_name] = prop_obj
-      else:
-        self.nodes.properties[prop_name].provenance_ids.update(
-            prop_obj.provenance_ids)
+    self.nodes.merge_metadata(res.provenances, res.sources)
+    self.nodes.merge_properties(res.properties)
+    self._merge_worker_writer_state(res)
+
+  def _merge_worker_writer_state(self, res: ImportProcResult) -> None:
+    """Merges a worker's processed imports and collision stats into the writer."""
     self.graph_writer._processed_imports.update(res.processed_imports)
-    if res.obs_collision_count and hasattr(self.graph_writer,
-                                           "obs_collision_count"):
-      self.graph_writer.obs_collision_count += res.obs_collision_count
-      for f_name, count in res.file_collision_counts.items():
-        self.graph_writer.file_collision_counts[f_name] += count
-        self.graph_writer.file_sample_collisions[f_name].extend(
-            res.file_sample_collisions.get(f_name, []))
+    if not res.obs_collision_count:
+      return
+    self.graph_writer.obs_collision_count += res.obs_collision_count
+    for f_name, count in res.file_collision_counts.items():
+      self.graph_writer.file_collision_counts[f_name] += count
+      self.graph_writer.file_sample_collisions[f_name].extend(
+          res.file_sample_collisions.get(f_name, []))
 
   def _log_file_progress(self, file_prefix: str, file: File):
     """Increments file progress counter thread-safely and logs standard progress line."""

@@ -22,7 +22,6 @@ _provenance_mcf) to vary that.
 from testsuite.lib import builders as b
 from testsuite.lib.builders import Case
 from testsuite.lib.builders import cases
-from testsuite.lib.builders import known_bug
 
 _ONE_ROW = b.csv_file(b.obs_row())
 
@@ -110,14 +109,38 @@ def test_provenance_url_is_copied_onto_observations():
                    [b.obs(provenanceUrl="https://source.example.org/dataset")])
 
 
-@known_bug(reason="with use_multiprocessing=True (production), observations"
-           " lose dcid:provenanceUrl")
 def test_provenance_url_survives_the_production_path():
   result = b.run_csv(_ONE_ROW,
                      mode="production",
                      shared_files=_PROVENANCE_WITH_URL)
   b.assert_records(result.observations,
                    [b.obs(provenanceUrl="https://source.example.org/dataset")])
+
+
+# --- Production (multiprocessing) path ----------------------------------------
+#
+# In production mode each file is imported in its own worker process. MCF
+# workers finish first; CSV workers then start from the provenances and
+# sources the MCF files registered.
+
+_MANY_CSVS = {
+    f"case{i}.csv": b.csv_file(b.obs_row(f"country/C{i}")) for i in range(8)
+}
+
+
+def test_csv_workers_use_the_provenance_defined_in_mcf():
+  """No CSV worker auto-creates a copy of the provenance that replaces it."""
+  result = b.run(_MANY_CSVS,
+                 b.obs_config(),
+                 mode="production",
+                 shared_files=_PROVENANCE_WITH_URL)
+  b.assert_records(result.of_type("Provenance"), [])
+  b.assert_records(result.of_type("Source"), [])
+  b.assert_records(result.removed, [])
+  b.assert_records(result.observations, [
+      b.obs(f"country/C{i}", provenanceUrl="https://source.example.org/dataset")
+      for i in range(8)
+  ])
 
 
 # --- Validation ---------------------------------------------------------------
