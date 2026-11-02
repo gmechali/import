@@ -19,9 +19,11 @@ Author keyed by author_id, unless it says otherwise (see entities_config()
 in lib/builders.py).
 """
 
+import pytest
 from testsuite.lib import builders as b
 from testsuite.lib.builders import Case
 from testsuite.lib.builders import cases
+from testsuite.lib.builders import known_bug
 
 
 def test_rows_become_typed_nodes_keyed_by_the_id_column():
@@ -31,9 +33,6 @@ def test_rows_become_typed_nodes_keyed_by_the_id_column():
                  header=["author_id", "author_name", "author_country"]),
       b.entities_config())
   b.assert_records(result.nodes, [
-      b.property_node("author_id"),
-      b.property_node("author_name"),
-      b.property_node("author_country"),
       b.entity("author1",
                author_id="author1",
                author_name="Jane Doe",
@@ -51,8 +50,6 @@ def test_without_an_id_column_ids_are_generated():
                  header=["author_name", "author_country"]),
       b.entities_config(id_column=None))
   b.assert_records(result.nodes, [
-      b.property_node("author_name"),
-      b.property_node("author_country"),
       b.entity("Author_0", author_name="Jane Doe",
                author_country="country/USA"),
       b.entity(
@@ -152,21 +149,97 @@ def test_value(given, expect):
                    [b.entity("author1", author_id="author1", value=expect)])
 
 
-# A column becomes a Property named after it. Its id is the column name when
-# that is a valid dcid, with spaces and dashes turned into underscores;
-# otherwise a generated c/prop/<n>.
-PROPERTY_IDS = [
+# Modes whose entities output must match: threaded, and production
+# (multiprocessing), where each file is imported by its own worker process.
+_MODES = ("threaded", "production")
+
+# A column's values are written under its header when that is a valid dcid,
+# with spaces and dashes turned into underscores.
+PREDICATES = [
     Case("valid dcid is kept", given="papers", expect="papers"),
     Case("space becomes underscore", given="my col", expect="my_col"),
     Case("dash becomes underscore", given="h-index", expect="h_index"),
-    Case("non-ASCII gets a generated id", given="Catégorie", expect="c/prop/1"),
 ]
 
 
-@cases(*PROPERTY_IDS)
-def test_column_property_id(given, expect):
+@cases(*PREDICATES)
+@pytest.mark.parametrize("mode", _MODES)
+def test_column_header_is_the_predicate(given, expect, mode):
   result = b.run_csv(b.csv_file(["author1", "x"], header=["author_id", given]),
-                     b.entities_config())
+                     b.entities_config(),
+                     mode=mode)
   b.assert_records(result.of_type("Author"),
                    [b.entity("author1", author_id="author1", **{expect: "x"})])
-  assert b.property_node(given, expect) in result.nodes
+
+
+@pytest.mark.parametrize("mode", _MODES)
+def test_mapped_column_uses_its_mapping(mode):
+  result = b.run_csv(
+      b.csv_file(["author1", "Jane Doe"], header=["author_id", "Nom complet"]),
+      b.entities_config(columnMappings={"dcid:name": "Nom complet"}),
+      mode=mode)
+  b.assert_records(result.of_type("Author"),
+                   [b.entity("author1", author_id="author1", name="Jane Doe")])
+
+
+@pytest.mark.parametrize("mode", _MODES)
+def test_id_column_header_is_sanitized_like_any_other(mode):
+  result = b.run_csv(b.csv_file(["author1", "Jane Doe"],
+                                header=["author id", "author_name"]),
+                     b.entities_config(id_column="author id"),
+                     mode=mode)
+  b.assert_records(
+      result.of_type("Author"),
+      [b.entity("author1", author_id="author1", author_name="Jane Doe")])
+
+
+@pytest.mark.parametrize("mode", [
+    "threaded",
+    pytest.param(
+        "production",
+        marks=known_bug(reason="in production, worker processes upload their"
+                        " JSON-LD as they finish, so a failed run leaves the"
+                        " output of the files that succeeded behind")),
+])
+def test_every_invalid_column_header_is_reported_at_once(mode):
+  result = b.run_csv(b.csv_file(["author1", "x", "y"],
+                                header=["Nº", "Catégorie", "Größe"]),
+                     b.entities_config(id_column="Nº"),
+                     mode=mode)
+  b.assert_fails(
+      result, "ValueError",
+      "has column headers that are not valid property DCIDs: ['Nº',"
+      " 'Catégorie', 'Größe']. Map each of them to a property DCID in"
+      " 'columnMappings'")
+
+
+@pytest.mark.parametrize("mode", _MODES)
+def test_no_property_nodes_are_written_for_columns(mode):
+  result = b.run_csv(b.csv_file(["author1", "Jane Doe"],
+                                header=["author_id", "author_name"]),
+                     b.entities_config(),
+                     mode=mode)
+  b.assert_records(result.of_type("Property"), [])
+
+
+@pytest.mark.parametrize("mode", _MODES)
+def test_property_node_for_a_column_is_defined_in_mcf(mode):
+  result = b.run(
+      {
+          "case.csv":
+              b.csv_file(["author1", "Jane Doe"],
+                         header=["author_id", "author_name"]),
+          "schema.mcf":
+              b.mcf_node("dcid:author_name",
+                         typeOf="dcs:Property",
+                         name='"Author name"',
+                         description='"Full name of the author"'),
+      },
+      b.entities_config(),
+      mode=mode)
+  b.assert_records(result.of_type("Property"), [
+      b.record("author_name",
+               "Property",
+               name="Author name",
+               description="Full name of the author"),
+  ])

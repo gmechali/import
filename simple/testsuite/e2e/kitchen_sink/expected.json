@@ -105,21 +105,6 @@
               "@id": "dcid:KitchenProvenance"
             }
           },
-          "dcid:author_country": {
-            "@id": "dcid:author_country",
-            "@type": "dcid:Property",
-            "dcid:name": "author_country"
-          },
-          "dcid:author_id": {
-            "@id": "dcid:author_id",
-            "@type": "dcid:Property",
-            "dcid:name": "author_id"
-          },
-          "dcid:author_name": {
-            "@id": "dcid:author_name",
-            "@type": "dcid:Property",
-            "dcid:name": "author_name"
-          },
           "dcid:c/g/Root": {
             "@id": "dcid:c/g/Root",
             "@type": "dcid:StatVarGroup",

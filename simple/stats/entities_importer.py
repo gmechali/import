@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import logging
+import re
 
 import pandas as pd
 from stats.data import FileValidationError
@@ -27,6 +28,9 @@ from stats.reporter import FileImportReporter
 from stats.util import has_namespace_prefix
 from util.filesystem import File
 
+# Pattern to check if a string conforms to that of a valid DCID.
+_DCID_PATTERN = r"^(?:[A-Za-z0-9_/]+:)?[A-Za-z0-9_/]+$"
+
 
 def _parse_object_ids(v_str: str) -> str | list[str]:
   """Splits comma-separated entity references and strips namespace prefixes."""
@@ -35,11 +39,21 @@ def _parse_object_ids(v_str: str) -> str | list[str]:
   return strip_namespace(v_str)
 
 
+def _sanitize_dcid(raw: str) -> str | None:
+  """Returns `raw` (or `raw` with spaces/dashes replaced by `_`) if it is a valid DCID."""
+  if re.fullmatch(_DCID_PATTERN, raw):
+    return raw
+  candidate = re.sub(r"[ -]", "_", raw)
+  if re.fullmatch(_DCID_PATTERN, candidate):
+    return candidate
+  return None
+
+
 class EntitiesImporter(Importer):
   """Imports a single entities input file.
 
   Key behaviors at this time:
-  - All un-ignored columns will be encoded as property triples.
+  - All un-ignored columns will be encoded as property triples. A column's predicate is its `columnMappings` entry, else its header as a DCID (spaces and dashes become `_`). Headers that are not valid DCIDs must be mapped.
   - If an id column was configured, it will be used as the entity dcid. Else a new dcid will be generated for each entity.
   - Columns specified as entity columns will be encoded as object_id in the triples tables. Others will be encoded as object_value.
     + Currently this importer does not resolve any entities and all entities are assumed to be pre-resolved into dcids.
@@ -139,14 +153,31 @@ class EntitiesImporter(Importer):
   def _is_entity_reference_column(self, col: str) -> bool:
     return col in self.entity_columns
 
+  def _column_predicate(self, col: str) -> str | None:
+    """Returns the predicate a column's values are written under, if any.
+
+    That is the column's `columnMappings` entry if it has one, else the header
+    itself when it is (or, with spaces/dashes as `_`, becomes) a valid DCID.
+    """
+    if col in self.reverse_mappings:
+      return self.reverse_mappings[col]
+    return _sanitize_dcid(col)
+
   def _rename_columns(self) -> None:
-    renamed = {}
-    for col in self.df.columns:
-      id = self.reverse_mappings.get(col, self.nodes.property(col).dcid)
-      renamed[col] = id
-      if col in self.entity_columns:
-        self.entity_columns.remove(col)
-        self.entity_columns.add(id)
+    """Renames every column to its predicate.
+
+    Raises:
+      ValueError: naming every column that has no valid predicate.
+    """
+    renamed = {col: self._column_predicate(col) for col in self.df.columns}
+    invalid = [col for col, predicate in renamed.items() if not predicate]
+    if invalid:
+      raise ValueError(
+          f"The CSV file '{self.input_file.path}' has column headers that are "
+          f"not valid property DCIDs: {invalid}. Map each of them to a "
+          "property DCID in 'columnMappings' (or list them in 'ignoreColumns') "
+          "in config.json.")
+    self.entity_columns = {renamed.get(col, col) for col in self.entity_columns}
     self.df = self.df.rename(columns=renamed)
 
   def _extract_row_properties(
@@ -166,13 +197,11 @@ class EntitiesImporter(Importer):
     return prop_object_values, prop_object_ids
 
   def _write_row_entity_triples(self) -> None:
-    # All property columns would've been renamed to their dcids by now.
-    # So use the id column's dcid as the id column name.
+    # All columns have been renamed to their predicates by now, so look the id
+    # column up by its predicate.
     id_column_name = ""
     if self.id_column:
-      id_column_name = self.reverse_mappings.get(
-          self.id_column,
-          self.nodes.property(self.id_column).dcid)
+      id_column_name = self._column_predicate(self.id_column)
 
     triples: list[Triple] = []
     entity_type = strip_namespace(self.row_entity_type)

@@ -300,11 +300,6 @@ def entity(dcid: str, row_type: str = "Author", **props: Any) -> dict:
   return record(dcid, row_type, includedIn=ref(PROVENANCE), **props)
 
 
-def property_node(name: str, dcid: str | None = None) -> dict:
-  """The Property node written for a CSV column (dcid defaults to name)."""
-  return record(dcid or name, "Property", name=name)
-
-
 # --- Running ------------------------------------------------------------------
 
 _OBSERVATION_TYPE = "dcid:StatVarObservation"

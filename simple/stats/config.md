@@ -79,6 +79,24 @@ built-in default column names.
 required, along with at least one entity mapping: either `dcid:observationAbout`
 or a custom observation property you have defined in MCF.
 
+For `"entities"` imports, `columnMappings` is optional. If given, every column
+other than the `idColumn` and `ignoreColumns` must be mapped. Each column's
+values are written under its mapped DCID, or else under the column heading
+itself, with spaces and dashes replaced by `_`. Headings that are still not
+valid DCIDs (for example, ones with non-ASCII characters) must be mapped;
+otherwise the import fails with an error that lists all of them.
+
+No `Property` node is created for a column. If the property is not already in
+the Data Commons schema, define it (with its `name` and `description`) in an
+MCF file matched by an `inputFiles` entry, for example:
+
+```
+Node: dcid:author_name
+typeOf: dcs:Property
+name: "Author name"
+description: "Full name of the author"
+```
+
 #### `ignoreColumns`
 
 The list of column names to be ignored by the importer, if any.
