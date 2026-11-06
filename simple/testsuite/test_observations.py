@@ -234,6 +234,37 @@ def test_collisions_of_every_file_are_summarized(caplog):
   assert len(samples) == 2, details
 
 
+def test_collisions_across_files_are_summarized(caplog):
+  """
+  Two files that produce the same observation id collide.
+
+  Each file is imported by its own worker, which only sees its own file, so the
+  coordinator finds the collision. It is counted for the later file (in import
+  order), and the sample names the earlier one.
+  """
+  row = b.obs_row("country/X", value="1")
+  files = {
+      "provenance.mcf": b.PROVENANCE_MCF,
+      "case_x.csv": b.csv_file(row),
+      "case_y.csv": b.csv_file(row, b.obs_row("country/Y", value="1")),
+  }
+  with caplog.at_level(logging.WARNING):
+    result = b.run_dir(files, b.obs_config(b.OBS_MAPPINGS))
+  assert result.error is None, result.error
+  summaries = [
+      r.getMessage()
+      for r in caplog.records
+      if r.getMessage().startswith(_COLLISION_SUMMARY)
+  ]
+  assert len(summaries) == 1, summaries
+  header, file_line, sample = summaries[0].splitlines()
+  assert header == (f"{_COLLISION_SUMMARY} Total of 1 observation @id"
+                    " collisions detected across 1 file(s):")
+  assert file_line == "  File 'case_y.csv': 1 collision(s)"
+  assert sample.startswith("    - @id='dcid:obs_"), sample
+  assert sample.endswith(" also produced by 'case_x.csv'"), sample
+
+
 @known_bug(reason="the observation id is hashed before trimming whitespace, so"
            " 'country/USA ' and 'country/USA' get different ids")
 def test_surrounding_whitespace_does_not_change_observation_id():

@@ -17,6 +17,7 @@ from dataclasses import dataclass
 import json
 import logging
 import os
+import tempfile
 import traceback
 from typing import Callable, Optional
 
@@ -31,9 +32,12 @@ from stats.data import ValidationErrorType
 from stats.entities_importer import EntitiesImporter
 from stats.graph_writer import GraphWriter
 from stats.importer import Importer
+from stats.jsonld_stream_writer import collision_file_key
 from stats.jsonld_stream_writer import JsonLdStreamWriter
 from stats.mcf_importer import McfImporter
 from stats.nodes import Nodes
+from stats.obs_id_collisions import find_cross_file_collisions
+from stats.obs_id_collisions import save_obs_ids
 from stats.reporter import FileImportReporter
 from stats.reporter import ImportReporter
 from stats.validation import MetadataValidator
@@ -97,10 +101,13 @@ class ImportProcResult:
 
   `sources` and `provenances` are all of the worker's nodes, keyed as in
   `Nodes`; the coordinator merges them with `Nodes.merge_metadata`. The
-  collision fields mirror the worker's `JsonLdStreamWriter` stats.
+  collision fields mirror the worker's `JsonLdStreamWriter` stats, which cover
+  collisions within the file. `obs_ids_path` is where the file's observation
+  ids were saved for the coordinator to find collisions between files, or None
+  if the file has no observations.
   """
   file_rel_path: str
-  obs_collision_count: int
+  obs_ids_path: str | None
   file_collision_counts: dict[str, int]
   file_sample_collisions: dict[str, list[str]]
   sources: dict[str, Source]
@@ -177,12 +184,14 @@ def _raise_for_failures(failures: list[_FileFailure]) -> None:
 
 
 def _run_single_import_proc(file_rel_path: str, input_dir_path: str,
-                            args: _WorkerArgs) -> ImportProcResult:
+                            args: _WorkerArgs,
+                            obs_ids_path: str) -> ImportProcResult:
   """Imports one file in a worker process and returns its results.
 
   The worker starts from an empty `Nodes`: a CSV needs only its provenance id,
   which comes from config. The Provenance and Source nodes that an MCF file
-  defines are returned for the coordinator to merge.
+  defines are returned for the coordinator to merge. The file's observation
+  ids are saved to `obs_ids_path` (see `stats.obs_id_collisions`).
   """
   with create_store(input_dir_path) as input_store_obj, \
        create_store(args.output_dir_path) as output_store_obj, \
@@ -208,10 +217,13 @@ def _run_single_import_proc(file_rel_path: str, input_dir_path: str,
                                          reporter, nodes)
     importer.do_import()
     graph_writer.commit_and_close()
+    has_obs = bool(graph_writer.obs_hash_set)
+    if has_obs:
+      save_obs_ids(graph_writer.obs_hash_set, obs_ids_path)
 
     return ImportProcResult(
         file_rel_path=file_rel_path,
-        obs_collision_count=graph_writer.obs_collision_count,
+        obs_ids_path=obs_ids_path if has_obs else None,
         file_collision_counts=dict(graph_writer.file_collision_counts),
         file_sample_collisions=dict(graph_writer.file_sample_collisions),
         sources=dict(nodes.sources),
@@ -635,7 +647,8 @@ class Runner:
   def _run_multiprocess_imports(self, files: list[File]) -> None:
     """Imports `files` in worker processes and merges each result.
 
-    See `_finish_imports` for the merge order and for failures.
+    See `_finish_imports` for the merge order and for failures. Once every
+    file is merged, looks for observation ids that several files produced.
     """
     worker_args = _WorkerArgs(
         output_dir_path=self.output_dir.full_path(),
@@ -644,13 +657,34 @@ class Runner:
         config_json_str=json.dumps(self.config.data),
         jsonld_dir_name=self.graph_writer.jsonld_dir.name(),
     )
-    with concurrent.futures.ProcessPoolExecutor(
-        max_workers=min(_MAX_WORKERS, len(files))) as executor:
-      futures = [
-          executor.submit(_run_single_import_proc, file.path,
-                          file._store.root_path, worker_args) for file in files
-      ]
-      _finish_imports(files, futures, merge=self._merge_worker_result)
+    # (file key, saved ids path) of each file with observations, in order.
+    self._obs_ids_files: list[tuple[str, str]] = []
+    # Workers run on this machine, so they can write to a local directory.
+    with tempfile.TemporaryDirectory(prefix="obs-ids-") as obs_ids_dir:
+      with concurrent.futures.ProcessPoolExecutor(
+          max_workers=min(_MAX_WORKERS, len(files))) as executor:
+        futures = [
+            executor.submit(_run_single_import_proc, file.path,
+                            file._store.root_path, worker_args,
+                            os.path.join(obs_ids_dir, f"{i:06d}.npy"))
+            for i, file in enumerate(files)
+        ]
+        _finish_imports(files, futures, merge=self._merge_worker_result)
+      self._merge_cross_file_collisions()
+
+  def _merge_cross_file_collisions(self) -> None:
+    """Adds the collisions between files to the writer's summary."""
+    if len(self._obs_ids_files) < 2:
+      return
+    logging.info("Checking observation ids of %d files for collisions...",
+                 len(self._obs_ids_files))
+    collisions = find_cross_file_collisions(self._obs_ids_files)
+    if collisions.count:
+      logging.warning(
+          "Found %d observation @id collisions between files: different files"
+          " produce identical observation ids.", collisions.count)
+    self.graph_writer.merge_collisions(collisions.file_counts,
+                                       collisions.file_samples)
 
   def _run_all_data_imports(self):
     """Finds the input files, validates CSV headers, and imports every file."""
@@ -686,13 +720,11 @@ class Runner:
   def _merge_worker_writer_state(self, res: ImportProcResult) -> None:
     """Merges a worker's processed imports and collision stats into the writer."""
     self.graph_writer._processed_imports.update(res.processed_imports)
-    if not res.obs_collision_count:
-      return
-    self.graph_writer.obs_collision_count += res.obs_collision_count
-    for f_name, count in res.file_collision_counts.items():
-      self.graph_writer.file_collision_counts[f_name] += count
-      self.graph_writer.file_sample_collisions[f_name].extend(
-          res.file_sample_collisions.get(f_name, []))
+    if res.obs_ids_path:
+      self._obs_ids_files.append(
+          (collision_file_key(res.file_rel_path), res.obs_ids_path))
+    self.graph_writer.merge_collisions(res.file_collision_counts,
+                                       res.file_sample_collisions)
 
   def _log_file_progress(self, file_path: str):
     """Counts `file_path` as imported and logs the run's progress."""
