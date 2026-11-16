@@ -50,7 +50,9 @@ WORKER = "worker"
 @dataclasses.dataclass(frozen=True)
 class Request:
   phase: str  # A PHASES value, or WORKER.
-  kind: str  # "list", "get" (metadata), "download", "upload" or the method.
+  # "list", "get" (metadata), "download" (of a whole object), "range" (a
+  # ranged download), "upload" or the HTTP method.
+  kind: str
   url: str  # Percent-decoded.
 
 
@@ -67,11 +69,12 @@ class Requests:
     ]
 
 
-def _kind(method: str, url: str) -> str:
+def _kind(method: str, url: str, headers: dict) -> str:
   if "/upload/" in url:
     return "upload"
   if "alt=media" in url:
-    return "download"
+    ranged = any(name.lower() == "range" for name in headers)
+    return "range" if ranged else "download"
   if re.search(r"/b/[^/]+/o(\?|$)", url):
     return "list"
   if method == "GET":
@@ -95,7 +98,8 @@ def record() -> Iterator[Requests]:
     if name:
       decoded = unquote(str(url))
       with open(log_path, "a", encoding="utf-8") as f:
-        f.write(f"{name}\t{_kind(method, decoded)}\t{decoded}\n")
+        kind = _kind(method, decoded, kwargs.get("headers") or {})
+        f.write(f"{name}\t{kind}\t{decoded}\n")
     return real_request(session, method, url, *args, **kwargs)
 
   def in_phase(name, method):

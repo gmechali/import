@@ -168,3 +168,36 @@ class TestGcsListing(unittest.TestCase):
         for path, is_dir in expected.items():
           with self.subTest(root=root, path=path):
             self.assertEqual(store.as_dir().is_subdir(path), is_dir)
+
+
+class TestGcsStream(unittest.TestCase):
+  """File.open_stream on (fake) GCS reads what it reads from local disk."""
+
+  _CONTENTS = {
+      "empty.csv":
+          b"",
+      # Longer than one read of the text stream (8 KiB), with multibyte
+      # characters across read boundaries.
+      "bom_crlf.csv":
+          ("\ufeffa,b\r\n" + "\"x\r\ny\",\u00e9\u4e2d\r\n" * 2000).encode(),
+  }
+
+  def test_stream_matches_local_whatever_the_chunk_size(self):
+    local = tempfile.mkdtemp()
+    self.addCleanup(shutil.rmtree, local)
+    for name, content in self._CONTENTS.items():
+      with open(os.path.join(local, name), "wb") as f:
+        f.write(content)
+    gcs = f"{fake_gcs.new_prefix()}/input"
+    fake_gcs.upload_dir(local, gcs)
+    for name in self._CONTENTS:
+      with create_store(local) as store:
+        file = store.as_dir().open_file(name, create_if_missing=False)
+        with file.open_stream() as stream:
+          expected = stream.read()
+      for chunk_size in [7, 8191, 10_001]:
+        with self.subTest(name=name, chunk_size=chunk_size):
+          with create_store(gcs, mark_gcs_dirs=False) as store:
+            [file] = [f for f in store.as_dir().all_files() if f.name() == name]
+            with file.open_stream(chunk_size=chunk_size) as stream:
+              self.assertEqual(stream.read(), expected)
