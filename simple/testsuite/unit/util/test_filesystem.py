@@ -201,3 +201,23 @@ class TestGcsStream(unittest.TestCase):
             [file] = [f for f in store.as_dir().all_files() if f.name() == name]
             with file.open_stream(chunk_size=chunk_size) as stream:
               self.assertEqual(stream.read(), expected)
+
+  def test_part_stream_reads_the_header_then_the_range(self):
+    content = "h1,h2\n" + "".join(f"{i},\u00e9\n" for i in range(3000))
+    local = tempfile.mkdtemp()
+    self.addCleanup(shutil.rmtree, local)
+    with open(os.path.join(local, "data.csv"), "w", encoding="utf-8") as f:
+      f.write(content)
+    gcs = f"{fake_gcs.new_prefix()}/input"
+    fake_gcs.upload_dir(local, gcs)
+    data = content.encode()
+    header_end, start, end = 6, data.index(b"\n1000,") + 1, len(data) - 5
+    expected = (data[:header_end] + data[start:end]).decode()
+    for root in [local, gcs]:
+      with create_store(root, mark_gcs_dirs=False) as store:
+        [file] = store.as_dir().all_files()
+        for chunk_size in [7, 10_001]:
+          with self.subTest(root=root, chunk_size=chunk_size):
+            with file.open_part_stream(header_end, start, end,
+                                       chunk_size) as stream:
+              self.assertEqual(stream.read(), expected)

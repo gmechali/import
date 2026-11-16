@@ -23,6 +23,7 @@ Observation ids are content hashes, so these tests compare records without
 
 import logging
 
+import pytest
 from testsuite.lib import builders as b
 from testsuite.lib.builders import Case
 from testsuite.lib.builders import cases
@@ -234,7 +235,8 @@ def _collision_summary(caplog) -> list[str]:
   return summaries[0].splitlines()
 
 
-def test_collisions_of_every_file_are_summarized(caplog):
+@pytest.mark.parametrize("mode", ["disk_input", "tiny_split"])
+def test_collisions_of_every_file_are_summarized(caplog, mode):
   """
   The end-of-run summary counts the collisions of every file.
 
@@ -254,7 +256,7 @@ def test_collisions_of_every_file_are_summarized(caplog):
                      b.obs_row("country/Y", value="2")),
   }
   with caplog.at_level(logging.WARNING):
-    result = b.run_dir(files, b.obs_config(b.OBS_MAPPINGS))
+    result = b.run_dir(files, b.obs_config(b.OBS_MAPPINGS), mode=mode)
   assert result.error is None, result.error
   header, *details = _collision_summary(caplog)
   assert header == (f"{_COLLISION_SUMMARY} Total of 2 observation @id"
@@ -267,7 +269,8 @@ def test_collisions_of_every_file_are_summarized(caplog):
   assert len(samples) == 2, details
 
 
-def test_collisions_across_files_are_summarized(caplog):
+@pytest.mark.parametrize("mode", ["disk_input", "tiny_split"])
+def test_collisions_across_files_are_summarized(caplog, mode):
   """
   Two files that produce the same observation id collide.
 
@@ -282,7 +285,7 @@ def test_collisions_across_files_are_summarized(caplog):
       "case_y.csv": b.csv_file(row, b.obs_row("country/Y", value="1")),
   }
   with caplog.at_level(logging.WARNING):
-    result = b.run_dir(files, b.obs_config(b.OBS_MAPPINGS))
+    result = b.run_dir(files, b.obs_config(b.OBS_MAPPINGS), mode=mode)
   assert result.error is None, result.error
   header, file_line, sample = _collision_summary(caplog)
   assert header == (f"{_COLLISION_SUMMARY} Total of 1 observation @id"
@@ -290,6 +293,23 @@ def test_collisions_across_files_are_summarized(caplog):
   assert file_line == "  File 'case_y.csv': 1 collision(s)"
   assert sample.startswith("    - @id='dcid:obs_"), sample
   assert sample.endswith(" also produced by 'case_x.csv'"), sample
+
+
+@pytest.mark.parametrize("mode", ["disk_input", "tiny_split"])
+def test_a_split_file_counts_the_collisions_of_the_whole_file(caplog, mode):
+  """Three rows with one key, in three parts with tiny_split: 2 collisions."""
+  rows = [b.obs_row("country/X", value=str(v)) for v in (1, 2, 3)]
+  files = {
+      "provenance.mcf": b.PROVENANCE_MCF,
+      "case.csv": b.csv_file(*rows, b.obs_row("country/Y")),
+  }
+  with caplog.at_level(logging.WARNING):
+    result = b.run_dir(files, b.obs_config(b.OBS_MAPPINGS), mode=mode)
+  assert result.error is None, result.error
+  header, file_line, *_ = _collision_summary(caplog)
+  assert header == (f"{_COLLISION_SUMMARY} Total of 2 observation @id"
+                    " collisions detected across 1 file(s):")
+  assert file_line == "  File 'case.csv': 2 collision(s)"
 
 
 def test_files_with_the_same_name_in_two_imports_are_summarized_apart(caplog):

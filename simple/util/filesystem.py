@@ -28,10 +28,13 @@ in PyFilesystem. So far, OSFS (with system paths) and GCSFS (with gs:// paths)
 have been tested. In-memory (mem://) and temp (temp://) paths are also built in.
 """
 
+import contextlib
 import io
 import logging
 import os
+import tempfile
 import time
+from typing import Callable, Iterator
 
 from fs import open_fs
 import fs.errors as fserrors
@@ -420,33 +423,113 @@ class File(_StoreWrapper):
             self.path, attempt + 1, max_retries, e)
         time.sleep(1)
 
+  def open_part_stream(self,
+                       header_end: int,
+                       start: int,
+                       end: int,
+                       chunk_size: int = _GCS_STREAM_CHUNK_BYTES):
+    """Returns a text stream of bytes [0, header_end) then [start, end).
+
+    For a part of a CSV file: its header, then its rows (see
+    `stats.csv_split`). Fetched and decoded as `open_stream` does.
+    """
+    ranges = [(0, header_end), (start, end)]
+    if isinstance(self.fs(), GCSFS):
+      return _text_stream(_RangesReader(self._gcs_fetch(), ranges, chunk_size))
+    binary = self.fs().openbin(self.path)
+
+    def fetch(range_start: int, range_end: int) -> bytes:
+      binary.seek(range_start)
+      return binary.read(range_end - range_start)
+
+    return _text_stream(
+        _RangesReader(fetch, ranges, chunk_size, on_close=binary.close))
+
   def _open_gcs_stream(self, chunk_size: int) -> io.TextIOWrapper:
-    blob = self.fs().bucket.blob(_gcs_key(self.fs(), self.path),
+    reader = _RangesReader(self._gcs_fetch(), [(0, self.size())],
+                           chunk_size,
+                           allow_whole_object=True)
+    return _text_stream(reader)
+
+  @contextlib.contextmanager
+  def local_path(self) -> Iterator[str]:
+    """Yields a local path to the file's bytes: its own, or a temporary copy."""
+    syspath = self.syspath()
+    if syspath is not None:
+      yield syspath
+      return
+    with tempfile.NamedTemporaryFile(prefix="file-copy-") as copy:
+      if isinstance(self.fs(), GCSFS):
+        self._gcs_blob().download_to_file(copy)
+      else:
+        self.fs().download(self.path, copy)
+      copy.flush()
+      yield copy.name
+
+  def _gcs_blob(self) -> storage.Blob:
+    """The file's GCS object, at the known generation if any."""
+    return self.fs().bucket.blob(_gcs_key(self.fs(), self.path),
                                  generation=self._gcs_generation)
-    raw = _GcsRangeReader(blob, self.size(), chunk_size)
-    # Decoded as fs.open(path, "r") does, also without a buffered layer, so
-    # that the decoder sees the same reads.
-    return io.TextIOWrapper(raw, encoding="utf-8", newline="")
+
+  def _gcs_fetch(self) -> Callable[[int, int], bytes]:
+    """Returns a function that fetches bytes [start, end) of the object."""
+    blob = self._gcs_blob()
+
+    def fetch(start: int, end: int) -> bytes:
+      # Checksums are of whole objects, so they can't validate a range.
+      return blob.download_as_bytes(start=start, end=end - 1, checksum=None)
+
+    return fetch
 
 
-class _GcsRangeReader(io.RawIOBase):
-  """Reads a GCS object of known size in ranged requests of `chunk_size`.
+def _text_stream(reader: io.RawIOBase) -> io.TextIOWrapper:
+  """Decodes `reader` as fs.open(path, "r") decodes a file.
 
-  Reads return as many bytes as asked for until the end, like a local file's.
-  Reading at the end sends no request.
+  Also without a buffered layer, so that the decoder sees the same reads.
+  """
+  return io.TextIOWrapper(reader, encoding="utf-8", newline="")
+
+
+class _RangesReader(io.RawIOBase):
+  """Reads byte ranges of a file one after the other, a chunk per fetch.
+
+  `fetch(start, end)` returns bytes [start, end) of the file, e.g. with a
+  ranged GCS request; it's called for at most `chunk_size` bytes at a time.
+  Reads return as many bytes as asked for until the end, like a local file's,
+  and reading at the end fetches nothing.
   """
 
-  def __init__(self, blob: storage.Blob, size: int, chunk_size: int) -> None:
+  def __init__(self,
+               fetch: Callable[[int, int], bytes],
+               ranges: list[tuple[int, int]],
+               chunk_size: int,
+               allow_whole_object: bool = False,
+               on_close: Callable[[], None] | None = None) -> None:
+    """
+    Args:
+      allow_whole_object: For a GCS object read whole: GCS ignores ranges of
+        gzip-encoded objects and returns the whole decompressed object, whose
+        size isn't the listed (compressed) one. That response is then read
+        as the object.
+      on_close: Called when the reader is closed, e.g. to close the file it
+        reads.
+    """
     super().__init__()
-    self._blob = blob
-    self._size = size
+    self._fetch = fetch
+    self._ranges = _merge_adjacent(ranges)
     self._chunk_size = chunk_size
-    self._chunk = b""  # The last bytes fetched, from offset _pos - len.
+    self._allow_whole_object = allow_whole_object
+    self._on_close = on_close
+    self._chunk = b""  # The last bytes fetched.
     self._chunk_pos = 0  # Bytes of _chunk already read.
-    self._pos = 0  # Offset of the end of _chunk.
 
   def readable(self) -> bool:
     return True
+
+  def close(self) -> None:
+    if self._on_close and not self.closed:
+      self._on_close()
+    super().close()
 
   def readinto(self, buffer) -> int:
     view = memoryview(buffer).cast("B")
@@ -461,25 +544,34 @@ class _GcsRangeReader(io.RawIOBase):
     return filled
 
   def _fetch_chunk(self) -> bool:
-    """Fetches the next chunk; returns False at the end of the object."""
-    if self._pos >= self._size:
+    """Fetches the next chunk; returns False after the last range."""
+    while self._ranges and self._ranges[0][0] >= self._ranges[0][1]:
+      self._ranges.pop(0)
+    if not self._ranges:
       return False
-    end = min(self._pos + self._chunk_size, self._size)
-    # Checksums are of whole objects, so they can't validate a range.
-    data = self._blob.download_as_bytes(start=self._pos,
-                                        end=end - 1,
-                                        checksum=None)
-    if self._pos == 0 and len(data) > end:
-      # GCS ignores ranges of gzip-encoded objects and sends the whole
-      # decompressed object, whose size isn't the listed (compressed) one.
-      self._size = len(data)
-    elif len(data) != end - self._pos:
-      raise IOError(f"Expected {end - self._pos} bytes at offset {self._pos} of"
-                    f" gs://{self._blob.bucket.name}/{self._blob.name}, got"
-                    f" {len(data)}")
+    start, range_end = self._ranges[0]
+    end = min(start + self._chunk_size, range_end)
+    data = self._fetch(start, end)
+    if self._allow_whole_object and start == 0 and len(data) > end:
+      self._ranges = []
+    elif len(data) != end - start:
+      raise IOError(f"Expected {end - start} bytes at offset {start}, got"
+                    f" {len(data)}: the file changed while it was read")
+    else:
+      self._ranges[0] = (end, range_end)
     self._chunk, self._chunk_pos = data, 0
-    self._pos += len(data)
     return True
+
+
+def _merge_adjacent(ranges: list[tuple[int, int]]) -> list[tuple[int, int]]:
+  """Merges ranges that end where the next starts, to fetch them together."""
+  merged = []
+  for start, end in ranges:
+    if merged and merged[-1][1] == start:
+      merged[-1] = (merged[-1][0], end)
+    else:
+      merged.append((start, end))
+  return merged
 
 
 def _gcs_key(fs: GCSFS, path: str) -> str:
